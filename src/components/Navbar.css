@@ -19,6 +19,18 @@
   color: var(--accent-gold);
 }
 
+.navbar-logo-img {
+  height: 80px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    height: 48px;
+  }
+}
+
 .logo-text {
   display: flex;
   flex-direction: column;

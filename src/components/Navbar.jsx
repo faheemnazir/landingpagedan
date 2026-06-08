@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="navbar container">
       <a href="/#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <img src={logoImg} alt="Daneen Al Majaz" style={{ height: '80px', width: 'auto' }} />
+        <img src={logoImg} alt="Daneen Al Majaz" className="navbar-logo-img" />
       </a>
 
       <ul className="navbar-links">
