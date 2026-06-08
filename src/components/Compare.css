@@ -1,0 +1,167 @@
+.compare {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.compare-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.compare-header {
+  margin-bottom: 48px;
+}
+
+.compare-header h2 {
+  margin-bottom: 12px;
+}
+
+.compare-subtitle {
+  color: var(--text-secondary);
+}
+
+.compare-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.compare-table-header {
+  display: flex;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-items: center;
+}
+
+.col-feature {
+  flex: 2;
+}
+
+.col-ours, .col-theirs {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.badge-gold {
+  background-color: rgba(201, 160, 99, 0.2);
+  color: var(--accent-gold);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.compare-row {
+  display: flex;
+  padding: 10px 0;
+  min-height: 44px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: center;
+}
+
+.compare-row:last-child {
+  border-bottom: none;
+}
+
+.compare-feature {
+  flex: 2;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0 16px;
+}
+
+.compare-ours, .compare-theirs {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.price-gold {
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.price-gray {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.compare-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  position: relative;
+  z-index: 10;
+}
+
+.compare-action .btn {
+  padding: 16px 40px;
+  font-size: 1.125rem;
+  border-radius: 100px;
+}
+
+@media (max-width: 768px) {
+  .compare-card {
+    padding: 24px 12px;
+  }
+  
+  .compare-table-header {
+    font-size: 0.7rem;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .col-feature {
+    padding-right: 8px;
+    flex: 1.8;
+  }
+  
+  .col-ours, .col-theirs {
+    padding: 0 4px;
+  }
+  
+  .badge-gold {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+  
+  .compare-feature {
+    font-size: 0.75rem;
+    padding-right: 8px;
+    padding-left: 0;
+    flex: 1.8;
+  }
+  
+  .compare-ours, .compare-theirs {
+    padding: 0 4px;
+  }
+
+  .compare-ours svg, .compare-theirs svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .price-gold, .price-gray {
+    font-size: 0.85rem;
+  }
+  
+  .compare-action .btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+}

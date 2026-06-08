@@ -1,0 +1,253 @@
+.tech-stack {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.tech-stack-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.tech-stack-header h2 {
+  margin-bottom: 12px;
+}
+
+.title-underline {
+  width: 60px;
+  height: 2px;
+  background-color: var(--accent-gold);
+  margin: 16px auto 24px auto;
+}
+
+.tech-stack-subtitle {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Tabs Navigation Styling */
+.tech-tabs-container {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 48px;
+}
+
+.tech-tabs {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.tech-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 12px 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  color: var(--accent-gold);
+  border-bottom: 2px solid var(--accent-gold);
+}
+
+/* Horizontal Cards Styling */
+.tech-cards-wrapper {
+  overflow: visible;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.tech-cards-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.tech-flat-card {
+  flex: 1;
+  min-width: 160px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 32px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-flat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(255, 184, 0, 0.5);
+}
+
+/* Centered Icon Container styles */
+.tech-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.tech-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.tech-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+
+.tech-desc {
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Custom color classes for custom semi-transparent backgrounds */
+.icon-blue {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.icon-cyan {
+  background-color: rgba(6, 182, 212, 0.1);
+  color: #06b6d4;
+}
+
+.icon-orange {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+}
+
+.icon-purple {
+  background-color: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+
+.icon-gray {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #f3f4f6;
+}
+
+.icon-green {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.icon-yellow {
+  background-color: rgba(234, 179, 8, 0.1);
+  color: #eab308;
+}
+
+.icon-pink {
+  background-color: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+}
+
+.icon-blue-purple {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.icon-teal {
+  background-color: rgba(20, 184, 166, 0.1);
+  color: #14b8a6;
+}
+
+.icon-red {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+@media (max-width: 1024px) {
+  .tech-cards-wrapper {
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    margin-top: -16px;
+  }
+
+  .tech-cards-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tech-cards-row {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .tech-flat-card {
+    flex: 0 0 200px;
+    /* Force cards to scroll horizontally instead of squeezing */
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-stack {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .tech-tabs-container {
+    justify-content: flex-start;
+    margin-bottom: 32px;
+  }
+
+  .tech-tabs {
+    gap: 20px;
+  }
+
+  .tab-btn {
+    font-size: 0.95rem;
+    padding: 10px 2px;
+  }
+
+  .tech-flat-card {
+    flex: 0 0 170px;
+    min-width: 170px;
+    padding: 24px 12px;
+  }
+
+  .tech-icon-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+  }
+
+  .tech-logo-img {
+    width: 28px;
+    height: 28px;
+  }
+}

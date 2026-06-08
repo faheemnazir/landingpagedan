@@ -1,0 +1,264 @@
+.challenges {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  /* Prevent horizontal page overflow from slider */
+}
+
+.challenges-header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.challenges-header .badge {
+  margin-bottom: 16px;
+}
+
+.challenges-header h2 {
+  margin-bottom: 16px;
+}
+
+.challenges-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ── Grid: now a horizontal slider on all screen sizes ── */
+.challenges-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  gap: 24px;
+  padding: 12px 0 24px 0;
+  /* Prevents card translation clipping */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+.challenges-grid::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+.challenge-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 24px;
+
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-height: 480px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.998649px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15.9784px;
+  scroll-snap-align: start;
+
+  /* Clean transitions and shadows ONLY (no scaling or blurring animation, no border-color change on hover) */
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.challenge-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(255, 184, 0, 0.5);
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 170px;
+  /* Aligns dividers and solutions vertically */
+}
+
+.problem-badge {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.challenge-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+}
+
+.problem-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.card-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 12px 0;
+  width: 100%;
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.solution-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.solution-icon-svg {
+  color: var(--accent-gold);
+  fill: rgba(201, 160, 99, 0.1);
+}
+
+.solution-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.solution-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bullet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* Slider controls styles have been moved to index.css globally */
+
+/* ── Bottom Callout Banner ── */
+.challenges-callout {
+  margin-top: 48px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(200, 164, 107, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(200, 164, 107, 0.3);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+}
+
+.callout-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  line-height: 1.4;
+}
+
+.callout-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ── Responsive breakpoints ── */
+@media (max-width: 1024px) {
+  .challenges {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .challenges-grid {
+    gap: 20px;
+  }
+
+  .challenge-card {
+    flex: 0 0 calc((100% - 20px) / 2);
+    min-height: 420px;
+  }
+
+  .challenges-callout {
+    padding: 24px;
+    margin-top: 32px;
+  }
+
+  .callout-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .challenges {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .challenges-header {
+    margin-bottom: 32px;
+  }
+
+  .challenges-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .challenges-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .challenge-card {
+    flex: 0 0 85%;
+    height: auto;
+    min-height: 380px;
+  }
+
+  .card-top {
+    min-height: auto;
+  }
+
+  .challenges-callout {
+    border-radius: 16px;
+  }
+}

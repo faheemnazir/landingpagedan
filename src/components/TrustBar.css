@@ -1,0 +1,160 @@
+/* ==========================================
+   TRUST BAR — Full-width credential strip
+   ========================================== */
+.trust-bar {
+  width: 100%;
+  background: rgba(200, 164, 107, 0.04);
+  border-top: 1px solid rgba(200, 164, 107, 0.12);
+  border-bottom: 1px solid rgba(200, 164, 107, 0.12);
+  padding: 44px 24px;
+}
+
+.trust-bar-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+/* Individual Trust Card */
+.trust-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 16px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(200, 164, 107, 0.25);
+  border-radius: 16px;
+  flex: 1;
+  min-width: 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.trust-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 20px rgba(200, 164, 107, 0.4);
+}
+
+/* Icon Circle */
+.trust-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 164, 107, 0.35);
+  background: rgba(200, 164, 107, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C8A46B;
+  margin-bottom: 16px;
+}
+
+/* Text-based icon (e.g. "12+") */
+.trust-text-icon {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #C8A46B;
+  line-height: 1;
+}
+
+/* Title */
+.trust-card-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #C8A46B;
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+}
+
+/* Description */
+.trust-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 10px 0;
+}
+
+/* Check line */
+.trust-card-check {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #C8A46B;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 1024px) {
+  .trust-bar {
+    padding: 36px 16px;
+  }
+
+  .trust-bar-inner {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .trust-card {
+    flex: 0 0 calc(33.33% - 10px);
+    padding: 24px 12px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trust-bar {
+    padding: 28px 12px;
+  }
+
+  .trust-bar-inner {
+    gap: 10px;
+  }
+
+  .trust-card {
+    flex: 0 0 calc(33.33% - 8px);
+    padding: 18px 10px 14px;
+  }
+
+  .trust-card-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 10px;
+  }
+
+  .trust-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .trust-card-title {
+    font-size: 12px;
+  }
+
+  .trust-card-desc {
+    font-size: 11px;
+  }
+
+  .trust-card-check {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-card {
+    flex: 0 0 calc(50% - 6px);
+  }
+}

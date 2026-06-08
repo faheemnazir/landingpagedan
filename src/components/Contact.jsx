@@ -1,0 +1,219 @@
+import React, { useState } from 'react';
+import { Mail, Phone, Clock, ArrowRight, CheckCircle, MapPin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import './Contact.css';
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    full_name: '',
+    phone: '',
+    business_email: '',
+    business_name: '',
+    project_type: '',
+    project_details: ''
+  });
+  const [status, setStatus] = useState('idle');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus('loading');
+    
+    emailjs.send(
+      'service_c9hhcov',
+      'template_6ydk44z',
+      formData,
+      '_0hhWSB1UlH1s_11l'
+    )
+    .then(() => {
+      setStatus('success');
+    })
+    .catch((err) => {
+      setStatus('error');
+      console.error('Failed to send email:', err);
+      setTimeout(() => setStatus('idle'), 5000);
+    });
+  };
+
+  return (
+    <section className="contact container" id="contact">
+      <div className="thinking-form-card dual-column-card">
+
+        <div className="thinking-content">
+          <h3 className="heading-md text-gold italic-title">Still Thinking About It?</h3>
+          <h4 className="thinking-subtitle">That's Exactly Why This Is Free.</h4>
+
+          <p className="text-body">This is a significant investment — we understand that completely. That's precisely why there's no commitment before the conversation.</p>
+          <p className="text-body mt-3">Just an honest 30-minute call about your idea, what it would take to build it, and whether we're the right team for the job.</p>
+
+          <div className="reach-us-card mt-3">
+            <h4 className="reach-us-title">REACH US DIRECTLY</h4>
+
+            <div className="reach-us-primary">
+              <div className="contact-line">
+                <Mail size={18} className="text-blue-ish" />
+                <span>info@daneenalmajaz.in</span>
+              </div>
+              <div className="contact-line">
+                <Phone size={18} className="text-gray" />
+                <span style={{ fontWeight: 600 }}>+44 0300 124 0371 (UK)</span>
+              </div>
+              <div className="contact-line">
+                <Clock size={18} className="text-gray" />
+                <span>Mon–Sat, 9am–6pm GMT/IST · Response within 1 business day</span>
+              </div>
+            </div>
+
+            <div className="branch-offices">
+              <div className="branch-card">
+                <div className="flag-icon">🇬🇧</div>
+                <div className="branch-info">
+                  <h5 className="branch-title">UK BRANCH OFFICE</h5>
+                  <p className="branch-phone">+44 0300 124 0371</p>
+                  <p className="branch-address">Flat 5, Purbeck House, Crusader Way, Watford, England, WD18 6GP</p>
+                </div>
+              </div>
+
+              <div className="branch-card">
+                <div className="flag-icon">🇦🇪</div>
+                <div className="branch-info">
+                  <h5 className="branch-title">UAE HEAD OFFICE</h5>
+                  <p className="branch-phone">+971 58 566 8144</p>
+                  <p className="branch-address">Prime Tower, Office No. 22, 23rd Floor, Business Bay, Dubai, UAE</p>
+                </div>
+              </div>
+
+              <div className="branch-card">
+                <div className="flag-icon">🇮🇳</div>
+                <div className="branch-info">
+                  <h5 className="branch-title">INDIA BRANCH OFFICE</h5>
+                  <p className="branch-phone">+91 9596828515</p>
+                  <p className="branch-address">Taj Complex, South City, Pohru Road, Nowgam, Srinagar, J&K</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="form-inner-card">
+          <div style={{ display: 'grid', width: '100%' }}>
+            {/* The Content Wrapper - Invisible when success, but holds the height! */}
+            <div style={{ gridArea: '1 / 1', visibility: status === 'success' ? 'hidden' : 'visible', opacity: status === 'success' ? 0 : 1, pointerEvents: status === 'success' ? 'none' : 'auto', transition: 'opacity 0.3s', display: 'flex', flexDirection: 'column', width: '100%' }}>
+              <h3 className="form-title" style={{ fontSize: '28px', textTransform: 'none', letterSpacing: 'normal', color: '#fff', marginBottom: '8px' }}>Get Your <span style={{ color: '#D4B483' }}>Free</span><br />Consultation</h3>
+              <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', marginBottom: '24px' }}>£5,999 • iOS + Android • 8-14 weeks • Reply within 1 business day</p>
+
+              <form className="contact-form inner-form" onSubmit={handleSubmit} style={{ margin: 0 }}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase' }}>Full Name</label>
+                  <input type="text" name="full_name" value={formData.full_name} onChange={handleChange} placeholder="Your full name" required />
+                </div>
+                <div className="form-group">
+                  <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase' }}>Phone</label>
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+44 7XXX XXXXXX" required />
+                </div>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase' }}>Business Email</label>
+                  <input type="email" name="business_email" value={formData.business_email} onChange={handleChange} placeholder="you@company.co.uk" required />
+                </div>
+                <div className="form-group">
+                  <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase' }}>Business Name</label>
+                  <input type="text" name="business_name" value={formData.business_name} onChange={handleChange} placeholder="Your company name" required />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase' }}>Project Type</label>
+                <select className="form-select" name="project_type" value={formData.project_type} onChange={handleChange} required>
+                  <option value="" disabled>Select your app type</option>
+                  <option value="ios">iOS App (Apple)</option>
+                  <option value="android">Android App (Google)</option>
+                  <option value="cross-platform">iOS and Android (Cross-platform)</option>
+                  <option value="mvp">MVP / Proof of Concept</option>
+                  <option value="enterprise">Enterprise Solution</option>
+                  <option value="redesign">App Redesign / Rebuild</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase' }}>Project Details</label>
+                <textarea name="project_details" value={formData.project_details} onChange={handleChange} placeholder="Describe your app idea..." rows="3" required></textarea>
+              </div>
+
+              <button type="submit" className="submit-btn" disabled={status === 'loading'} style={{ background: 'linear-gradient(90deg, #D4B483 0%, #C8A46B 50%, #B8925A 100%)', color: '#000', border: 'none', borderRadius: '8px', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', padding: '16px', marginTop: '8px', cursor: 'pointer' }}>
+                {status === 'loading' ? 'Sending...' : 'Get Free Consultation'} {status === 'idle' && <ArrowRight size={18} style={{ marginLeft: '8px' }} />}
+              </button>
+              
+              {status === 'error' && <p style={{ color: '#F44336', fontSize: '13px', textAlign: 'center', marginTop: '12px' }}>Failed to send request. Please try again or email us directly.</p>}
+              </form>
+
+              <div className="form-footer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '8px', marginTop: '24px' }}>
+                <div style={{ display: 'flex', gap: '16px', color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
+                  <span>• No obligation</span>
+                  <span>• NDA available</span>
+                </div>
+                <p className="text-small" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px', margin: 0 }}>
+                  No sales pitch. Just an honest conversation about your project.
+                </p>
+              </div>
+            </div>
+
+            {/* The Success Message - Positioned perfectly over the form wrapper */}
+            <div className="success-message-card" style={{ gridArea: '1 / 1', height: '100%', padding: '56px 40px', backgroundColor: 'rgba(212, 180, 131, 0.05)', border: '1px solid rgba(212, 180, 131, 0.2)', borderRadius: '12px', display: 'flex', flexDirection: 'column', gap: '28px', justifyContent: 'center', visibility: status === 'success' ? 'visible' : 'hidden', opacity: status === 'success' ? 1 : 0, pointerEvents: status === 'success' ? 'auto' : 'none', transition: 'opacity 0.3s' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#D4B483' }}>
+                <CheckCircle size={36} />
+                <h3 style={{ fontSize: '32px', fontWeight: 700, margin: 0, color: '#D4B483' }}>
+                  Thank You{formData.full_name ? `, ${formData.full_name.split(' ')[0].charAt(0).toUpperCase() + formData.full_name.split(' ')[0].slice(1)}` : ''}!
+                </h3>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <h4 style={{ fontSize: '20px', color: '#fff', margin: 0, fontWeight: 500 }}>Your inquiry has been successfully received.</h4>
+                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '16px', lineHeight: '1.7', margin: 0 }}>
+                  A senior consultant from Daneen Al Majaz IT Services will contact you within one business day to arrange your free discovery call — no commitment required.
+                </p>
+              </div>
+              <div style={{ marginTop: '16px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px', fontWeight: 600 }}>For Urgent Inquiries</p>
+                <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500 }}>
+                    <Phone size={18} />
+                    <span style={{ color: '#fff' }}>+44 0300 124 0371</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500 }}>
+                    <Mail size={18} />
+                    <span style={{ color: '#fff' }}>info@daneenalmajaz.in</span>
+                  </div>
+                </div>
+              </div>
+
+              <button 
+                onClick={() => {
+                  setStatus('idle');
+                  setFormData({ full_name: '', phone: '', business_email: '', business_name: '', project_type: '', project_details: '' });
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                style={{ 
+                  background: 'transparent', border: '1px solid #D4B483', color: '#D4B483', padding: '16px', borderRadius: '8px', cursor: 'pointer', marginTop: '16px', textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1px', width: '100%', transition: 'all 0.3s'
+                }}
+                onMouseOver={(e) => { e.target.style.background = 'rgba(212, 180, 131, 0.1)' }}
+                onMouseOut={(e) => { e.target.style.background = 'transparent' }}
+              >
+                Back to Home
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

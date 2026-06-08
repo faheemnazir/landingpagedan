@@ -1,0 +1,251 @@
+.portfolio {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.portfolio-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 12px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-header .badge {
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+}
+
+.portfolio-header h2 {
+  margin-bottom: 4px;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.portfolio-header .portfolio-subtitle {
+  font-size: clamp(0.8rem, 1.1vw, 1rem);
+  line-height: 1.3;
+  color: var(--text-secondary);
+}
+
+/* ── Grid: stretches to match other sections, 4 cards per row (4x2 layout) ── */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 1.8vw, 24px);
+  width: 100%;
+}
+
+.project-card {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0; /* Edge-to-edge image header */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(255, 184, 0, 0.5);
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 180px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.image-category-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: clamp(0.55rem, 0.7vw, 0.7rem);
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.project-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.project-card:hover .project-image-full {
+  transform: scale(1.05);
+}
+
+/* Info section inside card */
+.project-info {
+  padding: clamp(12px, 1.2vw, 18px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-title {
+  font-size: clamp(0.85rem, 1vw, 1.1rem);
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #FFFFFF;
+}
+
+.project-desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.65rem, 0.75vw, 0.8rem);
+  line-height: 1.4;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 4.2em; /* Ensure all description containers are exactly 3 lines high for uniform card heights */
+}
+
+.project-stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: clamp(0.55rem, 0.65vw, 0.7rem);
+  color: rgba(255, 255, 255, 0.5);
+  align-items: center;
+}
+
+.stat-value {
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1vw, 1.1rem);
+  margin-right: 2px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.project-tag {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.55rem, 0.65vw, 0.7rem);
+  font-weight: 500;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent-gold);
+  font-size: clamp(0.65rem, 0.75vw, 0.8rem);
+  font-weight: 500;
+  transition: opacity 0.2s;
+  margin-top: auto;
+}
+
+.project-link:hover {
+  opacity: 0.8;
+}
+
+.project-features {
+  margin: 12px 0;
+  padding-left: 14px;
+  list-style-type: disc;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: clamp(0.65rem, 0.72vw, 0.75rem);
+  line-height: 1.4;
+}
+
+.project-feature {
+  margin-bottom: 4px;
+}
+
+/* ── Responsive: Mobile Slider under 1024px ── */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 16px;
+    gap: 16px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  
+  .portfolio-grid::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .project-card {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+    max-width: 85vw;
+  }
+
+  .portfolio-header h2 {
+    font-size: 2rem;
+  }
+  
+  .portfolio-header .portfolio-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 8px;
+  }
+
+  .portfolio-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .portfolio-header .portfolio-subtitle {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 6px;
+  }
+
+  .portfolio-header h2 {
+    font-size: 1.25rem;
+  }
+}

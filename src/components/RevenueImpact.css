@@ -1,0 +1,161 @@
+.revenue-impact {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.revenue-content {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.left-column h2 {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  line-height: 1.25;
+}
+
+.left-column .text-normal {
+  color: var(--text-primary);
+}
+
+.revenue-subtitle {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn .arrow {
+  transition: transform 0.2s ease;
+}
+
+.cta-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   STATS CARDS GRID (FIXED TRANSITIONS)
+   ========================================== */
+.revenue-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.revenue-stat-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  /* Ensuring smooth timing back and forth */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.revenue-stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(255, 184, 0, 0.5);
+}
+
+
+.stat-num {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   GOLD BUTTON CONTROLS 
+   ========================================== */
+.btn-gold.cta-btn {
+  background-color: #dfb15b;
+  color: #040404 !important;
+  /* Kept dark color for clear readability over solid gold background */
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #dfb15b;
+  transition: all 0.3s ease;
+}
+
+.btn-gold.cta-btn:hover {
+  background-color: #cb9f4c;
+  border-color: #cb9f4c;
+  color: #ffffff !important;
+  /* Becomes white text seamlessly on hover */
+  transform: translateY(-2px);
+}
+
+.btn-gold.cta-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-gold.cta-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================== */
+@media (max-width: 1200px) {
+  .revenue-content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .revenue-impact {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .revenue-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Fixed: Removed the breaking layout shadows and accidental transforms that were sitting here */
+  .stat-num {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .revenue-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
