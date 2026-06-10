@@ -66,12 +66,24 @@ const Testimonials = () => {
 
   const handleScroll = () => {
     if (sliderRef.current) {
-      const scrollLeft = sliderRef.current.scrollLeft;
-      const cardWidth = sliderRef.current.children[0].clientWidth + 24; // width + gap
-      const newActiveSlide = Math.round(scrollLeft / cardWidth);
-      const clampedSlide = Math.min(newActiveSlide, 3);
-      if (clampedSlide !== activeSlide) {
-        setActiveSlide(clampedSlide);
+      const container = sliderRef.current;
+      const scrollLeft = container.scrollLeft;
+      const scrollWidth = container.scrollWidth;
+      const clientWidth = container.clientWidth;
+      
+      const isAtEnd = Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
+      
+      const cardWidth = container.children[0].clientWidth + 24; // width + gap
+      
+      let newActiveSlide = Math.round(scrollLeft / cardWidth);
+      if (isAtEnd) {
+        newActiveSlide = testimonials.length - 1;
+      } else {
+        newActiveSlide = Math.min(newActiveSlide, testimonials.length - 1);
+      }
+      
+      if (newActiveSlide !== activeSlide) {
+        setActiveSlide(newActiveSlide);
       }
     }
   };
@@ -79,14 +91,16 @@ const Testimonials = () => {
   const scrollPrev = () => {
     if (sliderRef.current) {
       const cardWidth = sliderRef.current.children[0].clientWidth + 24;
-      sliderRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      const targetIndex = Math.max(0, activeSlide - 1);
+      sliderRef.current.scrollTo({ left: targetIndex * cardWidth, behavior: 'smooth' });
     }
   };
 
   const scrollNext = () => {
     if (sliderRef.current) {
       const cardWidth = sliderRef.current.children[0].clientWidth + 24;
-      sliderRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      const targetIndex = Math.min(testimonials.length - 1, activeSlide + 1);
+      sliderRef.current.scrollTo({ left: targetIndex * cardWidth, behavior: 'smooth' });
     }
   };
 
@@ -109,11 +123,11 @@ const Testimonials = () => {
 
       {/* Mobile Slider Controls */}
       <div className="slider-controls-mobile">
-        <button className="control-btn prev" onClick={scrollPrev} aria-label="Previous testimonial">
+        <button className="control-btn prev" onClick={scrollPrev} aria-label="Previous testimonial" disabled={activeSlide === 0}>
           <ArrowLeft size={18} />
         </button>
         <div className="slider-dots">
-          {[0, 1, 2, 3].map((idx) => (
+          {testimonials.map((_, idx) => (
             <span
               key={idx}
               className={`slider-dot ${activeSlide === idx ? 'active' : ''}`}
@@ -129,7 +143,7 @@ const Testimonials = () => {
             />
           ))}
         </div>
-        <button className="control-btn next" onClick={scrollNext} aria-label="Next testimonial">
+        <button className="control-btn next" onClick={scrollNext} aria-label="Next testimonial" disabled={activeSlide >= testimonials.length - 1}>
           <ArrowRight size={18} />
         </button>
       </div>

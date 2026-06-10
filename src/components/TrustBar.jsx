@@ -92,9 +92,11 @@ const TrustBar = () => {
     const gap = 20;
     const scrollAmount = cardWidth + gap;
     if (direction === 'left') {
-      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      const targetIndex = Math.max(0, activeIndex - 1);
+      container.scrollTo({ left: targetIndex * scrollAmount, behavior: 'smooth' });
     } else {
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      const targetIndex = Math.min(trustItems.length - 1, activeIndex + 1);
+      container.scrollTo({ left: targetIndex * scrollAmount, behavior: 'smooth' });
     }
   };
 
