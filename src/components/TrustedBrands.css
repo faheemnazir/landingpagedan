@@ -88,12 +88,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 23.9676px;
-  width: 226.08px;
-  height: 127.83px;
+  padding: 20px;
+  width: 280px;
+  height: 160px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
   border: 0.998649px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15.9784px;
+  border-radius: 18px;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -109,13 +109,16 @@
 .brand-card img {
   height: 100%;
   width: 100%;
+  max-height: 110px;
+  max-width: 230px;
   object-fit: contain;
   opacity: 0.85;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .brand-card:hover img {
   opacity: 1;
+  transform: scale(1.05);
 }
 
 /* ── Stats Cards Grid ── */

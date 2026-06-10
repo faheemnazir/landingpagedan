@@ -47,8 +47,8 @@ const Navbar = () => {
       </ul>
 
       <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
-        <span className="btn-text-desktop">Get Free Consultation</span>
-        <span className="btn-text-mobile">Free Consultation</span>
+        <span className="btn-text-desktop">Get Started</span>
+        <span className="btn-text-mobile">Get Free Consultation</span>
       </a>
 
       <button className="navbar-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
