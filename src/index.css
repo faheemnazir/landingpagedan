@@ -209,3 +209,16 @@ button {
     font-size: 1.75rem;
   }
 }
+
+/* Responsive Contact Links */
+@media (max-width: 768px) {
+  .desktop-phone-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-phone-only {
+    display: none !important;
+  }
+}

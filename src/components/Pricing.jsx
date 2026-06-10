@@ -1,24 +1,31 @@
 import React from 'react';
-import { CheckCircle2, Code, ShieldCheck, Rocket } from 'lucide-react';
+import { CheckCircle2, Star, Code, ShieldCheck, Rocket, ArrowRight } from 'lucide-react';
 import './Pricing.css';
 
-const PricingCard = ({ price, title, features, buttonText, highlighted = false }) => (
+const PricingCard = ({ price, title, features, buttonText, highlighted = false, badgeText }) => (
   <div className={`pricing-card ${highlighted ? 'highlighted' : ''}`}>
-    <div className="pricing-header">
-      <div className="price-tag">{price}</div>
+    <div className={`pricing-header ${highlighted ? 'highlighted-header' : ''}`}>
+      {badgeText && (
+        <div className="pricing-badge">
+          <Star size={14} fill="#ffffff" strokeWidth={1.5} /> {badgeText}
+        </div>
+      )}
       <div className="price-title">{title}</div>
+      <div className="price-tag">{price}</div>
     </div>
-    <ul className="pricing-features">
-      {features.map((feature, idx) => (
-        <li key={idx}>
-          <CheckCircle2 size={16} className="text-gold" />
-          <span>{feature}</span>
-        </li>
-      ))}
-    </ul>
-    <button className={`btn ${highlighted ? 'btn-primary' : 'btn-outline'}`}>
-      {buttonText}
-    </button>
+    <div className="pricing-body">
+      <ul className="pricing-features">
+        {features.map((feature, idx) => (
+          <li key={idx}>
+            <CheckCircle2 size={16} className="text-gold" />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      <a href="#contact" className="btn btn-outline" style={{ marginTop: 'auto', width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', textDecoration: 'none' }}>
+        {buttonText} <ArrowRight size={18} />
+      </a>
+    </div>
   </div>
 );
 
@@ -34,41 +41,49 @@ const Pricing = () => {
 
       <div className="pricing-grid">
         <PricingCard
-          price="Starting at $5,999"
-          title="Small-to-medium sized project"
+          title="STARTER"
+          price="from £5,999"
           features={[
-            "Ideal for MVPs and startups",
-            "5-6 month timeline",
-            "Single platform",
-            "Modern UI Design"
+            "Single platform — iOS or Android",
+            "Up to 10 app screens",
+            "UI/UX design included",
+            "Backend API development",
+            "App Store submission handled",
+            "30 days post-launch support"
           ]}
-          buttonText="Get a Quote"
+          buttonText="Get a free quote"
         />
 
         <PricingCard
-          price="Starting at $9,999"
-          title="Medium-to-large sized project"
+          title="PROFESSIONAL"
+          price="from £9,999"
+          badgeText="Most Popular"
           features={[
-            "iOS and Android development",
-            "6-8 month timeline",
-            "Advanced UI/UX design",
-            "Backend API and database",
-            "Ongoing support included"
+            "iOS and Android — both platforms",
+            "Unlimited screens",
+            "Advanced UI/UX and prototyping",
+            "Scalable backend architecture",
+            "Third-party integrations (payments, maps)",
+            "Full QA and automated testing suite",
+            "Admin dashboard included",
+            "6 months post-launch support"
           ]}
-          buttonText="Get Started"
+          buttonText="Get a free quote"
           highlighted={true}
         />
 
         <PricingCard
-          price="Custom"
-          title="Enterprise-level solution"
+          title="ENTERPRISE"
+          price="Custom Pricing"
           features={[
-            "Complex integrations",
-            "Unlimited revisions",
-            "Dedicated team",
-            "White-label option"
+            "Everything in Professional",
+            "Enterprise security & compliance",
+            "Custom CMS and admin architecture",
+            "Real-time analytics dashboard",
+            "Dedicated development team",
+            "Priority support for 12 months"
           ]}
-          buttonText="Talk to Us"
+          buttonText="Talk to us"
         />
       </div>
 

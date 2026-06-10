@@ -1,6 +1,6 @@
 .revenue-impact {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .revenue-content {
@@ -139,8 +139,8 @@
 
 @media (max-width: 768px) {
   .revenue-impact {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .revenue-stats-grid {

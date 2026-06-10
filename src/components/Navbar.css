@@ -20,14 +20,20 @@
 }
 
 .navbar-logo-img {
-  height: 80px;
+  height: 64px;
   width: auto;
   transition: height 0.3s ease;
 }
 
+@media (max-width: 1024px) {
+  .navbar-logo-img {
+    height: 52px;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar-logo-img {
-    height: 48px;
+    height: 44px;
   }
 }
 

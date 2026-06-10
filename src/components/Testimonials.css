@@ -1,6 +1,6 @@
 .testimonials {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .testimonials-header {
@@ -24,7 +24,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .testimonial-card {

@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 48px;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   align-items: flex-start;
 }
 
@@ -318,6 +318,20 @@
 }
 
 @media (max-width: 1400px) {
+  .hero {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+
+  .hero-form-card {
+    max-width: 480px;
+    padding: 24px;
+  }
+
   .hero-subtitle {
     font-size: 20px;
     line-height: 32px;

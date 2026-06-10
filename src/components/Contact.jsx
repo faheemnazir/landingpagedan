@@ -54,14 +54,18 @@ const Contact = () => {
             <h4 className="reach-us-title">REACH US DIRECTLY</h4>
 
             <div className="reach-us-primary">
-              <div className="contact-line">
+              <a href="mailto:info@daneenalmajaz.in" className="contact-line" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Mail size={18} className="text-blue-ish" />
                 <span>info@daneenalmajaz.in</span>
-              </div>
-              <div className="contact-line">
+              </a>
+              <div className="contact-line desktop-phone-only">
                 <Phone size={18} className="text-gray" />
                 <span style={{ fontWeight: 600 }}>+44 0300 124 0371 (UK)</span>
               </div>
+              <a href="tel:+4403001240371" className="contact-line mobile-phone-only" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Phone size={18} className="text-gray" />
+                <span style={{ fontWeight: 600 }}>+44 0300 124 0371 (UK)</span>
+              </a>
               <div className="contact-line">
                 <Clock size={18} className="text-gray" />
                 <span>Mon–Sat, 9am–6pm GMT/IST · Response within 1 business day</span>
@@ -100,9 +104,9 @@ const Contact = () => {
         </div>
 
         <div className="form-inner-card">
-          <div style={{ display: 'grid', width: '100%' }}>
-            {/* The Content Wrapper - Invisible when success, but holds the height! */}
-            <div style={{ gridArea: '1 / 1', visibility: status === 'success' ? 'hidden' : 'visible', opacity: status === 'success' ? 0 : 1, pointerEvents: status === 'success' ? 'none' : 'auto', transition: 'opacity 0.3s', display: 'flex', flexDirection: 'column', width: '100%' }}>
+          <div style={{ width: '100%' }}>
+            {/* The Content Wrapper */}
+            <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
               <h3 className="form-title" style={{ fontSize: '28px', textTransform: 'none', letterSpacing: 'normal', color: '#fff', marginBottom: '8px' }}>Get Your <span style={{ color: '#D4B483' }}>Free</span><br />Consultation</h3>
               <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', marginBottom: '24px' }}>£5,999 • iOS + Android • 8-14 weeks • Reply within 1 business day</p>
 
@@ -165,9 +169,21 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* The Success Message - Positioned perfectly over the form wrapper */}
-            <div className="success-message-card" style={{ gridArea: '1 / 1', height: '100%', padding: '56px 40px', backgroundColor: 'rgba(212, 180, 131, 0.05)', border: '1px solid rgba(212, 180, 131, 0.2)', borderRadius: '12px', display: 'flex', flexDirection: 'column', gap: '28px', justifyContent: 'center', visibility: status === 'success' ? 'visible' : 'hidden', opacity: status === 'success' ? 1 : 0, pointerEvents: status === 'success' ? 'auto' : 'none', transition: 'opacity 0.3s' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#D4B483' }}>
+            {/* The Success Message - Rendered as a Modal Popup */}
+            <div className="success-modal-overlay" style={{
+              position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.8)', backdropFilter: 'blur(5px)',
+              zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px',
+              visibility: status === 'success' ? 'visible' : 'hidden', opacity: status === 'success' ? 1 : 0,
+              pointerEvents: status === 'success' ? 'auto' : 'none', transition: 'all 0.3s ease'
+            }}>
+              <div className="success-message-card" style={{ 
+                backgroundColor: '#111', padding: '56px 40px', border: '1px solid rgba(212, 180, 131, 0.2)', 
+                borderRadius: '12px', display: 'flex', flexDirection: 'column', gap: '28px', justifyContent: 'center', 
+                maxWidth: '500px', width: '100%', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+                transform: status === 'success' ? 'scale(1)' : 'scale(0.95)', transition: 'transform 0.3s ease'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: '#D4B483' }}>
                 <CheckCircle size={36} />
                 <h3 style={{ fontSize: '32px', fontWeight: 700, margin: 0, color: '#D4B483' }}>
                   Thank You{formData.full_name ? `, ${formData.full_name.split(' ')[0].charAt(0).toUpperCase() + formData.full_name.split(' ')[0].slice(1)}` : ''}!
@@ -182,14 +198,21 @@ const Contact = () => {
               <div style={{ marginTop: '16px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                 <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px', fontWeight: 600 }}>For Urgent Inquiries</p>
                 <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexWrap: 'wrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500 }}>
+                  {/* Desktop phone (unclickable text) */}
+                  <div className="desktop-phone-only" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500 }}>
                     <Phone size={18} />
                     <span style={{ color: '#fff' }}>+44 0300 124 0371</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500 }}>
+                  {/* Mobile phone (clickable link) */}
+                  <a href="tel:+4403001240371" className="mobile-phone-only" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500, textDecoration: 'none' }}>
+                    <Phone size={18} />
+                    <span style={{ color: '#fff' }}>+44 0300 124 0371</span>
+                  </a>
+                  {/* Email (clickable everywhere) */}
+                  <a href="mailto:info@daneenalmajaz.in" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500, textDecoration: 'none' }}>
                     <Mail size={18} />
                     <span style={{ color: '#fff' }}>info@daneenalmajaz.in</span>
-                  </div>
+                  </a>
                 </div>
               </div>
 
@@ -207,6 +230,7 @@ const Contact = () => {
               >
                 Back to Home
               </button>
+              </div>
             </div>
           </div>
         </div>

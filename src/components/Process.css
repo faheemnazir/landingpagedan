@@ -1,6 +1,6 @@
 .process {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .process-header {
@@ -24,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .process-step {

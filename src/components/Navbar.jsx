@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="navbar-mobile-drawer" onClick={(e) => e.stopPropagation()}>
           <div className="drawer-header">
             <a href="/#" className="navbar-logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMenu(); }}>
-              <img src={logoImg} alt="Daneen Al Majaz" style={{ height: '48px', width: 'auto' }} />
+              <img src={logoImg} alt="Daneen Al Majaz" style={{ height: '44px', width: 'auto' }} />
             </a>
           </div>
           <ul className="drawer-links">

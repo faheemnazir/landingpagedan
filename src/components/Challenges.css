@@ -1,6 +1,6 @@
 .challenges {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -207,8 +207,8 @@
 /* ── Responsive breakpoints ── */
 @media (max-width: 1024px) {
   .challenges {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .challenges-grid {
