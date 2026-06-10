@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import logoImg from '../assets/logo-transparent.png';
-import { FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -33,52 +33,48 @@ const Footer = () => {
               Building world-class mobile applications for startups and enterprise clients globally.
             </p>
             <div className="social-links">
-              <a href="#" aria-label="Twitter"><FaTwitter size={18} /></a>
-              <a href="#" aria-label="LinkedIn"><FaLinkedin size={18} /></a>
-              <a href="#" aria-label="GitHub"><FaGithub size={18} /></a>
-              <a href="#" aria-label="Email"><Mail size={18} /></a>
+              <a href="https://www.facebook.com/daneenalmajaz/?_rdr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook size={18} /></a>
+              <a href="https://www.instagram.com/daneenalmajaz?igsh=MXFrbjA0c3dlaG8xcA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram size={18} /></a>
+              <a href="https://x.com/Daneenalmajaz" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter size={18} /></a>
+              <a href="https://www.linkedin.com/company/daneen-al-majaz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin size={18} /></a>
             </div>
           </div>
 
-          <div className="footer-links">
-            <div className="link-group">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">API Reference</a></li>
-                <li><a href="/#faq">Support Center / FAQ</a></li>
-              </ul>
-            </div>
-            <div className="link-group">
-              <h4>Services</h4>
-              <ul>
-                <li><a href="/#services">iOS Development</a></li>
-                <li><a href="/#services">Android Development</a></li>
-                <li><a href="/#services">Cross-Platform</a></li>
-                <li><a href="/#services">UI/UX Design</a></li>
-              </ul>
-            </div>
-            <div className="link-group">
-              <h4>Legal</h4>
-              <ul>
-                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link to="/terms-and-conditions">Terms of Service</Link></li>
-                <li><Link to="/privacy-policy">Cookie Policy</Link></li>
-                <li><Link to="/gdpr">GDPR</Link></li>
-              </ul>
-            </div>
-            <div className="link-group">
-              <h4>Reach Us Directly</h4>
-              <ul>
-                <li><a href="mailto:info@daneenalmajaz.in">info@daneenalmajaz.in</a></li>
-                <li><a href="tel:+4403001240371">+44 0300 124 0371 (UK)</a></li>
-                <li style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', lineHeight: '20px' }}>Mon–Sat, 9am–6pm GMT/IST</li>
-                <li style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', lineHeight: '20px' }}>Response within 1 business day</li>
-              </ul>
-            </div>
-
-
+          <div className="link-group">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">API Reference</a></li>
+              <li><a href="/#faq">Support Center / FAQ</a></li>
+            </ul>
+          </div>
+          <div className="link-group">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/#services">iOS Development</a></li>
+              <li><a href="/#services">Android Development</a></li>
+              <li><a href="/#services">Cross-Platform</a></li>
+              <li><a href="/#services">UI/UX Design</a></li>
+            </ul>
+          </div>
+          <div className="link-group">
+            <h4>Legal</h4>
+            <ul>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-and-conditions">Terms of Service</Link></li>
+              <li><Link to="/privacy-policy">Cookie Policy</Link></li>
+              <li><Link to="/gdpr">GDPR</Link></li>
+            </ul>
+          </div>
+          <div className="link-group">
+            <h4>Reach Us Directly</h4>
+            <ul>
+              <li><a href="mailto:info@daneenalmajaz.in">info@daneenalmajaz.in</a></li>
+              <li><a href="tel:+4403001240371">+44 0300 124 0371 (UK)</a></li>
+              <li style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', lineHeight: '20px' }}>Mon–Sat, 9am–6pm GMT/IST</li>
+              <li style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', lineHeight: '20px' }}>Response within 1 business day</li>
+            </ul>
           </div>
         </div>
       </div>
