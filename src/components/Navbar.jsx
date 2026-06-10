@@ -56,13 +56,13 @@ const Navbar = () => {
             <span className="btn-text-desktop">Get Started</span>
             <span className="btn-text-mobile">Get Free Consultation</span>
           </a>
-          <a href="tel:+4403001240371" className="navbar-call-btn" aria-label="Call Us">
+          <a href="tel:+443001240371" className="navbar-call-btn" aria-label="Call Us">
             <Phone size={18} />
           </a>
         </div>
       </nav>
 
-      <a href="tel:+4403001240371" className={`floating-call-btn ${scrolled ? 'visible' : ''}`} aria-label="Call Us Now">
+      <a href="tel:+443001240371" className={`floating-call-btn ${scrolled ? 'visible' : ''}`} aria-label="Call Us Now">
         <Phone size={24} />
       </a>
     </>

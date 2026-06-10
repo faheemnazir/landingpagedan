@@ -176,7 +176,7 @@ const Hero = () => {
                       <span style={{ color: '#fff' }}>+44 0300 124 0371</span>
                     </div>
                     {/* Mobile phone (clickable link) */}
-                    <a href="tel:+4403001240371" className="mobile-phone-only" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500, textDecoration: 'none' }}>
+                    <a href="tel:+443001240371" className="mobile-phone-only" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500, textDecoration: 'none' }}>
                       <Phone size={18} />
                       <span style={{ color: '#fff' }}>+44 0300 124 0371</span>
                     </a>

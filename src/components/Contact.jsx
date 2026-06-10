@@ -62,7 +62,7 @@ const Contact = () => {
                 <Phone size={18} className="text-gray" />
                 <span style={{ fontWeight: 600 }}>+44 0300 124 0371 (UK)</span>
               </div>
-              <a href="tel:+4403001240371" className="contact-line mobile-phone-only" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href="tel:+443001240371" className="contact-line mobile-phone-only" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <Phone size={18} className="text-gray" />
                 <span style={{ fontWeight: 600 }}>+44 0300 124 0371 (UK)</span>
               </a>
@@ -78,7 +78,7 @@ const Contact = () => {
                 <div className="branch-info">
                   <h5 className="branch-title">UK BRANCH OFFICE</h5>
                   <p className="branch-phone">
-                    <a href="tel:+4403001240371" style={{ color: 'inherit', textDecoration: 'none' }}>+44 0300 124 0371</a>
+                    <a href="tel:+443001240371" style={{ color: 'inherit', textDecoration: 'none' }}>+44 0300 124 0371</a>
                   </p>
                   <p className="branch-address">Flat 5, Purbeck House, Crusader Way, Watford, England, WD18 6GP</p>
                 </div>
@@ -210,7 +210,7 @@ const Contact = () => {
                     <span style={{ color: '#fff' }}>+44 0300 124 0371</span>
                   </div>
                   {/* Mobile phone (clickable link) */}
-                  <a href="tel:+4403001240371" className="mobile-phone-only" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500, textDecoration: 'none' }}>
+                  <a href="tel:+443001240371" className="mobile-phone-only" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#D4B483', fontSize: '16px', fontWeight: 500, textDecoration: 'none' }}>
                     <Phone size={18} />
                     <span style={{ color: '#fff' }}>+44 0300 124 0371</span>
                   </a>
