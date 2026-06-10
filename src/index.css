@@ -67,9 +67,16 @@ button {
   padding: 0 clamp(16px, 5vw, 80px);
 }
 
-/* Typography Utilities */
 .text-gold {
   color: var(--accent-gold);
+}
+
+.badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
 }
 
 .heading-xl {
