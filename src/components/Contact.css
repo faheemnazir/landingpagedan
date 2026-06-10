@@ -1,23 +1,23 @@
 .contact {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: clamp(20px, 3vh, 40px);
+  padding-bottom: clamp(20px, 3vh, 40px);
 }
 
 .dual-column-card {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 48px;
+  gap: clamp(20px, 3vw, 48px);
   align-items: flex-start;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
-  padding: 48px;
-  margin-bottom: 32px;
+  padding: clamp(20px, 3.5vh, 48px);
+  margin-bottom: clamp(16px, 2vh, 32px);
 }
 
 .italic-title {
   font-style: italic;
-  font-size: 2.25rem;
+  font-size: clamp(1.8rem, 2.5vw, 2.25rem);
   margin-bottom: 12px;
 }
 
@@ -27,13 +27,13 @@
 }
 
 .thinking-subtitle {
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: clamp(12px, 1.8vh, 24px);
 }
 
 .thinking-content p {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   line-height: 1.7;
 }
 
@@ -42,10 +42,10 @@
 }
 
 .thinking-list {
-  margin-top: 32px;
+  margin-top: clamp(16px, 2.2vh, 32px);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(12px, 1.8vh, 20px);
 }
 
 .thinking-list li {
@@ -55,7 +55,7 @@
 }
 
 .thinking-list span {
-  font-size: 1.05rem;
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
   color: var(--text-primary);
   line-height: 1.6;
 }
@@ -69,26 +69,26 @@
   background-color: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--border-radius-lg);
-  padding: 40px;
+  padding: clamp(16px, 3vh, 40px);
 }
 
 .form-title {
   font-size: 0.9rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: clamp(12px, 1.8vh, 24px);
 }
 
 .inner-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(12px, 1.8vh, 20px);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   flex: 1;
 }
 
@@ -99,7 +99,7 @@
 
 .form-row {
   display: flex;
-  gap: 16px;
+  gap: clamp(10px, 1.5vw, 16px);
 }
 
 .inner-form input,

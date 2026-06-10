@@ -18,6 +18,16 @@
   --border-radius-md: 12px;
   --border-radius-lg: 16px;
   --border-radius-xl: 24px;
+
+  /* Fluid typography tokens */
+  --fs-xl: clamp(2rem, 3.8vw, 3.5rem);
+  --fs-lg: clamp(1.6rem, 2.8vw, 2.5rem);
+  --fs-md: clamp(1.2rem, 1.8vw, 1.5rem);
+  --fs-body: clamp(0.9rem, 1.1vw, 1.05rem);
+  --fs-small: clamp(0.75rem, 0.9vw, 0.875rem);
+  
+  /* Fluid spacing tokens */
+  --section-padding-y: clamp(24px, 4.5vh, 72px);
 }
 
 * {
@@ -63,31 +73,31 @@ button {
 }
 
 .heading-xl {
-  font-size: 3.5rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 .heading-lg {
-  font-size: 2.5rem;
+  font-size: var(--fs-lg);
   font-weight: 700;
   line-height: 1.2;
 }
 
 .heading-md {
-  font-size: 1.5rem;
+  font-size: var(--fs-md);
   font-weight: 600;
 }
 
 .text-body {
-  font-size: 1rem;
+  font-size: var(--fs-body);
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .text-small {
-  font-size: 0.875rem;
+  font-size: var(--fs-small);
   color: var(--text-secondary);
 }
 

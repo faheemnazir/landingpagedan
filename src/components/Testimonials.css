@@ -1,30 +1,30 @@
 .testimonials {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: clamp(20px, 3.5vh, 48px);
+  padding-bottom: clamp(20px, 3.5vh, 48px);
 }
 
 .testimonials-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 64px auto;
+  margin: 0 auto clamp(20px, 4vh, 50px) auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .testimonials-header .badge {
-  margin-bottom: 24px;
+  margin-bottom: clamp(12px, 1.8vh, 24px);
 }
 
 .testimonials-header h2 {
-  margin-bottom: 16px;
+  margin-bottom: clamp(8px, 1.2vh, 16px);
 }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
+  gap: clamp(12px, 1.8vw, 24px);
+  margin-bottom: clamp(20px, 3vh, 40px);
 }
 
 .testimonial-card {
@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 32px;
+  padding: clamp(16px, 2.5vh, 32px);
   height: 100%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -47,20 +47,20 @@
 }
 
 .quote-icon {
-  margin-bottom: 16px;
+  margin-bottom: clamp(8px, 1.2vh, 16px);
   opacity: 0.5;
 }
 
 .testimonial-card .stars {
-  margin-bottom: 12px;
+  margin-bottom: clamp(6px, 1vh, 12px);
 }
 
 .testimonial-text {
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: 24px;
-  padding-bottom: 24px;
+  margin-bottom: clamp(12px, 2vh, 24px);
+  padding-bottom: clamp(12px, 2vh, 24px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   flex-grow: 1;
 }

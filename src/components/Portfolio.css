@@ -1,12 +1,14 @@
 .portfolio {
   padding-top: 10px;
   padding-bottom: 10px;
+  container-type: inline-size;
+  container-name: portfolio;
 }
 
 .portfolio-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 12px auto;
+  margin: 0 auto clamp(8px, 1.2vh, 16px) auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +21,7 @@
 
 .portfolio-header h2 {
   margin-bottom: 4px;
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
 }
 
 .portfolio-header .portfolio-subtitle {
@@ -32,7 +34,7 @@
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(12px, 1.8vw, 24px);
+  gap: clamp(10px, 1.5cqw, 24px);
   width: 100%;
 }
 
@@ -55,14 +57,14 @@
 
 .project-image-placeholder {
   width: 100%;
-  height: 180px;
+  height: clamp(110px, 14vh, 180px);
   background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 12px;
+  padding: clamp(8px, 1vh, 12px);
   box-sizing: border-box;
 }
 
@@ -96,7 +98,7 @@
 
 /* Info section inside card */
 .project-info {
-  padding: clamp(12px, 1.2vw, 18px);
+  padding: clamp(10px, 1.2vh, 18px);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -113,19 +115,19 @@
   color: rgba(255, 255, 255, 0.6);
   font-size: clamp(0.65rem, 0.75vw, 0.8rem);
   line-height: 1.4;
-  margin-bottom: 10px;
+  margin-bottom: clamp(6px, 0.8vh, 10px);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: 4.2em; /* Ensure all description containers are exactly 3 lines high for uniform card heights */
+  min-height: calc(3 * 1.4 * clamp(0.65rem, 0.75vw, 0.8rem)); /* Scaled with font size */
 }
 
 .project-stats {
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: clamp(6px, 0.8vh, 10px);
   font-size: clamp(0.55rem, 0.65vw, 0.7rem);
   color: rgba(255, 255, 255, 0.5);
   align-items: center;
@@ -142,7 +144,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  margin-bottom: 10px;
+  margin-bottom: clamp(6px, 0.8vh, 10px);
 }
 
 .project-tag {
@@ -183,8 +185,8 @@
   margin-bottom: 4px;
 }
 
-/* ── Responsive: Mobile Slider under 1024px ── */
-@media (max-width: 1024px) {
+/* ── Container query: Mobile Slider under 1024px container width ── */
+@container portfolio (max-width: 1024px) {
   .portfolio-grid {
     display: flex;
     flex-wrap: nowrap;

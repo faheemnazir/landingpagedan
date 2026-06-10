@@ -2,16 +2,16 @@
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: clamp(16px, 3vw, 32px);
-  padding-top: clamp(12px, 2vw, 24px);
-  padding-bottom: clamp(12px, 2vw, 24px);
-  align-items: flex-start;
+  padding-top: clamp(12px, 2.5vh, 48px);
+  padding-bottom: clamp(12px, 2.5vh, 48px);
+  align-items: center;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: clamp(12px, 1.8vh, 24px);
   width: 100%;
 }
 
@@ -167,7 +167,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 24px;
+  padding: clamp(16px, 2.2vh, 28px);
   width: 100%;
   max-width: 576px;
   background: rgba(255, 255, 255, 0.05);
@@ -189,7 +189,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 16px;
+  gap: clamp(10px, 1.5vh, 16px);
 }
 
 .form-group {
@@ -197,7 +197,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
-  margin-bottom: 10px;
+  margin-bottom: clamp(6px, 0.8vh, 10px);
   width: 100%;
 }
 
@@ -267,11 +267,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 24px;
-  margin-top: 24px;
+  padding-top: clamp(12px, 1.8vh, 24px);
+  margin-top: clamp(12px, 1.8vh, 24px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
-  gap: 12px;
+  gap: clamp(8px, 1.2vh, 12px);
 }
 
 .form-footer .text-small {
