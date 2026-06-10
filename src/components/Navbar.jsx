@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Phone } from 'lucide-react';
 import logoImg from '../assets/logo-transparent.png';
 import './Navbar.css';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLogoClick = (e) => {
     e.preventDefault();
@@ -49,7 +62,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <a href="tel:+4403001240371" className="floating-call-btn" aria-label="Call Us Now">
+      <a href="tel:+4403001240371" className={`floating-call-btn ${scrolled ? 'visible' : ''}`} aria-label="Call Us Now">
         <Phone size={24} />
       </a>
     </>
