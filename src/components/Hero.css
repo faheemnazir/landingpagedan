@@ -350,32 +350,68 @@
   .hero {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .hero-badge {
+    padding: 6px 12px;
+    margin-bottom: 12px;
   }
 
   .hero-title {
     font-size: clamp(1.8rem, 3vw, 3rem);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 
   .hero-form-card {
-    padding: 20px;
+    padding: 16px 20px;
     max-width: 440px;
   }
 
   .form-title {
-    font-size: 18px;
-    margin-bottom: 16px;
+    font-size: 16px;
+    margin-bottom: 12px;
   }
 
   .hero-subtitle {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
     max-width: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   .btn-start, .btn-view {
-    padding: 12px 20px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .form-row {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .form-group label {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .form-input, .form-select {
+    padding: 8px 12px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .form-footer {
+    margin-top: 12px;
+  }
+
+  .btn-submit {
+    height: 42px;
     font-size: 14px;
   }
 }
