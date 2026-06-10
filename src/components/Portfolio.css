@@ -28,12 +28,22 @@
   color: var(--text-secondary);
 }
 
-/* ── Grid: stretches to match other sections, 4 cards per row (4x2 layout) ── */
+/* ── Grid: now a horizontal slider on all screen sizes ── */
 .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: clamp(10px, 1.5cqw, 24px);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   width: 100%;
+  gap: clamp(10px, 1.5cqw, 24px);
+  padding: 12px 0 24px 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.portfolio-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .project-card {
@@ -41,11 +51,14 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  padding: 0; /* Edge-to-edge image header */
+  padding: 0;
   display: flex;
   flex-direction: column;
   transition: all 0.5s ease;
   overflow: hidden;
+  
+  flex: 0 0 calc((100% - 72px) / 4);
+  scroll-snap-align: start;
 }
 
 .project-card:hover {
@@ -183,30 +196,7 @@
   margin-bottom: 4px;
 }
 
-/* ── Media query: Mobile Slider under 1024px viewport width ── */
 @media (max-width: 1024px) {
-  .portfolio-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 16px;
-    gap: 16px;
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  
-  .portfolio-grid::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .project-card {
-    flex: 0 0 280px;
-    scroll-snap-align: center;
-    max-width: 85vw;
-  }
-
   .portfolio-header h2 {
     font-size: 2rem;
   }

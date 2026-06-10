@@ -150,7 +150,7 @@ const Services = () => {
         ))}
       </div>
 
-      <div className="slider-controls-mobile">
+      <div className="slider-controls">
         <button 
           className="control-btn prev" 
           onClick={() => handleScrollTo('left')} 
