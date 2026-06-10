@@ -143,7 +143,7 @@ const Challenges = () => {
           <ArrowLeft size={18} />
         </button>
         <div className="slider-dots">
-          {[0, 1, 2, 3].map((idx) => (
+          {challengesData.map((_, idx) => (
             <span
               key={idx}
               className={`slider-dot ${activeSlide === idx ? 'active' : ''}`}
@@ -159,7 +159,7 @@ const Challenges = () => {
             />
           ))}
         </div>
-        <button className="control-btn next" onClick={scrollNext} aria-label="Next slide" disabled={activeSlide === 3}>
+        <button className="control-btn next" onClick={scrollNext} aria-label="Next slide" disabled={activeSlide >= challengesData.length - 1}>
           <ArrowRight size={18} />
         </button>
       </div>

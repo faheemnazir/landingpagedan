@@ -207,7 +207,7 @@ const Portfolio = () => {
 
       {/* Mobile Slider Controls */}
       <div className="slider-controls">
-        <button className="control-btn prev" onClick={scrollPrev} aria-label="Previous slide">
+        <button className="control-btn prev" onClick={scrollPrev} aria-label="Previous slide" disabled={activeSlide === 0}>
           <ArrowLeft size={18} />
         </button>
         <div className="slider-dots">
@@ -227,7 +227,7 @@ const Portfolio = () => {
             />
           ))}
         </div>
-        <button className="control-btn next" onClick={scrollNext} aria-label="Next slide">
+        <button className="control-btn next" onClick={scrollNext} aria-label="Next slide" disabled={activeSlide >= projects.length - 1}>
           <ArrowRight size={18} />
         </button>
       </div>

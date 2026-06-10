@@ -72,13 +72,10 @@ const Features = () => {
         ))}
       </div>
       
-      <div className="carousel-dots">
-        <div className="dot active"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
+      <div className="slider-dots" style={{ justifyContent: 'center', marginTop: '24px' }}>
+        {featuresData.map((_, idx) => (
+          <div key={idx} className={`slider-dot ${idx === 0 ? 'active' : ''}`}></div>
+        ))}
       </div>
     </section>
   );

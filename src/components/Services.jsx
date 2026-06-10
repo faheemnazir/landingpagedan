@@ -160,7 +160,7 @@ const Services = () => {
           <ArrowLeft size={18} />
         </button>
         <div className="slider-dots">
-          {[0, 1, 2, 3].map((idx) => (
+          {services.map((_, idx) => (
             <span 
               key={idx} 
               className={`slider-dot ${idx === activeIndex ? 'active' : ''}`}
@@ -180,7 +180,7 @@ const Services = () => {
           className="control-btn next" 
           onClick={() => handleScrollTo('right')} 
           aria-label="Next service"
-          disabled={activeIndex === 3}
+          disabled={activeIndex >= services.length - 1}
         >
           <ArrowRight size={18} />
         </button>
