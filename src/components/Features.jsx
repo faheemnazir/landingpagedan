@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import './Features.css';
 
@@ -21,6 +21,9 @@ const FeatureCard = ({ title, description, points }) => (
 );
 
 const Features = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const sliderRef = useRef(null);
+
   const featuresData = [
     {
       title: "Trusted Global Reach Potential",
@@ -54,6 +57,17 @@ const Features = () => {
     }
   ];
 
+  const handleScroll = () => {
+    if (sliderRef.current) {
+      const scrollLeft = sliderRef.current.scrollLeft;
+      const cardWidth = sliderRef.current.children[0].clientWidth + 24;
+      const newActiveSlide = Math.round(scrollLeft / cardWidth);
+      if (newActiveSlide !== activeSlide && newActiveSlide >= 0 && newActiveSlide < featuresData.length) {
+        setActiveSlide(newActiveSlide);
+      }
+    }
+  };
+
   return (
     <section className="features container" id="why-us">
       <div className="features-header">
@@ -66,16 +80,21 @@ const Features = () => {
         </p>
       </div>
 
-      <div className="features-grid">
+      <div className="features-grid" ref={sliderRef} onScroll={handleScroll}>
         {featuresData.map((feature, idx) => (
-          <FeatureCard key={idx} {...feature} />
+          <div key={idx} className={activeSlide === idx ? 'cover-flow-active' : 'cover-flow-inactive'} style={{ display: 'flex' }}>
+            <FeatureCard {...feature} />
+          </div>
         ))}
       </div>
       
-      <div className="slider-dots" style={{ justifyContent: 'center', marginTop: '24px' }}>
-        {featuresData.map((_, idx) => (
-          <div key={idx} className={`slider-dot ${idx === 0 ? 'active' : ''}`}></div>
-        ))}
+      <div className="slider-controls-mobile">
+        <div className="slider-progress-bar">
+          <div 
+            className="slider-progress-fill" 
+            style={{ width: `${((activeSlide + 1) / featuresData.length) * 100}%` }}
+          />
+        </div>
       </div>
     </section>
   );

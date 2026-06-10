@@ -184,33 +184,31 @@ button {
   transform: scale(0.92);
 }
 
-.slider-dots {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 16px;
-}
-
-.slider-dot {
-  width: 8px;
-  height: 8px;
+.slider-progress-bar {
+  flex: 1;
+  max-width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+  margin: 0 16px;
+  position: relative;
 }
 
-.slider-dot:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+.slider-progress-fill {
+  height: 100%;
+  background: var(--accent-gold);
+  border-radius: 4px;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.slider-dot.active {
-  background-color: var(--accent-gold);
-  width: 24px;
+/* Global Cover Flow Transition */
+.project-card, .service-card, .challenge-card, .trust-card, .feature-card {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* Remove ugly blue tap flash on mobile */
-a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-card {
+a, button, .project-card, .service-card, .challenge-card, .trust-card {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -218,6 +216,16 @@ a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-ca
 @media (max-width: 1024px) {
   .slider-controls-mobile {
     display: flex;
+  }
+  
+  .cover-flow-inactive {
+    transform: scale(0.9) !important;
+    opacity: 0.5 !important;
+  }
+  
+  .cover-flow-active {
+    transform: scale(1) !important;
+    opacity: 1 !important;
   }
 }
 

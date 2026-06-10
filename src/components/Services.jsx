@@ -144,9 +144,19 @@ const Services = () => {
         </p>
       </div>
 
-      <div className="services-grid" ref={scrollContainerRef}>
+      <div className="services-grid" ref={scrollContainerRef} onScroll={() => {
+        if (!scrollContainerRef.current) return;
+        const scrollLeft = scrollContainerRef.current.scrollLeft;
+        const cardWidth = scrollContainerRef.current.children[0].clientWidth + 24;
+        const newActiveIndex = Math.round(scrollLeft / cardWidth);
+        if (newActiveIndex !== activeIndex && newActiveIndex >= 0 && newActiveIndex < services.length) {
+          setActiveIndex(newActiveIndex);
+        }
+      }}>
         {services.map((service, idx) => (
-          <ServiceCard key={idx} {...service} />
+          <div key={idx} className={activeIndex === idx ? 'cover-flow-active' : 'cover-flow-inactive'} style={{ display: 'flex' }}>
+            <ServiceCard {...service} />
+          </div>
         ))}
       </div>
 
@@ -159,22 +169,11 @@ const Services = () => {
         >
           <ArrowLeft size={18} />
         </button>
-        <div className="slider-dots">
-          {services.map((_, idx) => (
-            <span 
-              key={idx} 
-              className={`slider-dot ${idx === activeIndex ? 'active' : ''}`}
-              onClick={() => {
-                if (!scrollContainerRef.current) return;
-                const container = scrollContainerRef.current;
-                const card = container.querySelector('.service-card');
-                if (!card) return;
-                const cardWidth = card.clientWidth;
-                const gap = 24;
-                container.scrollTo({ left: idx * (cardWidth + gap), behavior: 'smooth' });
-              }}
-            ></span>
-          ))}
+        <div className="slider-progress-bar">
+          <div 
+            className="slider-progress-fill" 
+            style={{ width: `${((activeIndex + 1) / services.length) * 100}%` }}
+          />
         </div>
         <button 
           className="control-btn next" 
