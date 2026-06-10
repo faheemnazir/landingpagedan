@@ -498,3 +498,59 @@
     font-size: 20px;
   }
 }
+
+/* Height compression for short laptop viewports to keep everything in a single frame */
+@media (max-height: 850px) and (min-width: 1025px) {
+  .hero {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .hero-content {
+    gap: 8px;
+  }
+  .hero-badge {
+    margin-bottom: 8px;
+  }
+  .hero-subtitle {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-size: clamp(16px, 1.5vw, 22px);
+  }
+  .hero-actions {
+    margin-top: 16px;
+  }
+  .hero-form-card {
+    padding: 20px 24px;
+  }
+  .hero-form {
+    gap: 10px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+    gap: 4px;
+  }
+  .form-group label {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-select {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .submit-btn {
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .form-footer {
+    padding-top: 12px;
+    margin-top: 12px;
+    gap: 8px;
+  }
+  .form-footer .text-small {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
