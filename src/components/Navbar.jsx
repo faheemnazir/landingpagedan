@@ -51,12 +51,15 @@ const Navbar = () => {
           <li><a href="/#contact">Contact</a></li>
         </ul>
 
+        <div className="navbar-banner">
+          <span className="banner-text">LIMITED SLOTS AVAILABLE !</span>
+        </div>
+
         <div className="navbar-actions">
           <div className="navbar-btn-wrapper">
             <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
               <div className="navbar-btn-content">
                 <span className="btn-text-desktop">Get Started</span>
-                <span className="btn-text-mobile">LIMITED SLOTS AVAILABLE !</span>
               </div>
             </a>
           </div>

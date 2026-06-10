@@ -233,6 +233,11 @@
   .portfolio-header .portfolio-subtitle {
     font-size: 0.75rem;
   }
+
+  .project-card {
+    flex: 0 0 85%;
+    max-width: none;
+  }
 }
 
 @media (max-width: 480px) {

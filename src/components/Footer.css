@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 80px 32px 80px;
+  padding: 60px 0 32px 0;
   width: 100%;
 }
 
@@ -327,6 +327,22 @@
   .footer-top-row {
     flex-direction: column;
     gap: 32px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+  }
+
+  .link-group {
+    align-items: center;
+    text-align: center;
+  }
+
+  .link-group ul {
+    align-items: center;
   }
   
   .newsletter-form {

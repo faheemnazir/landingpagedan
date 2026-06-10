@@ -116,3 +116,10 @@
   }
 }
 
+@media (max-width: 768px) {
+  .service-card {
+    flex: 0 0 85%;
+    max-width: none;
+  }
+}
+
