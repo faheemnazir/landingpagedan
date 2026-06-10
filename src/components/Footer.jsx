@@ -27,6 +27,24 @@ const Footer = () => {
 
           <div className="footer-links">
             <div className="link-group">
+              <h4>Legal</h4>
+              <ul>
+                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link to="/terms-and-conditions">Terms of Service</Link></li>
+                <li><Link to="/privacy-policy">Cookie Policy</Link></li>
+                <li><Link to="/gdpr">GDPR</Link></li>
+              </ul>
+            </div>
+            <div className="link-group">
+              <h4>Reach Us Directly</h4>
+              <ul>
+                <li><a href="mailto:info@daneenalmajaz.in">info@daneenalmajaz.in</a></li>
+                <li><a href="tel:+4403001240371">+44 0300 124 0371 (UK)</a></li>
+                <li style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', lineHeight: '20px' }}>Mon–Sat, 9am–6pm GMT/IST</li>
+                <li style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', lineHeight: '20px' }}>Response within 1 business day</li>
+              </ul>
+            </div>
+            <div className="link-group">
               <h4>Services</h4>
               <ul>
                 <li><a href="/#services">iOS Development</a></li>
@@ -44,48 +62,7 @@ const Footer = () => {
                 <li><a href="/#faq">Support Center / FAQ</a></li>
               </ul>
             </div>
-            <div className="link-group">
-              <h4>Legal</h4>
-              <ul>
-                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-                <li><Link to="/terms-and-conditions">Terms of Service</Link></li>
-                <li><Link to="/privacy-policy">Cookie Policy</Link></li>
-                <li><Link to="/gdpr">GDPR</Link></li>
-              </ul>
-            </div>
-            <div className="link-group contact-info-group">
-              <h4>Contact Information</h4>
-              <ul>
-                <li className="contact-item">
-                  <span className="contact-label">EMAIL SUPPORT</span>
-                  <a href="mailto:info@daneenalmajaz.in" className="contact-value">info@daneenalmajaz.in</a>
-                </li>
-                <li className="contact-item">
-                  <span className="contact-label">UNITED KINGDOM</span>
-                  <a href="tel:+4403001240371" className="contact-value">+44 0300 124 0371</a>
-                </li>
-                <li className="contact-item">
-                  <span className="contact-label">UNITED ARAB EMIRATES</span>
-                  <a href="tel:+971585668144" className="contact-value">+971 58 566 8144</a>
-                </li>
-                <li className="contact-item">
-                  <span className="contact-label">INDIA SUPPORT</span>
-                  <a href="tel:+919596828515" className="contact-value">+91 9596828515</a>
-                </li>
-              </ul>
-            </div>
           </div>
-        </div>
-
-        <div className="footer-newsletter">
-          <div className="newsletter-text">
-            <h4>Stay Updated</h4>
-            <p>Subscribe to our newsletter for the latest insights on mobile app development.</p>
-          </div>
-          <form className="newsletter-form">
-            <input type="email" placeholder="Enter your email" />
-            <button type="submit" className="btn-subscribe">Subscribe</button>
-          </form>
         </div>
       </div>
 

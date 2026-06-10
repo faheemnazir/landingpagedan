@@ -22,9 +22,9 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
-  gap: clamp(32px, 6vw, 96px);
+  gap: 48px;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .footer-brand {
@@ -338,44 +338,5 @@
     gap: 24px;
     text-align: center;
   }
-}
-
-.contact-info-group {
-  min-width: 220px;
-}
-
-.contact-info-group h4 {
-  color: var(--accent-gold, #C8A46B) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 16px;
-  align-items: flex-start !important;
-}
-
-.contact-label {
-  font-size: 0.725rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: rgba(200, 164, 107, 0.75); /* muted gold/bronze style */
-  letter-spacing: 0.08em;
-}
-
-.contact-value {
-  font-size: 0.95rem;
-  color: #ffffff !important;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-
-.contact-value:hover {
-  color: var(--accent-gold, #C8A46B) !important;
 }
 
