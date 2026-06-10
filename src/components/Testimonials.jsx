@@ -122,7 +122,7 @@ const Testimonials = () => {
       </div>
 
       {/* Mobile Slider Controls */}
-      <div className="slider-controls-mobile">
+      <div className="slider-controls">
         <button className="control-btn prev" onClick={scrollPrev} aria-label="Previous testimonial" disabled={activeSlide === 0}>
           <ArrowLeft size={18} />
         </button>
