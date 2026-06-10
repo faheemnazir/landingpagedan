@@ -139,8 +139,13 @@
 
 @media (max-width: 768px) {
   .revenue-impact {
-    padding-top: 40px;
+    padding-top: 72px;
     padding-bottom: 40px;
+  }
+
+  .left-column h2 {
+    font-size: 1.8rem;
+    line-height: 1.35;
   }
 
   .revenue-stats-grid {
