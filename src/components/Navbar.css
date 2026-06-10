@@ -231,12 +231,13 @@
     color: #c30000 !important;
     font-weight: 900 !important;
     letter-spacing: 0.5px;
+    text-transform: uppercase;
   }
   .navbar-actions {
     gap: 8px;
   }
   .navbar-btn-wrapper {
-    margin-right: 12px;
+    margin-right: 4px;
   }
   .navbar-btn {
     padding: 8px 14px;
