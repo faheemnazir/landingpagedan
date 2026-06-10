@@ -32,7 +32,8 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  width: 373.33px;
+  width: auto;
+  max-width: 400px;
 }
 
 .footer-logo {
@@ -110,7 +111,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 162.66px;
+  width: auto;
+  flex: 1;
+  min-width: 120px;
 }
 
 .link-group h4 {
@@ -195,7 +198,8 @@
   justify-content: center;
   align-items: flex-start;
   padding: 10px 16px;
-  width: 438.66px;
+  width: 100%;
+  max-width: 440px;
   height: 50px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -308,7 +312,8 @@
   }
   
   .newsletter-form input {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
