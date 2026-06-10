@@ -89,13 +89,11 @@ const TrustBar = () => {
     );
 
     if (container) {
-      container.addEventListener('scroll', handleScroll);
       observer.observe(container);
     }
     
     return () => {
       if (container) {
-        container.removeEventListener('scroll', handleScroll);
         observer.unobserve(container);
       }
     };
@@ -120,7 +118,7 @@ const TrustBar = () => {
 
   return (
     <section className="trust-bar">
-      <div className="trust-bar-inner" ref={scrollContainerRef}>
+      <div className="trust-bar-inner" ref={scrollContainerRef} onScroll={handleScroll}>
         {trustItems.map((item, idx) => {
           const Icon = item.icon;
           return (

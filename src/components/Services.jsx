@@ -137,13 +137,11 @@ const Services = () => {
     );
 
     if (container) {
-      container.addEventListener('scroll', handleScroll);
       observer.observe(container);
     }
     
     return () => {
       if (container) {
-        container.removeEventListener('scroll', handleScroll);
         observer.unobserve(container);
       }
     };
@@ -169,13 +167,14 @@ const Services = () => {
   return (
     <section className="services container" id="services">
       <div className="services-header">
-        <h2 className="heading-lg text-gold">Our Services</h2>
-        <p className="text-body services-subtitle">
-          From concept to launch and beyond, we provide comprehensive app development services tailored to your business needs.
+        <div className="badge">OUR EXPERTISE</div>
+        <h2 className="heading-xl text-gradient">Mastering Mobile & Web</h2>
+        <p className="services-subtitle text-secondary">
+          End-to-end digital engineering. From conceptualization to deployment, we build high-performance products tailored to your industry.
         </p>
       </div>
 
-      <div className="services-grid" ref={scrollContainerRef}>
+      <div className="services-grid" ref={scrollContainerRef} onScroll={handleScroll}>
         {services.map((service, idx) => (
           <ServiceCard key={idx} {...service} />
         ))}
