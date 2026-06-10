@@ -229,7 +229,8 @@
   .btn-text-mobile {
     display: inline;
     color: #c30000 !important;
-    font-weight: 800;
+    font-weight: 900 !important;
+    letter-spacing: 0.5px;
   }
   .navbar-actions {
     gap: 8px;
