@@ -348,6 +348,40 @@
 
 @media (max-width: 1200px) {
   .hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    margin-bottom: 16px;
+  }
+
+  .hero-form-card {
+    padding: 20px;
+    max-width: 440px;
+  }
+
+  .form-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .btn-start, .btn-view {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
     grid-template-columns: 1fr;
     gap: 32px;
     padding-top: 32px;
@@ -356,6 +390,7 @@
   
   .hero-form-card {
     padding: 24px;
+    max-width: 500px;
   }
   
   .hero-form-wrapper {
