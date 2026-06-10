@@ -167,9 +167,22 @@ const Portfolio = () => {
 
   const handleScroll = () => {
     if (sliderRef.current) {
-      const scrollLeft = sliderRef.current.scrollLeft;
-      const cardWidth = sliderRef.current.children[0].clientWidth + 16; // width + gap on mobile
-      const newActiveSlide = Math.round(scrollLeft / cardWidth);
+      const container = sliderRef.current;
+      const scrollLeft = container.scrollLeft;
+      const scrollWidth = container.scrollWidth;
+      const clientWidth = container.clientWidth;
+      
+      const isAtEnd = Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
+      
+      const cardWidth = container.children[0].clientWidth + 16; // width + gap on mobile
+      
+      let newActiveSlide = Math.round(scrollLeft / cardWidth);
+      if (isAtEnd) {
+        newActiveSlide = projects.length - 1;
+      } else {
+        newActiveSlide = Math.min(newActiveSlide, projects.length - 1);
+      }
+      
       if (newActiveSlide !== activeSlide) {
         setActiveSlide(newActiveSlide);
       }

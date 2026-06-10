@@ -97,14 +97,25 @@ const Services = () => {
     if (!scrollContainerRef.current) return;
     const container = scrollContainerRef.current;
     const scrollLeft = container.scrollLeft;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    
+    const isAtEnd = Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
+    
     const card = container.querySelector('.service-card');
     if (!card) return;
     const cardWidth = card.clientWidth;
     const gap = 24;
-    const index = Math.round(scrollLeft / (cardWidth + gap));
-    const clampedIndex = Math.min(index, 3);
-    if (clampedIndex >= 0 && clampedIndex < services.length) {
-      setActiveIndex(clampedIndex);
+    
+    let newIndex = Math.round(scrollLeft / (cardWidth + gap));
+    if (isAtEnd) {
+      newIndex = services.length - 1;
+    } else {
+      newIndex = Math.min(newIndex, services.length - 1);
+    }
+    
+    if (newIndex !== activeIndex) {
+      setActiveIndex(newIndex);
     }
   };
 

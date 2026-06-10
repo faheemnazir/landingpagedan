@@ -91,12 +91,24 @@ const Challenges = () => {
 
   const handleScroll = () => {
     if (sliderRef.current) {
-      const scrollLeft = sliderRef.current.scrollLeft;
-      const cardWidth = sliderRef.current.children[0].clientWidth + 24; // width + gap
-      const newActiveSlide = Math.round(scrollLeft / cardWidth);
-      const clampedSlide = Math.min(newActiveSlide, 3);
-      if (clampedSlide !== activeSlide) {
-        setActiveSlide(clampedSlide);
+      const container = sliderRef.current;
+      const scrollLeft = container.scrollLeft;
+      const scrollWidth = container.scrollWidth;
+      const clientWidth = container.clientWidth;
+      
+      const isAtEnd = Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
+      
+      const cardWidth = container.children[0].clientWidth + 24; // width + gap
+      
+      let newActiveSlide = Math.round(scrollLeft / cardWidth);
+      if (isAtEnd) {
+        newActiveSlide = challengesData.length - 1;
+      } else {
+        newActiveSlide = Math.min(newActiveSlide, challengesData.length - 1);
+      }
+      
+      if (newActiveSlide !== activeSlide) {
+        setActiveSlide(newActiveSlide);
       }
     }
   };

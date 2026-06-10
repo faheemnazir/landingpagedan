@@ -49,14 +49,25 @@ const TrustBar = () => {
     if (!scrollContainerRef.current) return;
     const container = scrollContainerRef.current;
     const scrollLeft = container.scrollLeft;
+    const scrollWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    
+    const isAtEnd = Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
+    
     const card = container.querySelector('.trust-card');
     if (!card) return;
     const cardWidth = card.clientWidth;
     const gap = 20;
-    const index = Math.round(scrollLeft / (cardWidth + gap));
-    const clampedIndex = Math.min(index, trustItems.length - 1);
-    if (clampedIndex >= 0 && clampedIndex < trustItems.length) {
-      setActiveIndex(clampedIndex);
+    
+    let newIndex = Math.round(scrollLeft / (cardWidth + gap));
+    if (isAtEnd) {
+      newIndex = trustItems.length - 1;
+    } else {
+      newIndex = Math.min(newIndex, trustItems.length - 1);
+    }
+    
+    if (newIndex !== activeIndex) {
+      setActiveIndex(newIndex);
     }
   };
 
