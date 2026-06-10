@@ -52,10 +52,13 @@ const Navbar = () => {
         </ul>
 
         <div className="navbar-actions">
-          <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
-            <span className="btn-text-desktop">Get Started</span>
-            <span className="btn-text-mobile">Get Free Consultation</span>
-          </a>
+          <div className="navbar-btn-wrapper">
+            <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
+              <span className="btn-text-desktop">Get Started</span>
+              <span className="btn-text-mobile">Get Free Consultation</span>
+            </a>
+            <span className="navbar-slots-badge">Limited slots available</span>
+          </div>
           <a href="tel:+443001240371" className="navbar-call-btn" aria-label="Call Us">
             <Phone size={18} />
           </a>
