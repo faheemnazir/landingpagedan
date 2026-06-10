@@ -56,7 +56,7 @@ const Navbar = () => {
             <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
               <div className="navbar-btn-content">
                 <span className="btn-text-desktop">Get Started</span>
-                <span className="btn-text-mobile">Limited slots available</span>
+                <span className="btn-text-mobile">LIMITED SLOTS AVAILABLE !</span>
               </div>
             </a>
           </div>

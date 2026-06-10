@@ -1,8 +1,6 @@
 .portfolio {
   padding-top: 10px;
   padding-bottom: 10px;
-  container-type: inline-size;
-  container-name: portfolio;
 }
 
 .portfolio-header {
@@ -185,8 +183,8 @@
   margin-bottom: 4px;
 }
 
-/* ── Container query: Mobile Slider under 1024px container width ── */
-@container portfolio (max-width: 1024px) {
+/* ── Media query: Mobile Slider under 1024px viewport width ── */
+@media (max-width: 1024px) {
   .portfolio-grid {
     display: flex;
     flex-wrap: nowrap;
