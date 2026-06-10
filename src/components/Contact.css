@@ -280,25 +280,6 @@
   }
 }
 
-@media (max-width: 1400px) {
-  .dual-column-card {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    padding: 32px;
-    gap: 24px;
-  }
-  .form-inner-card {
-    padding: 24px;
-  }
-  .italic-title {
-    font-size: 1.8rem;
-  }
-  .thinking-subtitle {
-    font-size: 1.2rem;
-  }
-  .thinking-content p {
-    font-size: 1rem;
-  }
-}
 
 @media (max-width: 1024px) {
   .dual-column-card {
