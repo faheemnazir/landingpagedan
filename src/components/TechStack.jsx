@@ -10,7 +10,7 @@ const TechStack = () => {
     "Design & QA"
   ];
 
-  const [activeTab, setActiveTab] = useState("Backend & Web");
+  const [activeTab, setActiveTab] = useState("App Technologies");
 
   const stackData = {
     "App Technologies": [

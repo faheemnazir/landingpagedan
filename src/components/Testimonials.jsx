@@ -69,8 +69,9 @@ const Testimonials = () => {
       const scrollLeft = sliderRef.current.scrollLeft;
       const cardWidth = sliderRef.current.children[0].clientWidth + 24; // width + gap
       const newActiveSlide = Math.round(scrollLeft / cardWidth);
-      if (newActiveSlide !== activeSlide) {
-        setActiveSlide(newActiveSlide);
+      const clampedSlide = Math.min(newActiveSlide, 3);
+      if (clampedSlide !== activeSlide) {
+        setActiveSlide(clampedSlide);
       }
     }
   };
@@ -112,7 +113,7 @@ const Testimonials = () => {
           <ArrowLeft size={18} />
         </button>
         <div className="slider-dots">
-          {testimonials.map((_, idx) => (
+          {[0, 1, 2, 3].map((idx) => (
             <span
               key={idx}
               className={`slider-dot ${activeSlide === idx ? 'active' : ''}`}

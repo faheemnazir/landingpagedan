@@ -31,7 +31,7 @@ const Navbar = () => {
         <li><a href="/#faq">FAQ</a></li>
       </ul>
 
-      <button className="btn btn-primary navbar-btn">Get Started</button>
+      <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>Get Started</a>
 
       <button className="navbar-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -55,7 +55,7 @@ const Navbar = () => {
             <li><a href="/#faq" onClick={closeMenu}>FAQ</a></li>
           </ul>
           <div className="drawer-footer">
-            <button className="btn btn-primary drawer-btn" onClick={closeMenu}>Get Started</button>
+            <a href="#contact" className="btn btn-primary drawer-btn" style={{ textDecoration: 'none' }} onClick={closeMenu}>Get Started</a>
           </div>
         </div>
       </div>

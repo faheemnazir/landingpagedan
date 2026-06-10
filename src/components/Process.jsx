@@ -132,7 +132,7 @@ const Process = () => {
         <div className="cta-card">
           <h3 className="heading-md">Ready to Start Your Journey?</h3>
           <p className="text-body">Schedule a free consultation to discuss your project and see how we can bring your vision to life.</p>
-          <button className="btn btn-primary">Schedule Free Consultation</button>
+          <a href="#contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Schedule Free Consultation</a>
         </div>
       </div>
     </section>

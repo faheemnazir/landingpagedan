@@ -360,6 +360,13 @@
     padding-bottom: 32px;
   }
   
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
   .hero-form-card {
     padding: 24px;
     max-width: 500px;
@@ -372,6 +379,8 @@
   .hero-badge {
     padding: 8px 16px;
     margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .badge-text {
@@ -389,6 +398,8 @@
 
   .hero-actions {
     gap: 16px;
+    justify-content: center;
+    width: 100%;
   }
 
   .btn-start, .btn-view {
@@ -408,6 +419,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 12px;
     width: 100%;

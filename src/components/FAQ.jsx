@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import './FAQ.css';
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const FAQItem = ({ question, answer, isOpen, onToggle }) => {
   return (
-    <div className={`faq-item ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+    <div className={`faq-item ${isOpen ? 'open' : ''}`} onClick={onToggle}>
       <div className="faq-question">
         <span>{question}</span>
         {isOpen ? <ChevronUp size={20} className="text-gold" /> : <ChevronDown size={20} className="text-gold" />}
@@ -21,6 +19,8 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const faqs = [
     {
       question: "How long does it take to develop a mobile app in the UK?",
@@ -58,13 +58,18 @@ const FAQ = () => {
 
       <div className="faq-list">
         {faqs.map((faq, idx) => (
-          <FAQItem key={idx} {...faq} />
+          <FAQItem 
+            key={idx} 
+            {...faq} 
+            isOpen={openIndex === idx}
+            onToggle={() => setOpenIndex(openIndex === idx ? null : idx)}
+          />
         ))}
       </div>
 
       <div className="faq-cta">
         <p className="text-body">Still have questions? We're here to help!</p>
-        <button className="btn btn-primary">Contact Us</button>
+        <a href="#contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Contact Us</a>
       </div>
     </section>
   );
