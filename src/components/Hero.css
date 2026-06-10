@@ -1,9 +1,9 @@
 .hero {
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 48px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  padding-top: clamp(24px, 4vw, 40px);
+  padding-bottom: clamp(24px, 4vw, 40px);
   align-items: flex-start;
 }
 
@@ -41,10 +41,12 @@
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(2rem, 5vw, 5.5rem);
+  font-size: clamp(2rem, 4vw, 5.5rem);
   line-height: 1.15;
   color: #FFFFFF;
   margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-title-gradient {
@@ -319,12 +321,12 @@
 
 @media (max-width: 1400px) {
   .hero {
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: 32px;
   }
 
   .hero-title {
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-size: clamp(2rem, 3.5vw, 4rem);
   }
 
   .hero-form-card {
@@ -346,7 +348,7 @@
 
 @media (max-width: 1200px) {
   .hero {
-    grid-template-columns: 1fr 440px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 32px;
   }
 
