@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Phone } from 'lucide-react';
 import logoImg from '../assets/logo-transparent.png';
 import './Navbar.css';
 
@@ -20,27 +21,38 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar container">
-      <a href="/#" onClick={handleLogoClick} className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <img src={logoImg} alt="Daneen Al Majaz" className="navbar-logo-img" />
-      </a>
+    <>
+      <nav className="navbar container">
+        <a href="/#" onClick={handleLogoClick} className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <img src={logoImg} alt="Daneen Al Majaz" className="navbar-logo-img" />
+        </a>
 
-      <ul className="navbar-links">
-        <li><a href="/#home">Home</a></li>
-        <li><a href="/#why-us">Why Us</a></li>
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#pricing">Pricing</a></li>
-        <li><a href="/#portfolio">Portfolio</a></li>
-        <li><a href="/#process">Process</a></li>
-        <li><a href="/#testimonials">Testimonials</a></li>
-        <li><a href="/#faq">FAQ</a></li>
-      </ul>
+        <ul className="navbar-links">
+          <li><a href="/#why-us">Why Us</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#portfolio">Portfolio</a></li>
+          <li><a href="/#process">Process</a></li>
+          <li><a href="/#testimonials">Testimonials</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
 
-      <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
-        <span className="btn-text-desktop">Get Started</span>
-        <span className="btn-text-mobile">Get Free Consultation</span>
+        <div className="navbar-actions">
+          <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
+            <span className="btn-text-desktop">Get Started</span>
+            <span className="btn-text-mobile">Get Free Consultation</span>
+          </a>
+          <a href="tel:+4403001240371" className="navbar-call-btn" aria-label="Call Us">
+            <Phone size={18} />
+          </a>
+        </div>
+      </nav>
+
+      <a href="tel:+4403001240371" className="floating-call-btn" aria-label="Call Us Now">
+        <Phone size={24} />
       </a>
-    </nav>
+    </>
   );
 };
 

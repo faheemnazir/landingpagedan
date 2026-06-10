@@ -266,6 +266,16 @@
   margin: 0;
 }
 
+.branch-phone a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.branch-phone a:hover {
+  color: #D4B483;
+}
+
 .branch-address {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.5);

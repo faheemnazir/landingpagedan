@@ -77,7 +77,9 @@ const Contact = () => {
                 <div className="flag-icon">🇬🇧</div>
                 <div className="branch-info">
                   <h5 className="branch-title">UK BRANCH OFFICE</h5>
-                  <p className="branch-phone">+44 0300 124 0371</p>
+                  <p className="branch-phone">
+                    <a href="tel:+4403001240371" style={{ color: 'inherit', textDecoration: 'none' }}>+44 0300 124 0371</a>
+                  </p>
                   <p className="branch-address">Flat 5, Purbeck House, Crusader Way, Watford, England, WD18 6GP</p>
                 </div>
               </div>
@@ -86,7 +88,9 @@ const Contact = () => {
                 <div className="flag-icon">🇦🇪</div>
                 <div className="branch-info">
                   <h5 className="branch-title">UAE HEAD OFFICE</h5>
-                  <p className="branch-phone">+971 58 566 8144</p>
+                  <p className="branch-phone">
+                    <a href="tel:+971585668144" style={{ color: 'inherit', textDecoration: 'none' }}>+971 58 566 8144</a>
+                  </p>
                   <p className="branch-address">Prime Tower, Office No. 22, 23rd Floor, Business Bay, Dubai, UAE</p>
                 </div>
               </div>
@@ -95,7 +99,9 @@ const Contact = () => {
                 <div className="flag-icon">🇮🇳</div>
                 <div className="branch-info">
                   <h5 className="branch-title">INDIA BRANCH OFFICE</h5>
-                  <p className="branch-phone">+91 9596828515</p>
+                  <p className="branch-phone">
+                    <a href="tel:+919596828515" style={{ color: 'inherit', textDecoration: 'none' }}>+91 9596828515</a>
+                  </p>
                   <p className="branch-address">Taj Complex, South City, Pohru Road, Nowgam, Srinagar, J&K</p>
                 </div>
               </div>
