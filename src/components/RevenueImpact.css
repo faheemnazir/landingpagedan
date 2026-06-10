@@ -87,6 +87,10 @@
   line-height: 1.1;
 }
 
+.stat-num.text-gold {
+  color: var(--accent-gold, #C8A46B);
+}
+
 .stat-desc {
   font-size: 0.85rem;
   color: #b3b3b3;
@@ -139,8 +143,8 @@
 
 @media (max-width: 768px) {
   .revenue-impact {
-    padding-top: 72px;
-    padding-bottom: 40px;
+    padding-top: 88px;
+    padding-bottom: 64px;
   }
 
   .left-column {
@@ -150,8 +154,16 @@
   }
 
   .left-column h2 {
-    font-size: 1.6rem;
-    line-height: 1.3;
+    font-size: 1.45rem;
+    line-height: 1.35;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  .revenue-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 36px;
   }
 
   .revenue-stats-grid {
@@ -159,7 +171,6 @@
     gap: 16px;
   }
 
-  /* Fixed: Removed the breaking layout shadows and accidental transforms that were sitting here */
   .stat-num {
     font-size: 2.25rem;
   }

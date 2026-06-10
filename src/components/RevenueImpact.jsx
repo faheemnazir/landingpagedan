@@ -11,17 +11,20 @@ const RevenueImpact = () => {
     {
       value: "68%",
       label: "of UK consumers prefer to shop and book via a mobile app over a mobile website",
-      highlight: false
+      highlight: false,
+      gold: true
     },
     {
       value: "40%",
       label: "reduction in customer support costs through in-app self-service and automated workflows",
-      highlight: false
+      highlight: false,
+      gold: true
     },
     {
       value: "55%",
       label: "boost in repeat purchases driven by push notifications and personalised offers",
-      highlight: false
+      highlight: false,
+      gold: true
     },
     {
       value: "£5,999",
@@ -58,7 +61,7 @@ const RevenueImpact = () => {
                 key={idx}
                 className={`revenue-stat-card ${stat.highlight ? 'highlighted-card' : ''}`}
               >
-                <div className="stat-num">{stat.value}</div>
+                <div className={`stat-num ${stat.gold ? 'text-gold' : ''}`}>{stat.value}</div>
                 <div className="stat-desc">{stat.label}</div>
               </div>
             ))}
