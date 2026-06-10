@@ -120,7 +120,7 @@ const Hero = () => {
 
                 <div className="form-group">
                   <label style={{ fontSize: '11px', letterSpacing: '1px', textTransform: 'uppercase' }}>Project Details</label>
-                  <textarea name="project_details" value={formData.project_details} onChange={handleChange} placeholder="Describe your app idea — platform, core features, target audience, and any specific requirements..." rows="3" required></textarea>
+                  <textarea name="project_details" value={formData.project_details} onChange={handleChange} placeholder="Describe your app idea..." rows="3" required></textarea>
                 </div>
 
                 <button type="submit" className="submit-btn" disabled={status === 'loading'} style={{ textTransform: 'uppercase', fontWeight: 600, letterSpacing: '1px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

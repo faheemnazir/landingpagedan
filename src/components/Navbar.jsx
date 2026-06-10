@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import logoImg from '../assets/logo-transparent.png';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,9 +17,21 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <nav className="navbar container">
-      <a href="/#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <a href="/#" onClick={handleLogoClick} className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
         <img src={logoImg} alt="Daneen Al Majaz" className="navbar-logo-img" />
       </a>
 
@@ -40,7 +55,7 @@ const Navbar = () => {
       <div className={`navbar-mobile-overlay ${isOpen ? 'active' : ''}`} onClick={closeMenu}>
         <div className="navbar-mobile-drawer" onClick={(e) => e.stopPropagation()}>
           <div className="drawer-header">
-            <a href="/#" className="navbar-logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); closeMenu(); }}>
+            <a href="/#" className="navbar-logo" onClick={(e) => { handleLogoClick(e); closeMenu(); }}>
               <img src={logoImg} alt="Daneen Al Majaz" style={{ height: '44px', width: 'auto' }} />
             </a>
           </div>

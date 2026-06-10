@@ -1,17 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import logoImg from '../assets/logo-transparent.png';
 import { FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="container footer-content">
         <div className="footer-top-row">
           <div className="footer-brand">
-            <a href="/#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="footer-logo" style={{ textDecoration: 'none' }}>
+            <a href="/#" onClick={handleLogoClick} className="footer-logo" style={{ textDecoration: 'none' }}>
               <img src={logoImg} alt="Daneen Al Majaz" style={{ height: '70px', width: 'auto', marginBottom: '16px' }} />
             </a>
             <p className="footer-desc">
@@ -26,6 +41,24 @@ const Footer = () => {
           </div>
 
           <div className="footer-links">
+            <div className="link-group">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">API Reference</a></li>
+                <li><a href="/#faq">Support Center / FAQ</a></li>
+              </ul>
+            </div>
+            <div className="link-group">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="/#services">iOS Development</a></li>
+                <li><a href="/#services">Android Development</a></li>
+                <li><a href="/#services">Cross-Platform</a></li>
+                <li><a href="/#services">UI/UX Design</a></li>
+              </ul>
+            </div>
             <div className="link-group">
               <h4>Legal</h4>
               <ul>
@@ -44,24 +77,8 @@ const Footer = () => {
                 <li style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', lineHeight: '20px' }}>Response within 1 business day</li>
               </ul>
             </div>
-            <div className="link-group">
-              <h4>Services</h4>
-              <ul>
-                <li><a href="/#services">iOS Development</a></li>
-                <li><a href="/#services">Android Development</a></li>
-                <li><a href="/#services">Cross-Platform</a></li>
-                <li><a href="/#services">UI/UX Design</a></li>
-              </ul>
-            </div>
-            <div className="link-group">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">API Reference</a></li>
-                <li><a href="/#faq">Support Center / FAQ</a></li>
-              </ul>
-            </div>
+
+
           </div>
         </div>
       </div>

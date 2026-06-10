@@ -66,8 +66,9 @@ const Process = () => {
       const scrollLeft = sliderRef.current.scrollLeft;
       const cardWidth = sliderRef.current.children[0].clientWidth + 24; // width + gap
       const newActiveSlide = Math.round(scrollLeft / cardWidth);
-      if (newActiveSlide !== activeSlide) {
-        setActiveSlide(newActiveSlide);
+      const clampedSlide = Math.min(newActiveSlide, 3);
+      if (clampedSlide !== activeSlide) {
+        setActiveSlide(clampedSlide);
       }
     }
   };
@@ -103,11 +104,11 @@ const Process = () => {
 
       {/* Mobile Slider Controls */}
       <div className="slider-controls-mobile">
-        <button className="control-btn prev" onClick={scrollPrev} aria-label="Previous step">
+        <button className="control-btn prev" onClick={scrollPrev} aria-label="Previous step" disabled={activeSlide === 0}>
           <ArrowLeft size={18} />
         </button>
         <div className="slider-dots">
-          {steps.map((_, idx) => (
+          {[0, 1, 2, 3].map((idx) => (
             <span 
               key={idx} 
               className={`slider-dot ${activeSlide === idx ? 'active' : ''}`}
@@ -123,7 +124,7 @@ const Process = () => {
             />
           ))}
         </div>
-        <button className="control-btn next" onClick={scrollNext} aria-label="Next step">
+        <button className="control-btn next" onClick={scrollNext} aria-label="Next step" disabled={activeSlide === 3}>
           <ArrowRight size={18} />
         </button>
       </div>

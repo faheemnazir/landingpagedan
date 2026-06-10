@@ -102,8 +102,9 @@ const Services = () => {
     const cardWidth = card.clientWidth;
     const gap = 24;
     const index = Math.round(scrollLeft / (cardWidth + gap));
-    if (index >= 0 && index < services.length) {
-      setActiveIndex(index);
+    const clampedIndex = Math.min(index, 3);
+    if (clampedIndex >= 0 && clampedIndex < services.length) {
+      setActiveIndex(clampedIndex);
     }
   };
 
@@ -159,7 +160,7 @@ const Services = () => {
           <ArrowLeft size={18} />
         </button>
         <div className="slider-dots">
-          {services.map((_, idx) => (
+          {[0, 1, 2, 3].map((idx) => (
             <span 
               key={idx} 
               className={`slider-dot ${idx === activeIndex ? 'active' : ''}`}
@@ -179,7 +180,7 @@ const Services = () => {
           className="control-btn next" 
           onClick={() => handleScrollTo('right')} 
           aria-label="Next service"
-          disabled={activeIndex === services.length - 1}
+          disabled={activeIndex === 3}
         >
           <ArrowRight size={18} />
         </button>
