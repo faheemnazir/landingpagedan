@@ -12,7 +12,7 @@ const TestimonialCard = ({ quote, author, role, company }) => (
     </div>
     <p className="testimonial-text">{quote}</p>
     <div className="testimonial-author">
-      <div className="author-avatar">{author.substring(0, 2).toUpperCase()}</div>
+      <div className="author-avatar">{author.charAt(0).toUpperCase()}</div>
       <div className="author-info">
         <h4 className="author-name">{author}</h4>
         <p className="author-role">{role ? `${role}, ` : ''}{company}</p>
@@ -24,16 +24,16 @@ const TestimonialCard = ({ quote, author, role, company }) => (
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Daneen Al Majaz transformed our vision into a stunning mobile app that exceeded all expectations. Their attention to detail and technical expertise is unmatched. Our user engagement increased by 300% in the first quarter.",
-      author: "Sarah Johnson",
-      role: "CEO",
-      company: "FinanceHub"
+      quote: "The software Daneen Al Majaz IT Services built for Cemtac has completely transformed how we manage operations. The HRM and inventory system is reliable, fast, and exactly what we needed.",
+      author: "Imtiyaz Ahmad",
+      role: "Client",
+      company: "CEMTAC CEMENTS"
     },
     {
-      quote: "Daneen Al Majaz transformed our vision into a stunning mobile app that exceeded all expectations. Their attention to detail and technical expertise is unmatched. Our user engagement increased by 300% in the first quarter.",
-      author: "Sarah Johnson",
-      role: "CEO",
-      company: "FinanceHub"
+      quote: "The Apna Chicken Center app is mind-blowing. The billing system, token numbers, and custom ordering experience set us apart from every competitor.",
+      author: "Mohammad Saad Shah",
+      role: "Customer & App User",
+      company: "APNA CHICKEN CENTER"
     },
     {
       quote: "Daneen Al Majaz transformed our vision into a stunning mobile app that exceeded all expectations. Their attention to detail and technical expertise is unmatched. Our user engagement increased by 300% in the first quarter.",
