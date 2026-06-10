@@ -317,3 +317,21 @@
     padding: 20px 16px;
   }
 }
+
+@media (max-width: 480px) {
+  .dual-column-card {
+    padding: 16px 12px;
+  }
+  
+  .form-inner-card {
+    padding: 16px 12px;
+  }
+
+  .thinking-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .italic-title {
+    font-size: 1.8rem;
+  }
+}

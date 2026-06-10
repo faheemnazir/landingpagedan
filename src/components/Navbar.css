@@ -37,6 +37,12 @@
   }
 }
 
+@media (max-width: 480px) {
+  .navbar-logo-img {
+    height: 36px;
+  }
+}
+
 .logo-text {
   display: flex;
   flex-direction: column;

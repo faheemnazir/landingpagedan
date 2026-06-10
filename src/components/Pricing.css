@@ -186,3 +186,21 @@
     gap: 32px;
   }
 }
+
+@media (max-width: 480px) {
+  .pricing-header {
+    padding: 24px;
+  }
+  
+  .pricing-body {
+    padding: 24px;
+  }
+
+  .price-tag {
+    font-size: 36px;
+  }
+  
+  .pricing-included {
+    padding: 24px 16px;
+  }
+}

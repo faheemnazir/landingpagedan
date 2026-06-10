@@ -194,6 +194,9 @@ button {
   .slider-controls-mobile {
     display: flex;
   }
+  .container {
+    padding: 0 40px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -207,6 +210,20 @@ button {
   
   .heading-lg {
     font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .heading-xl {
+    font-size: 1.8rem;
+  }
+  
+  .heading-lg {
+    font-size: 1.5rem;
   }
 }
 
