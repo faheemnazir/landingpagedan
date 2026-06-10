@@ -167,10 +167,9 @@ const Services = () => {
   return (
     <section className="services container" id="services">
       <div className="services-header">
-        <div className="badge">OUR EXPERTISE</div>
-        <h2 className="heading-xl text-gradient">Mastering Mobile & Web</h2>
-        <p className="services-subtitle text-secondary">
-          End-to-end digital engineering. From conceptualization to deployment, we build high-performance products tailored to your industry.
+        <h2 className="heading-lg text-gold">Our Services</h2>
+        <p className="text-body services-subtitle">
+          From concept to launch and beyond, we provide comprehensive app development services tailored to your business needs.
         </p>
       </div>
 
