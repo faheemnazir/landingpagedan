@@ -46,7 +46,10 @@ const Navbar = () => {
         <li><a href="/#faq">FAQ</a></li>
       </ul>
 
-      <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>Get Started</a>
+      <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
+        <span className="btn-text-desktop">Get Free Consultation</span>
+        <span className="btn-text-mobile">Free Consultation</span>
+      </a>
 
       <button className="navbar-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
         {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,7 +73,7 @@ const Navbar = () => {
             <li><a href="/#faq" onClick={closeMenu}>FAQ</a></li>
           </ul>
           <div className="drawer-footer">
-            <a href="#contact" className="btn btn-primary drawer-btn" style={{ textDecoration: 'none' }} onClick={closeMenu}>Get Started</a>
+            <a href="#contact" className="btn btn-primary drawer-btn" style={{ textDecoration: 'none' }} onClick={closeMenu}>Get Free Consultation</a>
           </div>
         </div>
       </div>
