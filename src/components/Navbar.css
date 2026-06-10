@@ -200,30 +200,36 @@
 }
 
 .navbar-banner {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.banner-text {
-  color: #c30000;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-size: clamp(8px, 2.5vw, 13px);
-  white-space: nowrap;
-  animation: buttonPulse 2s infinite ease-in-out;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 4px 10px;
-  border-radius: 4px;
+  display: none; /* Hidden on desktop */
 }
 
 @media (max-width: 1024px) {
+  .navbar-banner {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    text-decoration: none;
+  }
+
+  .banner-text {
+    color: #c30000;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: clamp(9px, 2.8vw, 14px);
+    white-space: nowrap;
+    animation: buttonPulse 2s infinite ease-in-out;
+    background: var(--accent-gold, #C8A46B);
+    padding: 6px 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
   .btn-text-desktop {
     display: inline;
   }
@@ -231,15 +237,7 @@
     gap: 8px;
   }
   .navbar-btn-wrapper {
-    margin-right: 4px;
-  }
-  .navbar-btn {
-    padding: 8px 14px;
-    font-size: 11px;
-    margin-right: 0;
-  }
-  .navbar-btn:hover {
-    transform: scale(1.05);
+    display: none; /* Hide Get Started on mobile */
   }
   .navbar-call-btn {
     width: 34px;

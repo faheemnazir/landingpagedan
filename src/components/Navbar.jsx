@@ -51,9 +51,9 @@ const Navbar = () => {
           <li><a href="/#contact">Contact</a></li>
         </ul>
 
-        <div className="navbar-banner">
+        <a href="#contact" className="navbar-banner" style={{ textDecoration: 'none' }}>
           <span className="banner-text">LIMITED SLOTS AVAILABLE !</span>
-        </div>
+        </a>
 
         <div className="navbar-actions">
           <div className="navbar-btn-wrapper">

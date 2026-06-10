@@ -1,5 +1,5 @@
-import React from 'react';
-import { Landmark, ShieldCheck, PoundSterling, Clock, Check, CheckCircle2 } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Landmark, ShieldCheck, PoundSterling, Clock, Check, CheckCircle2, ArrowLeft, ArrowRight } from 'lucide-react';
 import './TrustBar.css';
 
 const trustItems = [
@@ -39,14 +39,57 @@ const trustItems = [
     desc: "Industry expertise",
     check: "Proven track record"
   }
-
-
 ];
 
 const TrustBar = () => {
+  const scrollContainerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollLeft = container.scrollLeft;
+    const card = container.querySelector('.trust-card');
+    if (!card) return;
+    const cardWidth = card.clientWidth;
+    const gap = 20;
+    const index = Math.round(scrollLeft / (cardWidth + gap));
+    const clampedIndex = Math.min(index, trustItems.length - 1);
+    if (clampedIndex >= 0 && clampedIndex < trustItems.length) {
+      setActiveIndex(clampedIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
+
+  const handleScrollTo = (direction) => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const card = container.querySelector('.trust-card');
+    if (!card) return;
+    const cardWidth = card.clientWidth;
+    const gap = 20;
+    const scrollAmount = cardWidth + gap;
+    if (direction === 'left') {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="trust-bar">
-      <div className="trust-bar-inner">
+      <div className="trust-bar-inner" ref={scrollContainerRef}>
         {trustItems.map((item, idx) => {
           const Icon = item.icon;
           return (
@@ -65,6 +108,42 @@ const TrustBar = () => {
             </div>
           );
         })}
+      </div>
+
+      <div className="slider-controls">
+        <button 
+          className="control-btn prev" 
+          onClick={() => handleScrollTo('left')} 
+          aria-label="Previous card"
+          disabled={activeIndex === 0}
+        >
+          <ArrowLeft size={18} />
+        </button>
+        <div className="slider-dots">
+          {[0, 1, 2, 3].map((idx) => (
+            <span 
+              key={idx} 
+              className={`slider-dot ${idx === activeIndex ? 'active' : ''}`}
+              onClick={() => {
+                if (!scrollContainerRef.current) return;
+                const container = scrollContainerRef.current;
+                const card = container.querySelector('.trust-card');
+                if (!card) return;
+                const cardWidth = card.clientWidth;
+                const gap = 20;
+                container.scrollTo({ left: idx * (cardWidth + gap), behavior: 'smooth' });
+              }}
+            ></span>
+          ))}
+        </div>
+        <button 
+          className="control-btn next" 
+          onClick={() => handleScrollTo('right')} 
+          aria-label="Next card"
+          disabled={activeIndex >= trustItems.length - 1}
+        >
+          <ArrowRight size={18} />
+        </button>
       </div>
     </section>
   );
