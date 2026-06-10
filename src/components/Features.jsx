@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import './Features.css';
 
@@ -64,7 +64,7 @@ const Features = () => {
     const scrollWidth = container.scrollWidth;
     const clientWidth = container.clientWidth;
     
-    const isAtEnd = Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
+    const isAtEnd = scrollLeft > 10 && Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
     
     const card = container.querySelector('.feature-card');
     if (!card) return;
@@ -72,7 +72,9 @@ const Features = () => {
     const gap = 24;
     
     let newIndex = Math.round(scrollLeft / (cardWidth + gap));
-    if (isAtEnd) {
+    if (scrollLeft <= 10) {
+      newIndex = 0;
+    } else if (isAtEnd) {
       newIndex = featuresData.length - 1;
     } else {
       newIndex = Math.min(newIndex, featuresData.length - 1);
@@ -82,6 +84,30 @@ const Features = () => {
       setActiveIndex(newIndex);
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({ left: 0 });
+            setActiveIndex(0);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    if (scrollContainerRef.current) {
+      observer.observe(scrollContainerRef.current);
+    }
+
+    return () => {
+      if (scrollContainerRef.current) {
+        observer.unobserve(scrollContainerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="features container" id="why-us">

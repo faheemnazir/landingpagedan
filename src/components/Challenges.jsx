@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Lightbulb, ArrowLeft, ArrowRight } from 'lucide-react';
 import './Challenges.css';
 
@@ -96,12 +96,14 @@ const Challenges = () => {
       const scrollWidth = container.scrollWidth;
       const clientWidth = container.clientWidth;
       
-      const isAtEnd = Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
+      const isAtEnd = scrollLeft > 10 && Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
       
       const cardWidth = container.children[0].clientWidth + 24; // width + gap
       
       let newActiveSlide = Math.round(scrollLeft / cardWidth);
-      if (isAtEnd) {
+      if (scrollLeft <= 10) {
+        newActiveSlide = 0;
+      } else if (isAtEnd) {
         newActiveSlide = challengesData.length - 1;
       } else {
         newActiveSlide = Math.min(newActiveSlide, challengesData.length - 1);
@@ -112,6 +114,30 @@ const Challenges = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && sliderRef.current) {
+            sliderRef.current.scrollTo({ left: 0 });
+            setActiveSlide(0);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    if (sliderRef.current) {
+      observer.observe(sliderRef.current);
+    }
+
+    return () => {
+      if (sliderRef.current) {
+        observer.unobserve(sliderRef.current);
+      }
+    };
+  }, []);
 
   const scrollPrev = () => {
     if (sliderRef.current) {
