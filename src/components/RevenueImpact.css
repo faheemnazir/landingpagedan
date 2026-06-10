@@ -81,7 +81,7 @@
 .stat-num {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--accent-gold, #C8A46B);
   margin-bottom: 12px;
   letter-spacing: -0.03em;
   line-height: 1.1;

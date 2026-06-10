@@ -61,7 +61,7 @@ const RevenueImpact = () => {
                 key={idx}
                 className={`revenue-stat-card ${stat.highlight ? 'highlighted-card' : ''}`}
               >
-                <div className={`stat-num ${stat.gold ? 'text-gold' : ''}`}>{stat.value}</div>
+                <div className="stat-num">{stat.value}</div>
                 <div className="stat-desc">{stat.label}</div>
               </div>
             ))}
