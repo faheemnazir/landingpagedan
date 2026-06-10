@@ -157,8 +157,10 @@ button {
 }
 
 .control-btn {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(25, 25, 25, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
   width: 48px;
   height: 48px;
@@ -174,11 +176,12 @@ button {
 .control-btn:hover {
   border-color: var(--accent-gold);
   color: var(--accent-gold);
-  background: rgba(200, 164, 107, 0.05);
+  background: rgba(200, 164, 107, 0.15);
+  box-shadow: 0 4px 12px rgba(200, 164, 107, 0.2);
 }
 
 .control-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 
 .slider-dots {
@@ -191,10 +194,10 @@ button {
 .slider-dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .slider-dot:hover {
@@ -203,7 +206,12 @@ button {
 
 .slider-dot.active {
   background-color: var(--accent-gold);
-  transform: scale(1.2);
+  width: 24px;
+}
+
+/* Remove ugly blue tap flash on mobile */
+a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-card {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Responsive Overrides */
@@ -214,6 +222,12 @@ button {
 }
 
 @media (max-width: 768px) {
+
+  /* Global Streamlined Mobile Section Spacing */
+  section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
 
   .heading-xl {
     font-size: 2.25rem;
