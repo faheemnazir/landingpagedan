@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import logoImg from '../assets/logo-transparent.png';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import './Footer.css';
 
 const Footer = () => {
@@ -35,7 +36,7 @@ const Footer = () => {
             <div className="social-links">
               <a href="https://www.facebook.com/daneenalmajaz/?_rdr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook size={18} /></a>
               <a href="https://www.instagram.com/daneenalmajaz?igsh=MXFrbjA0c3dlaG8xcA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram size={18} /></a>
-              <a href="https://x.com/Daneenalmajaz" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><FaTwitter size={18} /></a>
+              <a href="https://x.com/Daneenalmajaz" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><FaXTwitter size={18} /></a>
               <a href="https://www.linkedin.com/company/daneen-al-majaz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin size={18} /></a>
             </div>
           </div>
