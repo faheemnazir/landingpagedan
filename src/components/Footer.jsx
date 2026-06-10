@@ -53,6 +53,27 @@ const Footer = () => {
                 <li><Link to="/gdpr">GDPR</Link></li>
               </ul>
             </div>
+            <div className="link-group contact-info-group">
+              <h4>Contact Information</h4>
+              <ul>
+                <li className="contact-item">
+                  <span className="contact-label">EMAIL SUPPORT</span>
+                  <a href="mailto:info@daneenalmajaz.in" className="contact-value">info@daneenalmajaz.in</a>
+                </li>
+                <li className="contact-item">
+                  <span className="contact-label">UNITED KINGDOM</span>
+                  <a href="tel:+4403001240371" className="contact-value">+44 0300 124 0371</a>
+                </li>
+                <li className="contact-item">
+                  <span className="contact-label">UNITED ARAB EMIRATES</span>
+                  <a href="tel:+971585668144" className="contact-value">+971 58 566 8144</a>
+                </li>
+                <li className="contact-item">
+                  <span className="contact-label">INDIA SUPPORT</span>
+                  <a href="tel:+919596828515" className="contact-value">+91 9596828515</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
