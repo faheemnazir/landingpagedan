@@ -234,6 +234,6 @@ button {
 /* Global Laptop Figma Zoom Engine */
 @media (max-width: 1440px) and (min-width: 1025px) {
   html {
-    zoom: calc(100vw / 1440);
+    zoom: calc(100vw / 1440px);
   }
 }
