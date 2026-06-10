@@ -37,7 +37,7 @@ const Testimonials = () => {
     },
     {
       quote: "Daneen Al Majaz transformed our vision into a stunning mobile app that exceeded all expectations. Their attention to detail and technical expertise is unmatched. Our user engagement increased by 300% in the first quarter.",
-      author: "Sarah Johnson",
+      author: "Kashifa khan",
       role: "CEO",
       company: "FinanceHub"
     },
