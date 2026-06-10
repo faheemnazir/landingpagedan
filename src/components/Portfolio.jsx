@@ -201,9 +201,7 @@ const Portfolio = () => {
 
       <div className="portfolio-grid" ref={sliderRef} onScroll={handleScroll}>
         {projects.map((project, idx) => (
-          <div key={idx} className={activeSlide === idx ? 'cover-flow-active' : 'cover-flow-inactive'} style={{ display: 'flex' }}>
-            <ProjectCard {...project} />
-          </div>
+          <ProjectCard key={idx} {...project} />
         ))}
       </div>
 
@@ -212,11 +210,22 @@ const Portfolio = () => {
         <button className="control-btn prev" onClick={scrollPrev} aria-label="Previous slide" disabled={activeSlide === 0}>
           <ArrowLeft size={18} />
         </button>
-        <div className="slider-progress-bar">
-          <div 
-            className="slider-progress-fill" 
-            style={{ width: `${((activeSlide + 1) / projects.length) * 100}%` }}
-          />
+        <div className="slider-dots">
+          {projects.map((_, idx) => (
+            <span 
+              key={idx} 
+              className={`slider-dot ${activeSlide === idx ? 'active' : ''}`}
+              onClick={() => {
+                if (sliderRef.current) {
+                  const cardWidth = sliderRef.current.children[0].clientWidth + 16;
+                  sliderRef.current.scrollTo({
+                    left: cardWidth * idx,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+            />
+          ))}
         </div>
         <button className="control-btn next" onClick={scrollNext} aria-label="Next slide" disabled={activeSlide >= projects.length - 1}>
           <ArrowRight size={18} />

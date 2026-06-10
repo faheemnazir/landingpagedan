@@ -21,8 +21,8 @@ const FeatureCard = ({ title, description, points }) => (
 );
 
 const Features = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const sliderRef = useRef(null);
+  const scrollContainerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const featuresData = [
     {
@@ -58,13 +58,17 @@ const Features = () => {
   ];
 
   const handleScroll = () => {
-    if (sliderRef.current) {
-      const scrollLeft = sliderRef.current.scrollLeft;
-      const cardWidth = sliderRef.current.children[0].clientWidth + 24;
-      const newActiveSlide = Math.round(scrollLeft / cardWidth);
-      if (newActiveSlide !== activeSlide && newActiveSlide >= 0 && newActiveSlide < featuresData.length) {
-        setActiveSlide(newActiveSlide);
-      }
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollLeft = container.scrollLeft;
+    const card = container.querySelector('.feature-card');
+    if (!card) return;
+    const cardWidth = card.clientWidth;
+    const gap = 24;
+    const index = Math.round(scrollLeft / (cardWidth + gap));
+    const clampedIndex = Math.min(index, featuresData.length - 1);
+    if (clampedIndex !== activeIndex) {
+      setActiveIndex(clampedIndex);
     }
   };
 
@@ -80,21 +84,28 @@ const Features = () => {
         </p>
       </div>
 
-      <div className="features-grid" ref={sliderRef} onScroll={handleScroll}>
+      <div className="features-grid" ref={scrollContainerRef} onScroll={handleScroll}>
         {featuresData.map((feature, idx) => (
-          <div key={idx} className={activeSlide === idx ? 'cover-flow-active' : 'cover-flow-inactive'} style={{ display: 'flex' }}>
-            <FeatureCard {...feature} />
-          </div>
+          <FeatureCard key={idx} {...feature} />
         ))}
       </div>
       
-      <div className="slider-controls-mobile">
-        <div className="slider-progress-bar">
+      <div className="slider-dots" style={{ justifyContent: 'center', marginTop: '24px' }}>
+        {featuresData.map((_, idx) => (
           <div 
-            className="slider-progress-fill" 
-            style={{ width: `${((activeSlide + 1) / featuresData.length) * 100}%` }}
-          />
-        </div>
+            key={idx} 
+            className={`slider-dot ${idx === activeIndex ? 'active' : ''}`}
+            onClick={() => {
+              if (!scrollContainerRef.current) return;
+              const container = scrollContainerRef.current;
+              const card = container.querySelector('.feature-card');
+              if (!card) return;
+              const cardWidth = card.clientWidth;
+              const gap = 24;
+              container.scrollTo({ left: idx * (cardWidth + gap), behavior: 'smooth' });
+            }}
+          ></div>
+        ))}
       </div>
     </section>
   );

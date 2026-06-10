@@ -93,20 +93,18 @@ const TrustBar = () => {
         {trustItems.map((item, idx) => {
           const Icon = item.icon;
           return (
-            <div key={idx} className={activeIndex === idx ? 'cover-flow-active' : 'cover-flow-inactive'} style={{ display: 'flex' }}>
-              <div className="trust-card">
-                <div className="trust-card-icon">
-                  {item.textIcon
-                    ? <span className="trust-text-icon">{item.textIcon}</span>
-                    : <Icon size={24} />
-                  }
-                </div>
-                <h4 className="trust-card-title">{item.title}</h4>
-                <p className="trust-card-desc">{item.desc}</p>
-                <span className="trust-card-check">
-                  <CheckCircle2 size={14} /> {item.check}
-                </span>
+            <div key={idx} className="trust-card">
+              <div className="trust-card-icon">
+                {item.textIcon
+                  ? <span className="trust-text-icon">{item.textIcon}</span>
+                  : <Icon size={24} />
+                }
               </div>
+              <h4 className="trust-card-title">{item.title}</h4>
+              <p className="trust-card-desc">{item.desc}</p>
+              <span className="trust-card-check">
+                <CheckCircle2 size={14} /> {item.check}
+              </span>
             </div>
           );
         })}
@@ -121,11 +119,22 @@ const TrustBar = () => {
         >
           <ArrowLeft size={18} />
         </button>
-        <div className="slider-progress-bar">
-          <div 
-            className="slider-progress-fill" 
-            style={{ width: `${((activeIndex + 1) / trustItems.length) * 100}%` }}
-          />
+        <div className="slider-dots">
+          {trustItems.map((_, idx) => (
+            <span 
+              key={idx} 
+              className={`slider-dot ${idx === activeIndex ? 'active' : ''}`}
+              onClick={() => {
+                if (!scrollContainerRef.current) return;
+                const container = scrollContainerRef.current;
+                const card = container.querySelector('.trust-card');
+                if (!card) return;
+                const cardWidth = card.clientWidth;
+                const gap = 20;
+                container.scrollTo({ left: idx * (cardWidth + gap), behavior: 'smooth' });
+              }}
+            ></span>
+          ))}
         </div>
         <button 
           className="control-btn next" 
