@@ -85,41 +85,36 @@
 /* ── Brand Card Styles ── */
 .brand-card {
   box-sizing: border-box;
-  width: 220px;
+  width: auto;
   height: 90px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  padding: 12px;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  padding: 0 35px;
+  transition: transform 0.3s ease;
 }
 
 .brand-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: none;
+  background: transparent;
 }
 
 /* Brand card logo image styling */
 .brand-card img {
-  max-width: 85%;
-  max-height: 50px;
+  height: 62px;
+  max-width: 250px;
   object-fit: contain;
-  opacity: 0.65;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .brand-card:hover img {
   opacity: 1;
-  transform: scale(1.05);
-}
-
-.brand-card img.logo-lg {
-  max-height: 55px;
-  max-width: 90%;
+  transform: scale(1.08);
 }
 
 /* ── Stats Cards Grid ── */
