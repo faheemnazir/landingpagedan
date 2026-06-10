@@ -54,10 +54,12 @@ const Navbar = () => {
         <div className="navbar-actions">
           <div className="navbar-btn-wrapper">
             <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
-              <span className="btn-text-desktop">Get Started</span>
-              <span className="btn-text-mobile">Get Free Consultation</span>
+              <div className="navbar-btn-content">
+                <span className="btn-text-desktop">Get Started</span>
+                <span className="btn-text-mobile">Get Free Consultation</span>
+                <span className="btn-subtext">Limited slots available</span>
+              </div>
             </a>
-            <span className="navbar-slots-badge">Limited slots available</span>
           </div>
           <a href="tel:+443001240371" className="navbar-call-btn" aria-label="Call Us">
             <Phone size={18} />
