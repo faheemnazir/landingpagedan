@@ -219,23 +219,28 @@
 
 @media (max-width: 768px) {
   .tech-stack {
-    padding-top: 72px;
-    padding-bottom: 40px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 
   .tech-stack-header h2 {
-    font-size: 1.8rem;
-    line-height: 1.35;
-    padding: 0 10px;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    padding: 0;
   }
 
   .tech-br-desktop {
     display: none;
   }
 
+  .tech-stack-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
   .tech-tabs-container {
     justify-content: flex-start;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .tech-tabs {
@@ -248,20 +253,20 @@
   }
 
   .tech-flat-card {
-    flex: 0 0 170px;
-    min-width: 170px;
-    padding: 24px 12px;
+    flex: 0 0 150px;
+    min-width: 150px;
+    padding: 18px 10px;
   }
 
   .tech-icon-box {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-    margin-bottom: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    margin-bottom: 12px;
   }
 
   .tech-logo-img {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 }
