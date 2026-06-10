@@ -10,7 +10,12 @@
 }
 
 .tech-stack-header h2 {
-  margin-bottom: 12px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0 auto 12px auto;
+  max-width: 800px;
 }
 
 .title-underline {
@@ -216,6 +221,16 @@
   .tech-stack {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+
+  .tech-stack-header h2 {
+    font-size: 1.8rem;
+    line-height: 1.35;
+    padding: 0 10px;
+  }
+
+  .tech-br-desktop {
+    display: none;
   }
 
   .tech-tabs-container {

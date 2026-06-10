@@ -138,8 +138,8 @@ const TechStack = () => {
   return (
     <section className="tech-stack container" id="tech-stack">
       <div className="tech-stack-header">
-        <h2 className="heading-lg" style={{ fontSize: '2.5rem', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: '1.25', margin: '0 0 10px 0' }}>
-          What Technologies Does <span className="text-gold" style={{ color: '#dfb15b', borderBottom: '2px solid #dfb15b', paddingBottom: '4px' }}>Daneen Al Majaz</span> <br /> Use for Mobile App Development?
+        <h2 className="heading-lg">
+          What Technologies Does <span className="text-gold" style={{ color: '#dfb15b', borderBottom: '2px solid #dfb15b', paddingBottom: '4px' }}>Daneen Al Majaz</span> <br className="tech-br-desktop" /> Use for Mobile App Development?
         </h2>
         <div className="title-underline"></div>
         <p className="text-body tech-stack-subtitle">
