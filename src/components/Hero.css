@@ -1,9 +1,9 @@
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 48px);
-  padding-top: clamp(24px, 4vw, 40px);
-  padding-bottom: clamp(24px, 4vw, 40px);
+  gap: clamp(16px, 3vw, 32px);
+  padding-top: clamp(12px, 2vw, 24px);
+  padding-bottom: clamp(12px, 2vw, 24px);
   align-items: flex-start;
 }
 
@@ -25,7 +25,7 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 9999px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .badge-text {
@@ -65,8 +65,8 @@
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
   max-width: 100%;
-  margin-top: 16px;
-  margin-bottom: 32px;
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
 
 .hero-actions {
@@ -74,7 +74,7 @@
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  margin-top: 32px;
+  margin-top: 20px;
   flex-wrap: nowrap;
 }
 
@@ -167,7 +167,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 32px;
+  padding: 24px;
   width: 100%;
   max-width: 576px;
   background: rgba(255, 255, 255, 0.05);
@@ -182,7 +182,7 @@
   font-size: 24px;
   line-height: 32px;
   color: #FFFFFF;
-  margin: 0 0 24px 0;
+  margin: 0 0 16px 0;
 }
 
 .hero-form {
@@ -196,8 +196,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 4px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
@@ -255,7 +255,7 @@
   text-align: center;
   color: #000000;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: 4px;
   transition: opacity 0.2s;
 }
 
@@ -496,61 +496,5 @@
   
   .badge-price {
     font-size: 20px;
-  }
-}
-
-/* Height compression for short laptop viewports to keep everything in a single frame */
-@media (max-height: 850px) and (min-width: 1025px) {
-  .hero {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-  .hero-content {
-    gap: 8px;
-  }
-  .hero-badge {
-    margin-bottom: 8px;
-  }
-  .hero-subtitle {
-    margin-top: 8px;
-    margin-bottom: 16px;
-    font-size: clamp(16px, 1.5vw, 22px);
-  }
-  .hero-actions {
-    margin-top: 16px;
-  }
-  .hero-form-card {
-    padding: 20px 24px;
-  }
-  .hero-form {
-    gap: 10px;
-  }
-  .form-group {
-    margin-bottom: 10px;
-    gap: 4px;
-  }
-  .form-group label {
-    font-size: 11px;
-    line-height: 14px;
-  }
-  .form-group input,
-  .form-group textarea,
-  .form-select {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-  .submit-btn {
-    padding: 10px;
-    font-size: 14px;
-    margin-top: 4px;
-  }
-  .form-footer {
-    padding-top: 12px;
-    margin-top: 12px;
-    gap: 8px;
-  }
-  .form-footer .text-small {
-    font-size: 12px;
-    line-height: 16px;
   }
 }
