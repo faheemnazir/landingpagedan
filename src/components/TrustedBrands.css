@@ -103,76 +103,23 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
 }
 
-/* PRIME CO. logo styling */
-.brand-prime {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+/* Brand card logo image styling */
+.brand-card img {
+  max-width: 85%;
+  max-height: 50px;
+  object-fit: contain;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.prime-main {
-  color: #ff3b30;
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+.brand-card:hover img {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
-.prime-sub {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.55rem;
-  font-weight: 500;
-  margin-top: 4px;
-  letter-spacing: 0.5px;
-}
-
-/* TRUSTON logo styling */
-.brand-truston {
-  color: #ffffff;
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-/* Monstride logo styling */
-.brand-monstride {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.monstride-badge {
-  background: #3182ce;
-  color: #ffffff;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 800;
-  font-size: 0.75rem;
-  box-shadow: 0 0 10px rgba(49, 130, 206, 0.3);
-}
-
-.monstride-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.monstride-main {
-  color: #3182ce;
-  font-weight: 800;
-  font-size: 1.05rem;
-}
-
-.monstride-sub {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.55rem;
-  font-weight: 500;
-  margin-top: 2px;
+.brand-card img.logo-lg {
+  max-height: 55px;
+  max-width: 90%;
 }
 
 /* ── Stats Cards Grid ── */

@@ -2,59 +2,27 @@ import React from 'react';
 import './TrustedBrands.css';
 
 const TrustedBrands = () => {
-  const brands = [
-    {
-      type: 'prime',
-      element: (
-        <div className="brand-prime">
-          <span className="prime-main">PRIME CO.</span>
-          <span className="prime-sub">(MIDDLE EAST) LTD.</span>
-        </div>
-      )
-    },
-    {
-      type: 'truston',
-      element: (
-        <div className="brand-truston">TRUSTON</div>
-      )
-    },
-    {
-      type: 'monstride',
-      element: (
-        <div className="brand-monstride">
-          <span className="monstride-badge">M</span>
-          <div className="monstride-text">
-            <span className="monstride-main">Monstride</span>
-            <span className="monstride-sub">.de</span>
-          </div>
-        </div>
-      )
-    },
-    {
-      type: 'prime',
-      element: (
-        <div className="brand-prime">
-          <span className="prime-main">PRIME CO.</span>
-          <span className="prime-sub">(MIDDLE EAST) LTD.</span>
-        </div>
-      )
-    },
-    {
-      type: 'monstride',
-      element: (
-        <div className="brand-monstride">
-          <span className="monstride-badge">M</span>
-          <div className="monstride-text">
-            <span className="monstride-main">Monstride</span>
-            <span className="monstride-sub">.de</span>
-          </div>
-        </div>
-      )
-    }
+  const brandLogos = [
+    { src: "/images/114a6bba-3d7e-4f6a-b5b4-f098bb5b9d45-removebg-preview.png", alt: "Client Logo" },
+    { src: "/images/ChatGPT_Image_Apr_6__2026__01_46_46_PM-removebg-preview.png", alt: "Client Logo" },
+    { src: "/images/Screenshot_2026-01-16_155336-removebg-preview (1).png", alt: "Client Logo" },
+    { src: "/images/digital_white-removebg-preview.png", alt: "Client Logo" },
+    { src: "/images/image (10).png", alt: "Client Logo" },
+    { src: "/images/image (12).png", alt: "Client Logo" },
+    { src: "/images/image (7).png", alt: "Client Logo" },
+    { src: "/images/image (8).png", alt: "Client Logo" },
+    { src: "/images/image (9).png", alt: "Client Logo" },
+    { src: "/images/image__11_-removebg-preview.png", alt: "Client Logo" },
+    { src: "/images/image__15_-removebg-preview (1).png", alt: "Client Logo" },
+    { src: "/images/image__16_-removebg-preview.png", alt: "Client Logo" },
+    { src: "/images/image__5_-removebg-preview.png", alt: "Client Logo" },
+    { src: "/images/royal_palm_full_white.png", alt: "Client Logo" },
+    { src: "/images/spectra_white-removebg-preview.png", alt: "Client Logo", className: "logo-lg" },
+    { src: "/images/tailor pro.png", alt: "Client Logo", className: "logo-lg" }
   ];
 
-  // Duplicate the array for seamless infinite marquee scrolling
-  const marqueeBrands = [...brands, ...brands, ...brands];
+  // Duplicate for seamless infinite marquee scrolling
+  const marqueeBrands = [...brandLogos, ...brandLogos];
 
   const stats = [
     { value: "500+", label: "Happy Clients" },
@@ -78,7 +46,13 @@ const TrustedBrands = () => {
           <div className="marquee-content">
             {marqueeBrands.map((brand, idx) => (
               <div key={idx} className="brand-card">
-                {brand.element}
+                <img 
+                  loading="lazy" 
+                  decoding="async" 
+                  src={brand.src} 
+                  alt={brand.alt} 
+                  className={brand.className || ''} 
+                />
               </div>
             ))}
           </div>
