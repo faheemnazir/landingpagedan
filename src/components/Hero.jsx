@@ -59,7 +59,7 @@ const Hero = () => {
           We design and develop scalable, high-performance mobile apps tailored to your business goals — from idea to launch. No templates. No compromises. No hidden fees.
         </p>
 
-        <div className="hero-actions" style={{ flexWrap: 'wrap' }}>
+        <div className="hero-actions">
           <a href="#contact" className="btn-start" style={{ textDecoration: 'none' }}>
             Start Your Project <ArrowRight size={18} />
           </a>
@@ -67,20 +67,9 @@ const Hero = () => {
             View Our Work
           </a>
           
-          <div className="hero-pricing-badge" style={{ 
-            display: 'inline-flex', 
-            alignItems: 'center',
-            justifyContent: 'center', 
-            gap: '16px', 
-            padding: '0 36px',
-            height: '60px',
-            border: '1px solid rgba(255, 255, 255, 0.1)', 
-            borderRadius: '8px', 
-            background: 'rgba(255, 255, 255, 0.05)',
-            boxSizing: 'border-box'
-          }}>
-            <span style={{ fontSize: '14px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.9)' }}>Starting At</span>
-            <span style={{ fontSize: '28px', fontWeight: 700, color: '#C8A46B', lineHeight: 1 }}>£5,999</span>
+          <div className="hero-pricing-badge">
+            <span className="badge-label">Starting At</span>
+            <span className="badge-price">£5,999</span>
           </div>
         </div>
       </div>
