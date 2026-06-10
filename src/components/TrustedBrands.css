@@ -84,34 +84,34 @@
 
 .brand-card {
   box-sizing: border-box;
-  width: 200px;
-  height: 100px;
-  background: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-  padding: 12px 24px;
-  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  padding: 23.9676px;
+  width: 226.08px;
+  height: 127.83px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  border: 0.998649px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15.9784px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .brand-card:hover {
-  background: #050505;
-  border-color: rgba(200, 164, 107, 0.3);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Brand card logo image styling */
 .brand-card img {
   height: 100%;
   width: 100%;
-  max-height: 64px;
-  max-width: 150px;
   object-fit: contain;
   opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .brand-card:hover img {
