@@ -1,28 +1,30 @@
 import React from 'react';
 import './TrustedBrands.css';
 
+// Import the same client logos as the portfolio section
+import bakirImg from '../assets/bakir.png';
+import cemtacImg from '../assets/cemtac.png';
+import coldstoreImg from '../assets/coldstore.png';
+import digidalImg from '../assets/digidal.png';
+import kashmiriRealtorImg from '../assets/kashmiriRealtor.png';
+import snookerImg from '../assets/snooker.png';
+import valeMountsImg from '../assets/vale_mounts.png';
+import ziplynowImg from '../assets/ziplynow.png';
+
 const TrustedBrands = () => {
   const brandLogos = [
-    { src: "/images/114a6bba-3d7e-4f6a-b5b4-f098bb5b9d45-removebg-preview.png", alt: "Client Logo" },
-    { src: "/images/ChatGPT_Image_Apr_6__2026__01_46_46_PM-removebg-preview.png", alt: "Client Logo" },
-    { src: "/images/Screenshot_2026-01-16_155336-removebg-preview (1).png", alt: "Client Logo" },
-    { src: "/images/digital_white-removebg-preview.png", alt: "Client Logo" },
-    { src: "/images/image (10).png", alt: "Client Logo" },
-    { src: "/images/image (12).png", alt: "Client Logo" },
-    { src: "/images/image (7).png", alt: "Client Logo" },
-    { src: "/images/image (8).png", alt: "Client Logo" },
-    { src: "/images/image (9).png", alt: "Client Logo" },
-    { src: "/images/image__11_-removebg-preview.png", alt: "Client Logo" },
-    { src: "/images/image__15_-removebg-preview (1).png", alt: "Client Logo" },
-    { src: "/images/image__16_-removebg-preview.png", alt: "Client Logo" },
-    { src: "/images/image__5_-removebg-preview.png", alt: "Client Logo" },
-    { src: "/images/royal_palm_full_white.png", alt: "Client Logo" },
-    { src: "/images/spectra_white-removebg-preview.png", alt: "Client Logo", className: "logo-lg" },
-    { src: "/images/tailor pro.png", alt: "Client Logo", className: "logo-lg" }
+    { src: kashmiriRealtorImg, alt: "Kashmiri Realtor" },
+    { src: cemtacImg, alt: "Cemtac Cement" },
+    { src: snookerImg, alt: "The Snooker Academy" },
+    { src: valeMountsImg, alt: "Vale Mounts" },
+    { src: coldstoreImg, alt: "ColdStore J&K" },
+    { src: bakirImg, alt: "Bakir Group" },
+    { src: digidalImg, alt: "Digidal" },
+    { src: ziplynowImg, alt: "ZiplyNow" }
   ];
 
   // Duplicate for seamless infinite marquee scrolling
-  const marqueeBrands = [...brandLogos, ...brandLogos];
+  const marqueeBrands = [...brandLogos, ...brandLogos, ...brandLogos];
 
   const stats = [
     { value: "500+", label: "Happy Clients" },
