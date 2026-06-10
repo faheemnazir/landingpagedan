@@ -118,13 +118,7 @@
 }
 
 .btn-subtext {
-  color: #ff3b30;
-  font-size: 8px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 3px;
-  line-height: 1;
+  display: none;
 }
 
 .navbar-btn {
@@ -133,13 +127,7 @@
   justify-content: center;
   padding: 10px 20px;
   border-radius: 6px;
-  animation: buttonPulse 2s infinite ease-in-out;
   transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.navbar-btn:hover {
-  animation-play-state: paused;
-  transform: scale(1.05) !important;
 }
 
 @keyframes buttonPulse {
@@ -251,10 +239,21 @@
     padding: 8px 14px;
     font-size: 11px;
     margin-right: 0;
+    animation: buttonPulse 2s infinite ease-in-out;
+  }
+  .navbar-btn:hover {
+    animation-play-state: paused;
+    transform: scale(1.05) !important;
   }
   .btn-subtext {
+    display: inline-block;
+    color: #ff3b30;
     font-size: 7px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-top: 2px;
+    line-height: 1;
   }
   .navbar-call-btn {
     width: 34px;
