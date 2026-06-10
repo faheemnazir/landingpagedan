@@ -228,6 +228,8 @@
   }
   .btn-text-mobile {
     display: inline;
+    color: #c30000 !important;
+    font-weight: 800;
   }
   .navbar-actions {
     gap: 8px;
@@ -244,16 +246,6 @@
   .navbar-btn:hover {
     animation-play-state: paused;
     transform: scale(1.05) !important;
-  }
-  .btn-subtext {
-    display: inline-block;
-    color: #c30000;
-    font-size: 8px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 2px;
-    line-height: 1;
   }
   .navbar-call-btn {
     width: 34px;
