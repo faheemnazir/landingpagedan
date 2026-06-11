@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Star, Quote, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Star, Quote, ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 import './Testimonials.css';
 
 const TestimonialCard = ({ quote, author, role, company }) => (
@@ -18,6 +18,9 @@ const TestimonialCard = ({ quote, author, role, company }) => (
         <p className="author-role">{role ? `${role}, ` : ''}{company}</p>
       </div>
     </div>
+    <a href="#contact" className="testimonial-cta-btn">
+      Book Consultation <ArrowUpRight size={14} style={{ marginLeft: '2px' }} />
+    </a>
   </div>
 );
 
