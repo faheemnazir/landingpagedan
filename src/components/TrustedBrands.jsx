@@ -15,7 +15,6 @@ import royalPalmImg from '../assets/new_partnars/04_royal_palm_holidays.png';
 import astoraImg from '../assets/new_partnars/05_astora.png';
 import tailorProImg from '../assets/new_partnars/05_tailor_pro.png';
 import digidalImg from '../assets/new_partnars/06_digindal.png';
-import seriesMarriottImg from '../assets/new_partnars/06_series_by_marriott.png';
 import kashmirGiftImg from '../assets/new_partnars/07_kashmir_gift.png';
 import daintyImg from '../assets/new_partnars/08_dainty.png';
 import trustonImg from '../assets/new_partnars/08_truston.png';
@@ -35,7 +34,6 @@ const TrustedBrands = () => {
     { src: royalPalmImg, alt: "Royal Palm Holidays" },
     { src: motoboyImg, alt: "Motoboy.ae" },
     { src: astoraImg, alt: "Astora Equipment Trading" },
-    { src: seriesMarriottImg, alt: "Series by Marriott / Deprel" },
     { src: daintyImg, alt: "Spectra Bathe Gallery" },
     { src: coldstoreImg, alt: "ColdStore J&K" },
     { src: ziplynowImg, alt: "ZiplyNow" }
