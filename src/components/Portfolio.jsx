@@ -13,7 +13,7 @@ import zipply from '../assets/tech/portfolioimages/zipply.png';
 import coldstorage from '../assets/tech/portfolioimages/coldstorage.png';
 import digidal from '../assets/tech/portfolioimages/digidal.png';
 
-const ProjectCard = ({ title, number, tags, description, stats, category, image, bg = '#ffffff', fit = 'contain', padding = '12px', onCardClick }) => {
+const ProjectCard = ({ title, number, tags, description, stats, category, image, link, bg = '#ffffff', fit = 'contain', padding = '12px', onCardClick }) => {
   return (
     <div className="project-card" onClick={onCardClick} style={{ cursor: 'pointer' }}>
       <div className="project-image-placeholder" style={{ backgroundColor: bg, padding: padding }}>
@@ -51,9 +51,15 @@ const ProjectCard = ({ title, number, tags, description, stats, category, image,
           ))}
         </div>
 
-        <button className="project-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left' }}>
-          View Details <ArrowUpRight size={16} />
-        </button>
+        <a 
+          href={link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="project-link" 
+          onClick={(e) => e.stopPropagation()}
+        >
+          Visit Website <ArrowUpRight size={16} />
+        </a>
       </div>
     </div>
   );
