@@ -18,6 +18,7 @@ const TechStack = () => {
   const isScrollingToTab = useRef(false);
   const scrollTimeoutRef = useRef(null);
   const scrollThrottledRef = useRef(false);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 1024);
@@ -92,13 +93,15 @@ const TechStack = () => {
     if (tabsRef.current) {
       const activeEl = tabsRef.current.querySelector('.tab-btn.active');
       if (activeEl) {
-        activeEl.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
+        const container = tabsRef.current;
+        const scrollLeft = activeEl.offsetLeft - (container.clientWidth / 2) + (activeEl.clientWidth / 2);
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: isFirstRender.current ? 'auto' : 'smooth'
         });
       }
     }
+    isFirstRender.current = false;
   }, [activeTab]);
 
   const stackData = {
