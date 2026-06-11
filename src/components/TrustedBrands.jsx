@@ -14,23 +14,23 @@ import ziplynowImg from '../assets/ziplynow.png';
 // Import trusted partner logos
 import lotusImg from '../assets/partners/lotus_medical.png';
 import apnaChickenImg from '../assets/partners/apna_chicken.png';
-import angelWingsImg from '../assets/partners/angel_wings.png';
+import angelWingsImg from '../assets/partners/angel_wings.jpeg'; // Reverted to jpeg
 import cemtacPartnerImg from '../assets/partners/cemtac.png';
-import tailorProLightImg from '../assets/partners/tailor_pro_light.png';
+import tailorProLightImg from '../assets/partners/tailor_pro_light.jpeg'; // Reverted to jpeg
 import digidalPartnerImg from '../assets/partners/digidal.png';
-import kashmirGiftImg from '../assets/partners/kashmir_gift.png';
-import trustonImg from '../assets/partners/truston.png';
-import marriottImg from '../assets/partners/series_marriott.png';
+import kashmirGiftImg from '../assets/partners/kashmir_gift.jpeg'; // Reverted to jpeg
+import trustonImg from '../assets/partners/truston.jpeg'; // Reverted to jpeg
+import marriottImg from '../assets/partners/series_marriott.jpeg'; // Reverted to jpeg
 import auraImg from '../assets/partners/aura.png';
 import daintyImg from '../assets/partners/dainty.png';
 import abraqImg from '../assets/partners/abraq_agro.png';
 import primeCoImg from '../assets/partners/prime_co.png';
 import motoboyImg from '../assets/partners/motoboy.png';
 import astoraImg from '../assets/partners/astora.png';
-import royalPalmImg from '../assets/partners/royal_palm.png';
+import royalPalmImg from '../assets/partners/royal_palm.jpeg'; // Reverted to jpeg
 import deprelImg from '../assets/partners/deprel.png';
 import spectraImg from '../assets/partners/spectra_bathe.png';
-import tailorProImg from '../assets/partners/tailor_pro.png';
+import tailorProImg from '../assets/partners/tailor_pro.jpeg'; // Reverted to jpeg
 
 const TrustedBrands = () => {
   const brandLogos = [
@@ -43,26 +43,26 @@ const TrustedBrands = () => {
     { src: bakirImg, alt: "Bakir Group" },
     { src: digidalImg, alt: "Digidal" },
     { src: ziplynowImg, alt: "ZiplyNow" },
-    // New trusted partner logos (white bg — need blend mode)
-    { src: lotusImg, alt: "Lotus Medical Centre", blend: true },
-    { src: apnaChickenImg, alt: "Apna Chicken Centre", blend: true },
-    { src: angelWingsImg, alt: "Angel Wings", blend: true },
-    { src: cemtacPartnerImg, alt: "Cemtac Cements", blend: true },
-    { src: tailorProLightImg, alt: "Tailor Pro", blend: true },
-    { src: digidalPartnerImg, alt: "Digidal", blend: true },
-    { src: kashmirGiftImg, alt: "Kashmir Gift", blend: true },
-    { src: trustonImg, alt: "Truston US", blend: true },
-    { src: marriottImg, alt: "Series by Marriott", blend: true },
-    { src: auraImg, alt: "Aura", blend: true },
-    { src: daintyImg, alt: "Dainty", blend: true },
-    { src: abraqImg, alt: "ABRAQ Agro", blend: true },
-    { src: primeCoImg, alt: "Prime Co. Middle East", blend: true },
-    { src: motoboyImg, alt: "Motoboy", blend: true },
-    { src: astoraImg, alt: "Astora Equipment Trading", blend: true },
-    { src: royalPalmImg, alt: "Royal Palm Holidays", blend: true },
-    { src: deprelImg, alt: "Deprel", blend: true },
-    { src: spectraImg, alt: "Spectra Bathe Gallery", blend: true },
-    { src: tailorProImg, alt: "Tailor Pro", blend: true },
+    // New trusted partner logos
+    { src: lotusImg, alt: "Lotus Medical Centre" },
+    { src: apnaChickenImg, alt: "Apna Chicken Centre" },
+    { src: angelWingsImg, alt: "Angel Wings", blendScreen: true },
+    { src: cemtacPartnerImg, alt: "Cemtac Cements" },
+    { src: tailorProLightImg, alt: "Tailor Pro" },
+    { src: digidalPartnerImg, alt: "Digidal" },
+    { src: kashmirGiftImg, alt: "Kashmir Gift", blendScreen: true },
+    { src: trustonImg, alt: "Truston US", blendScreen: true },
+    { src: marriottImg, alt: "Series by Marriott", blendScreen: true },
+    { src: auraImg, alt: "Aura" },
+    { src: daintyImg, alt: "Dainty" },
+    { src: abraqImg, alt: "ABRAQ Agro" },
+    { src: primeCoImg, alt: "Prime Co. Middle East" },
+    { src: motoboyImg, alt: "Motoboy" },
+    { src: astoraImg, alt: "Astora Equipment Trading" },
+    { src: royalPalmImg, alt: "Royal Palm Holidays", blendScreen: true },
+    { src: deprelImg, alt: "Deprel" },
+    { src: spectraImg, alt: "Spectra Bathe Gallery" },
+    { src: tailorProImg, alt: "Tailor Pro" },
   ];
 
   // Duplicate for seamless infinite marquee scrolling
@@ -89,7 +89,7 @@ const TrustedBrands = () => {
         <div className="marquee-track">
           <div className="marquee-content">
             {marqueeBrands.map((brand, idx) => (
-              <div key={idx} className={`brand-card${brand.blend ? ' brand-card--blend' : ''}`}>
+              <div key={idx} className={`brand-card${brand.blend ? ' brand-card--blend' : ''}${brand.blendScreen ? ' brand-card--screen' : ''}`}>
                 <img 
                   loading="lazy" 
                   decoding="async" 
