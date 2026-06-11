@@ -341,7 +341,7 @@
   }
 
   .footer {
-    padding-bottom: 0px;
+    padding-bottom: 60px; /* Space for the mobile sticky bottom bar */
   }
 
   .footer-content {
@@ -407,31 +407,5 @@
   }
 }
 
-.footer-mobile-cta {
-  display: none; /* Hidden on desktop */
-}
 
-@media (max-width: 768px) {
-  .footer-mobile-cta {
-    display: block;
-    width: 100%;
-    background-color: var(--accent-gold, #C8A46B);
-    text-align: center;
-    border-radius: 16px 16px 0 0; /* Rounded top corners, flat bottom */
-    margin-top: 24px;
-    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
-  }
-
-  .footer-mobile-cta a {
-    display: block;
-    width: 100%;
-    padding: 16px 24px;
-    color: #000000 !important; /* Black text */
-    font-weight: 700; /* Bold */
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-  }
-}
 

@@ -6,17 +6,15 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [nearBottom, setNearBottom] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
+      setScrolled(window.scrollY > 100);
       const isNearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 350;
-      if (window.scrollY > 100 && !isNearBottom) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setNearBottom(isNearBottom);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -70,8 +68,12 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <a href="tel:+443001240371" className={`floating-call-btn ${scrolled ? 'visible' : ''}`} aria-label="Call Us Now">
+      <a href="tel:+443001240371" className={`floating-call-btn ${scrolled && !nearBottom ? 'visible' : ''}`} aria-label="Call Us Now">
         <Phone size={24} />
+      </a>
+
+      <a href="#contact" className={`floating-consult-btn ${scrolled ? 'visible' : ''}`}>
+        Book a Free Consultation Now
       </a>
     </>
   );

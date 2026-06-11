@@ -199,7 +199,55 @@
   box-shadow: 0 6px 20px rgba(201, 160, 99, 0.6);
 }
 
+/* Floating Consultation Button (Desktop Hidden, Mobile Sticky Bar) */
+.floating-consult-btn {
+  display: none;
+}
 
+@keyframes buttonPulseMobile {
+  0%, 100% {
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 -4px 20px rgba(201, 160, 99, 0.4);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-consult-btn {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--accent-gold, #C8A46B);
+    color: #000000 !important; /* Black text */
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    padding: 11px 20px; /* Reduced height padding */
+    border-radius: 16px 16px 0 0; /* Rounded top corners, flat bottom */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: buttonPulseMobile 2s infinite ease-in-out;
+    transition: background-color 0.3s ease;
+  }
+
+  .floating-consult-btn.visible {
+    display: flex;
+  }
+
+  .floating-consult-btn.visible:hover {
+    background-color: var(--accent-gold-hover, #d8b276);
+  }
+}
 
 .navbar-banner {
   display: none; /* Hidden on desktop */

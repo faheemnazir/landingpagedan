@@ -93,12 +93,6 @@ const Footer = () => {
           </a>
         </div>
       </div>
-
-      <div className="footer-mobile-cta">
-        <a href="#contact">
-          BOOK CONSULTATION NOW
-        </a>
-      </div>
     </footer>
   );
 };
