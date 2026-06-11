@@ -5,13 +5,14 @@ import './Portfolio.css';
 // Import project images from assets
 import bakirImg from '../assets/bakir.png';
 import cemtacImg from '../assets/cemtac.png';
-import coldstoreImg from '../assets/coldstore.png';
 import digidalImg from '../assets/digidal.png';
 import kashmiriRealtorImg from '../assets/kashmiriRealtor.png';
 import snookerImg from '../assets/snooker.png';
 import valeMountsImg from '../assets/vale_mounts.png';
-import zipplyImg from '../assets/tech/portfolioimages/zipply.png';
-import coldstoreImg from '../assets/tech/portfolioimages/coldstorage.png';
+import zipply from '../assets/tech/portfolioimages/zipply.png';
+import coldstorage from '../assets/tech/portfolioimages/coldstorage.png';
+import digidal from '../assets/tech/portfolioimages/digidal.png';
+
 const ProjectCard = ({ title, tags, description, stats, category, image, link, bg = '#ffffff', fit = 'contain', padding = '12px' }) => {
   const handleClick = (e) => {
     // Prevent double navigation if the user clicks directly on the project-link <a> tag
@@ -114,7 +115,7 @@ const Portfolio = () => {
     },
     {
       title: "❄️ ColdStore Pro",
-      image: coldstoreImg,
+      image: coldstorage,
       link: "https://cs.daneenalmajaz.in/",
       category: "Smart Logistics / IoT",
       tags: ["IoT", "Sensors", "Real-time"],
@@ -126,7 +127,7 @@ const Portfolio = () => {
     },
     {
       title: "📦 ZipplyNow",
-      image: zipplyImg,
+      image: zipply,
       link: "https://zipplynow.com",
       category: "Logistics SaaS",
       tags: ["Delivery", "Real-time", "SaaS"],
@@ -138,7 +139,7 @@ const Portfolio = () => {
     },
     {
       title: "🎬 DigiDal Media",
-      image: digidalImg,
+      image: digidal,
       link: "https://www.digidalglobal.com/",
       category: "Streaming SaaS",
       tags: ["Streaming", "Content Creation", "Social"],
