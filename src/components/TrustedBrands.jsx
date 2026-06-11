@@ -12,25 +12,25 @@ import valeMountsImg from '../assets/vale_mounts.png';
 import ziplynowImg from '../assets/ziplynow.png';
 
 // Import trusted partner logos
-import lotusImg from '../assets/partners/lotus_medical.jpeg';
-import apnaChickenImg from '../assets/partners/apna_chicken.jpeg';
-import angelWingsImg from '../assets/partners/angel_wings.jpeg';
-import cemtacPartnerImg from '../assets/partners/cemtac.jpeg';
-import tailorProLightImg from '../assets/partners/tailor_pro_light.jpeg';
-import digidalPartnerImg from '../assets/partners/digidal.jpeg';
-import kashmirGiftImg from '../assets/partners/kashmir_gift.jpeg';
-import trustonImg from '../assets/partners/truston.jpeg';
-import marriottImg from '../assets/partners/series_marriott.jpeg';
-import auraImg from '../assets/partners/aura.jpeg';
-import daintyImg from '../assets/partners/dainty.jpeg';
-import abraqImg from '../assets/partners/abraq_agro.jpeg';
-import primeCoImg from '../assets/partners/prime_co.jpeg';
-import motoboyImg from '../assets/partners/motoboy.jpeg';
-import astoraImg from '../assets/partners/astora.jpeg';
-import royalPalmImg from '../assets/partners/royal_palm.jpeg';
-import deprelImg from '../assets/partners/deprel.jpeg';
-import spectraImg from '../assets/partners/spectra_bathe.jpeg';
-import tailorProImg from '../assets/partners/tailor_pro.jpeg';
+import lotusImg from '../assets/partners/lotus_medical.png';
+import apnaChickenImg from '../assets/partners/apna_chicken.png';
+import angelWingsImg from '../assets/partners/angel_wings.png';
+import cemtacPartnerImg from '../assets/partners/cemtac.png';
+import tailorProLightImg from '../assets/partners/tailor_pro_light.png';
+import digidalPartnerImg from '../assets/partners/digidal.png';
+import kashmirGiftImg from '../assets/partners/kashmir_gift.png';
+import trustonImg from '../assets/partners/truston.png';
+import marriottImg from '../assets/partners/series_marriott.png';
+import auraImg from '../assets/partners/aura.png';
+import daintyImg from '../assets/partners/dainty.png';
+import abraqImg from '../assets/partners/abraq_agro.png';
+import primeCoImg from '../assets/partners/prime_co.png';
+import motoboyImg from '../assets/partners/motoboy.png';
+import astoraImg from '../assets/partners/astora.png';
+import royalPalmImg from '../assets/partners/royal_palm.png';
+import deprelImg from '../assets/partners/deprel.png';
+import spectraImg from '../assets/partners/spectra_bathe.png';
+import tailorProImg from '../assets/partners/tailor_pro.png';
 
 const TrustedBrands = () => {
   const brandLogos = [
