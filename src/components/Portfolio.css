@@ -240,10 +240,14 @@
   }
 
   .project-card {
-    flex: 0 0 85%;
+    flex: 0 0 80%;
     max-width: none;
     scroll-snap-align: start;
-    min-height: 420px; /* Lock height to match testimonials cards on mobile */
+    min-height: 390px; /* Lock height to match testimonials cards on mobile */
+  }
+
+  .project-image-placeholder {
+    height: 190px;
   }
 }
 
