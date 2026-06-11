@@ -205,28 +205,23 @@
 }
 
 @media (max-width: 768px) {
-  .floating-call-btn.visible {
-    bottom: 70px; /* Push above full-width bottom bar */
-  }
-
   .floating-consult-btn.visible {
     display: flex;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    transform: none;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     background: var(--accent-gold, #C8A46B);
     color: #c30000; /* Red text to match LIMITED SLOTS AVAILABLE */
     font-weight: 900;
     text-transform: uppercase;
-    font-size: 14px; /* Increased text size to fit card/bar better */
+    font-size: 12px;
     letter-spacing: 0.5px;
     white-space: nowrap;
-    padding: 16px 20px; /* Taller bar spanning whole width */
-    border-radius: 0; /* Stretches to screen edges */
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+    padding: 10px 24px; /* Larger padding for better pill proportion */
+    border-radius: 30px; /* Fully rounded corner */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     text-decoration: none;
     align-items: center;
     justify-content: center;
