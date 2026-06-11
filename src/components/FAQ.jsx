@@ -69,7 +69,7 @@ const FAQ = () => {
 
       <div className="faq-cta">
         <p className="text-body">Still have questions? We're here to help!</p>
-        <a href="#contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Contact Us</a>
+        <a href="#contact-form" className="btn btn-primary" style={{ textDecoration: 'none' }}>Contact Us</a>
       </div>
     </section>
   );

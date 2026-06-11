@@ -50,7 +50,7 @@ const Compare = () => {
       </div>
       
       <div className="compare-action">
-        <a href="#contact" className="btn btn-primary" style={{ textDecoration: 'none' }}>Start Your Project Today</a>
+        <a href="#contact-form" className="btn btn-primary" style={{ textDecoration: 'none' }}>Start Your Project Today</a>
       </div>
     </section>
   );

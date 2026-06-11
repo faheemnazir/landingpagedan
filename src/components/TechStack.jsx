@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './TechStack.css';
 
 const TechStack = () => {
@@ -11,6 +11,68 @@ const TechStack = () => {
   ];
 
   const [activeTab, setActiveTab] = useState("App Technologies");
+  const touchStartRef = useRef({ x: 0, y: 0 });
+  const wrapperRef = useRef(null);
+  const tabsRef = useRef(null);
+
+  const handleTouchStart = (e) => {
+    touchStartRef.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY
+    };
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!wrapperRef.current) return;
+    const diffX = e.changedTouches[0].clientX - touchStartRef.current.x;
+    const diffY = e.changedTouches[0].clientY - touchStartRef.current.y;
+
+    // Horizontal swipe threshold
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 60) {
+      const container = wrapperRef.current;
+      const isAtStart = container.scrollLeft <= 15;
+      const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 15;
+
+      const currentIdx = categories.indexOf(activeTab);
+
+      if (diffX < 0 && isAtEnd) {
+        // Swiped left (scrolling right) at the end -> Go to next tab
+        if (currentIdx < categories.length - 1) {
+          const nextTab = categories[currentIdx + 1];
+          setActiveTab(nextTab);
+          setTimeout(() => {
+            if (wrapperRef.current) {
+              wrapperRef.current.scrollTo({ left: 0, behavior: 'auto' });
+            }
+          }, 30);
+        }
+      } else if (diffX > 0 && isAtStart) {
+        // Swiped right (scrolling left) at the start -> Go to previous tab
+        if (currentIdx > 0) {
+          const prevTab = categories[currentIdx - 1];
+          setActiveTab(prevTab);
+          setTimeout(() => {
+            if (wrapperRef.current) {
+              wrapperRef.current.scrollTo({ left: wrapperRef.current.scrollWidth, behavior: 'auto' });
+            }
+          }, 30);
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (tabsRef.current) {
+      const activeEl = tabsRef.current.querySelector('.tab-btn.active');
+      if (activeEl) {
+        activeEl.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      }
+    }
+  }, [activeTab]);
 
   const stackData = {
     "App Technologies": [
@@ -149,7 +211,7 @@ const TechStack = () => {
 
       {/* Tabs Navigation */}
       <div className="tech-tabs-container">
-        <div className="tech-tabs">
+        <div className="tech-tabs" ref={tabsRef}>
           {categories.map((cat, idx) => (
             <button
               key={idx}
@@ -163,7 +225,12 @@ const TechStack = () => {
       </div>
 
       {/* Horizontal Cards Grid */}
-      <div className="tech-cards-wrapper">
+      <div 
+        className="tech-cards-wrapper" 
+        ref={wrapperRef}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="tech-cards-row">
           {stackData[activeTab].map((item, idx) => {
             const logoUrl = getTechLogoUrl(item.name);

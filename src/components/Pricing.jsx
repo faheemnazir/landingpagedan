@@ -22,7 +22,7 @@ const PricingCard = ({ price, title, features, buttonText, highlighted = false, 
           </li>
         ))}
       </ul>
-      <a href="#contact" className="btn btn-outline" style={{ marginTop: 'auto', width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', textDecoration: 'none' }}>
+      <a href="#contact-form" className="btn btn-outline" style={{ marginTop: 'auto', width: '100%', display: 'flex', justifyContent: 'center', gap: '8px', textDecoration: 'none' }}>
         {buttonText} <ArrowRight size={18} />
       </a>
     </div>
@@ -107,7 +107,7 @@ const Pricing = () => {
           </div>
         </div>
         <div className="included-footer text-small">
-          Need a custom solution? <a href="#contact" className="text-gold">Contact our team</a> for a personalized quote tailored to your specific requirements.
+          Need a custom solution? <a href="#contact-form" className="text-gold">Contact our team</a> for a personalized quote tailored to your specific requirements.
         </div>
       </div>
     </section>

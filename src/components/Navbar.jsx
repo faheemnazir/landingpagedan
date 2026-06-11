@@ -50,13 +50,13 @@ const Navbar = () => {
           <li><a href="/#contact">Contact</a></li>
         </ul>
 
-        <a href="#contact" className="navbar-banner" style={{ textDecoration: 'none' }}>
+        <a href="#contact-form" className="navbar-banner" style={{ textDecoration: 'none' }}>
           <span className="banner-text">LIMITED SLOTS AVAILABLE !</span>
         </a>
 
         <div className="navbar-actions">
           <div className="navbar-btn-wrapper">
-            <a href="#contact" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
+            <a href="#contact-form" className="btn btn-primary navbar-btn" style={{ textDecoration: 'none' }}>
               <div className="navbar-btn-content">
                 <span className="btn-text-desktop">Get Started</span>
               </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
         <Phone size={24} />
       </a>
 
-      <a href="#contact" className={`floating-consult-btn ${scrolled ? 'visible' : ''}`}>
+      <a href="#contact-form" className={`floating-consult-btn ${scrolled ? 'visible' : ''}`}>
         Book a Free Consultation Now
       </a>
     </>

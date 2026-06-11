@@ -49,7 +49,7 @@ const RevenueImpact = () => {
           <p className="text-body revenue-subtitle">
             UK businesses that invest in a custom mobile app are consistently outperforming those that don't. From faster customer service to automated operations and repeat purchase loops — here is the kind of measurable impact Daneen Al Majaz IT Services delivers for our clients.
           </p>
-          <a href="#contact" className="btn btn-gold cta-btn " >
+          <a href="#contact-form" className="btn btn-gold cta-btn " >
             Get My Free Consultation <span className="arrow">→</span>
           </a>
         </div>

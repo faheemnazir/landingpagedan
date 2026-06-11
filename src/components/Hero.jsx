@@ -60,7 +60,7 @@ const Hero = () => {
         </p>
 
         <div className="hero-actions">
-          <a href="#contact" className="btn-start" style={{ textDecoration: 'none' }}>
+          <a href="#contact-form" className="btn-start" style={{ textDecoration: 'none' }}>
             Start Your Project <ArrowRight size={18} />
           </a>
           <a href="#portfolio" className="btn-view" style={{ textDecoration: 'none' }}>

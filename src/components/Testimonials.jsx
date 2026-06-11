@@ -18,7 +18,7 @@ const TestimonialCard = ({ quote, author, role, company }) => (
         <p className="author-role">{role ? `${role}, ` : ''}{company}</p>
       </div>
     </div>
-    <a href="#contact" className="testimonial-cta-btn">
+    <a href="#contact-form" className="testimonial-cta-btn">
       Book Consultation <ArrowUpRight size={14} style={{ marginLeft: '2px' }} />
     </a>
   </div>

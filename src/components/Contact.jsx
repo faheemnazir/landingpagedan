@@ -109,7 +109,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="form-inner-card">
+        <div className="form-inner-card" id="contact-form">
           <div style={{ width: '100%' }}>
             {/* The Content Wrapper */}
             <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
