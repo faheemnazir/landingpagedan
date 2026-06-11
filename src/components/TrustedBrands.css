@@ -72,7 +72,7 @@
 .marquee-content {
   display: flex;
   gap: 24px;
-  animation: marquee-slide 25s linear infinite;
+  animation: marquee-slide 60s linear infinite;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -119,6 +119,21 @@
 .brand-card:hover img {
   opacity: 1;
   transform: scale(1.05);
+}
+
+/* White-background partner logos: blend away the white */
+.brand-card--blend {
+  background: #000000;
+}
+
+.brand-card--blend img {
+  mix-blend-mode: screen;
+  filter: invert(1);
+  opacity: 0.85;
+}
+
+.brand-card--blend:hover img {
+  opacity: 1;
 }
 
 /* ── Stats Cards Grid ── */
