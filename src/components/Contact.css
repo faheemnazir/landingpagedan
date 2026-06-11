@@ -70,6 +70,7 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--border-radius-lg);
   padding: clamp(16px, 3vh, 40px);
+  scroll-margin-top: 100px;
 }
 
 .form-title {
