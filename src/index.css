@@ -141,7 +141,7 @@ button {
 
 /* ── Global Slider Controls ── */
 .slider-controls {
-  display: flex;
+  display: none; /* Hidden by default on desktop for grid layouts */
   gap: 16px;
   justify-content: center;
   align-items: center;
@@ -222,6 +222,10 @@ a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-ca
 }
 
 @media (max-width: 768px) {
+
+  .slider-controls {
+    display: flex;
+  }
 
   /* Global Streamlined Mobile Section Spacing */
   section {

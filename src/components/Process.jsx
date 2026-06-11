@@ -34,7 +34,7 @@ const Process = () => {
     },
     {
       icon: Code2,
-      time: "8-12 weeks",
+      time: "8-14 weeks",
       title: "Development",
       description: "Agile development sprints with weekly demos, ensuring transparency and incorporating your feedback at every stage."
     },
@@ -109,8 +109,8 @@ const Process = () => {
         </button>
         <div className="slider-dots">
           {[0, 1, 2, 3].map((idx) => (
-            <span 
-              key={idx} 
+            <span
+              key={idx}
               className={`slider-dot ${activeSlide === idx ? 'active' : ''}`}
               onClick={() => {
                 if (sliderRef.current) {

@@ -1,68 +1,44 @@
 import React from 'react';
 import './TrustedBrands.css';
 
-// Import the existing client logos
-import bakirImg from '../assets/bakir.png';
-import cemtacImg from '../assets/cemtac.png';
 import coldstoreImg from '../assets/coldstore.png';
-import digidalImg from '../assets/digidal.png';
-import kashmiriRealtorImg from '../assets/kashmiriRealtor.png';
-import snookerImg from '../assets/snooker.png';
-import valeMountsImg from '../assets/vale_mounts.png';
 import ziplynowImg from '../assets/ziplynow.png';
 
-// Import trusted partner logos
-import lotusImg from '../assets/partners/lotus_medical.png';
-import apnaChickenImg from '../assets/partners/apna_chicken.png';
-import angelWingsImg from '../assets/partners/angel_wings.png';
-import cemtacPartnerImg from '../assets/partners/cemtac.png';
-import tailorProLightImg from '../assets/partners/tailor_pro_light.png';
-import digidalPartnerImg from '../assets/partners/digidal.png';
-import kashmirGiftImg from '../assets/partners/kashmir_gift.png';
-import trustonImg from '../assets/partners/truston.png';
-import marriottImg from '../assets/partners/series_marriott.png';
-import auraImg from '../assets/partners/aura.png';
-import daintyImg from '../assets/partners/dainty.png';
-import abraqImg from '../assets/partners/abraq_agro.png';
-import primeCoImg from '../assets/partners/prime_co.png';
-import motoboyImg from '../assets/partners/motoboy.png';
-import astoraImg from '../assets/partners/astora.png';
-import royalPalmImg from '../assets/partners/royal_palm.png';
-import deprelImg from '../assets/partners/deprel.png';
-import spectraImg from '../assets/partners/spectra_bathe.png';
-import tailorProImg from '../assets/partners/tailor_pro.png';
+
+import abraqAgroImg from '../assets/new_partnars/01_abraq_agro.png';
+import lotusMedicalImg from '../assets/new_partnars/01_lotus_medical.png';
+import apnaChickenImg from '../assets/new_partnars/02_apna_chicken.png';
+import motoboyImg from '../assets/new_partnars/02_motoboy_ae.png';
+import primeCoImg from '../assets/new_partnars/03_prime_co.png';
+import cemtacImg from '../assets/new_partnars/04_cemtac.png';
+import royalPalmImg from '../assets/new_partnars/04_royal_palm_holidays.png';
+import astoraImg from '../assets/new_partnars/05_astora.png';
+import tailorProImg from '../assets/new_partnars/05_tailor_pro.png';
+import digidalImg from '../assets/new_partnars/06_digindal.png';
+import seriesMarriottImg from '../assets/new_partnars/06_series_by_marriott.png';
+import kashmirGiftImg from '../assets/new_partnars/07_kashmir_gift.png';
+import daintyImg from '../assets/new_partnars/08_dainty.png';
+import trustonImg from '../assets/new_partnars/08_truston.png';
+
 
 const TrustedBrands = () => {
   const brandLogos = [
-    // Original client logos (already have dark/transparent backgrounds)
-    { src: kashmiriRealtorImg, alt: "Kashmiri Realtor" },
-    { src: cemtacImg, alt: "Cemtac Cement" },
-    { src: snookerImg, alt: "The Snooker Academy" },
-    { src: valeMountsImg, alt: "Vale Mounts" },
-    { src: coldstoreImg, alt: "ColdStore J&K" },
-    { src: bakirImg, alt: "Bakir Group" },
+    { src: lotusMedicalImg, alt: "Lotus Medical Centre" },
+    { src: apnaChickenImg, alt: "Apna Chicken Centre" },
+    { src: cemtacImg, alt: "Cemtac Cements" },
+    { src: tailorProImg, alt: "Tailor Pro" },
     { src: digidalImg, alt: "Digidal" },
-    { src: ziplynowImg, alt: "ZiplyNow" },
-    // New trusted partner logos (white bg — need blend mode)
-    { src: lotusImg, alt: "Lotus Medical Centre", blend: true },
-    { src: apnaChickenImg, alt: "Apna Chicken Centre", blend: true },
-    { src: angelWingsImg, alt: "Angel Wings", blend: true },
-    { src: cemtacPartnerImg, alt: "Cemtac Cements", blend: true },
-    { src: tailorProLightImg, alt: "Tailor Pro", blend: true },
-    { src: digidalPartnerImg, alt: "Digidal", blend: true },
-    { src: kashmirGiftImg, alt: "Kashmir Gift", blend: true },
-    { src: trustonImg, alt: "Truston US", blend: true },
-    { src: marriottImg, alt: "Series by Marriott", blend: true },
-    { src: auraImg, alt: "Aura", blend: true },
-    { src: daintyImg, alt: "Dainty", blend: true },
-    { src: abraqImg, alt: "ABRAQ Agro", blend: true },
-    { src: primeCoImg, alt: "Prime Co. Middle East", blend: true },
-    { src: motoboyImg, alt: "Motoboy", blend: true },
-    { src: astoraImg, alt: "Astora Equipment Trading", blend: true },
-    { src: royalPalmImg, alt: "Royal Palm Holidays", blend: true },
-    { src: deprelImg, alt: "Deprel", blend: true },
-    { src: spectraImg, alt: "Spectra Bathe Gallery", blend: true },
-    { src: tailorProImg, alt: "Tailor Pro", blend: true },
+    { src: kashmirGiftImg, alt: "Kashmir Gift" },
+    { src: trustonImg, alt: "Truston US" },
+    { src: abraqAgroImg, alt: "ABRAQ Agro" },
+    { src: primeCoImg, alt: "Prime Co. Middle East" },
+    { src: royalPalmImg, alt: "Royal Palm Holidays" },
+    { src: motoboyImg, alt: "Motoboy.ae" },
+    { src: astoraImg, alt: "Astora Equipment Trading" },
+    { src: seriesMarriottImg, alt: "Series by Marriott / Deprel" },
+    { src: daintyImg, alt: "Spectra Bathe Gallery" },
+    { src: coldstoreImg, alt: "ColdStore J&K" },
+    { src: ziplynowImg, alt: "ZiplyNow" }
   ];
 
   // Duplicate for seamless infinite marquee scrolling
@@ -90,11 +66,11 @@ const TrustedBrands = () => {
           <div className="marquee-content">
             {marqueeBrands.map((brand, idx) => (
               <div key={idx} className={`brand-card${brand.blend ? ' brand-card--blend' : ''}`}>
-                <img 
-                  loading="lazy" 
-                  decoding="async" 
-                  src={brand.src} 
-                  alt={brand.alt} 
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={brand.src}
+                  alt={brand.alt}
                 />
               </div>
             ))}

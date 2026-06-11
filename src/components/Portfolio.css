@@ -28,22 +28,13 @@
   color: var(--text-secondary);
 }
 
-/* ── Grid: now a horizontal slider on all screen sizes ── */
+/* ── Grid: Desktop (4 columns) ── */
 .portfolio-grid {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   width: 100%;
   gap: clamp(10px, 1.5cqw, 24px);
   padding: 12px 0 24px 0;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.portfolio-grid::-webkit-scrollbar {
-  display: none;
 }
 
 .project-card {
@@ -56,9 +47,6 @@
   flex-direction: column;
   transition: all 0.5s ease;
   overflow: hidden;
-  
-  flex: 0 0 calc((100% - 72px) / 4);
-  scroll-snap-align: start;
 }
 
 .project-card:hover {
@@ -224,9 +212,24 @@
     font-size: 0.75rem;
   }
 
+  .portfolio-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .portfolio-grid::-webkit-scrollbar {
+    display: none;
+  }
+
   .project-card {
     flex: 0 0 85%;
     max-width: none;
+    scroll-snap-align: start;
   }
 }
 
