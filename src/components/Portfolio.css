@@ -59,7 +59,6 @@
   
   flex: 0 0 calc((100% - 72px) / 4);
   scroll-snap-align: start;
-  min-height: 520px; /* Increased height significantly */
 }
 
 .project-card:hover {

@@ -155,15 +155,10 @@ const Services = () => {
     const cardWidth = card.clientWidth;
     const gap = 24;
     const scrollAmount = cardWidth + gap;
-    const currentScroll = container.scrollLeft;
     if (direction === 'left') {
-      const currentIndex = Math.floor((currentScroll - 10) / scrollAmount);
-      const targetIndex = Math.max(0, currentIndex);
-      container.scrollTo({ left: targetIndex * scrollAmount, behavior: 'smooth' });
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     } else {
-      const currentIndex = Math.ceil((currentScroll + 10) / scrollAmount);
-      const targetIndex = Math.min(services.length - 1, currentIndex);
-      container.scrollTo({ left: targetIndex * scrollAmount, behavior: 'smooth' });
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 

@@ -218,20 +218,14 @@ const Portfolio = () => {
   const scrollPrev = () => {
     if (sliderRef.current) {
       const cardWidth = sliderRef.current.children[0].clientWidth + 16;
-      const currentScroll = sliderRef.current.scrollLeft;
-      const currentIndex = Math.floor((currentScroll - 10) / cardWidth);
-      const targetIndex = Math.max(0, currentIndex);
-      sliderRef.current.scrollTo({ left: targetIndex * cardWidth, behavior: 'smooth' });
+      sliderRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
     }
   };
 
   const scrollNext = () => {
     if (sliderRef.current) {
       const cardWidth = sliderRef.current.children[0].clientWidth + 16;
-      const currentScroll = sliderRef.current.scrollLeft;
-      const currentIndex = Math.ceil((currentScroll + 10) / cardWidth);
-      const targetIndex = Math.min(projects.length - 1, currentIndex);
-      sliderRef.current.scrollTo({ left: targetIndex * cardWidth, behavior: 'smooth' });
+      sliderRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
     }
   };
 
