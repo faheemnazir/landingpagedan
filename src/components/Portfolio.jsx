@@ -357,15 +357,6 @@ const Portfolio = () => {
             </button>
             
             <div className="portfolio-modal-content">
-              <div className="portfolio-modal-image-sec" style={{ backgroundColor: selectedProject.bg || '#ffffff' }}>
-                {selectedProject.category && <span className="modal-category-badge">{selectedProject.category}</span>}
-                <img 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title} 
-                  style={{ objectFit: selectedProject.fit || 'contain', padding: selectedProject.padding || '12px' }} 
-                />
-              </div>
-              
               <div className="portfolio-modal-details-sec">
                 <span className="modal-category">{selectedProject.category}</span>
                 <h2 className="modal-title">
