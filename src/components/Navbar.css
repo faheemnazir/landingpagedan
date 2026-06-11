@@ -199,38 +199,77 @@
   box-shadow: 0 6px 20px rgba(201, 160, 99, 0.6);
 }
 
-/* Floating Consultation Button for Mobile */
+/* Floating Consultation Button (Desktop) */
 .floating-consult-btn {
   display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 156px; /* Positioned to the left of scroll-to-top button which is at right: 96px */
+  z-index: 1000;
+  background: var(--accent-gold, #C8A46B);
+  color: #c30000; /* Red text to match LIMITED SLOTS AVAILABLE */
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  padding: 12px 28px;
+  border-radius: 30px; /* Fully rounded corner */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  animation: buttonPulse 2s infinite ease-in-out;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.floating-consult-btn.visible {
+  display: flex;
+}
+
+.floating-consult-btn.visible:hover {
+  background-color: var(--accent-gold-hover, #d8b276);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 164, 107, 0.5);
+}
+
+@keyframes buttonPulseMobile {
+  0%, 100% {
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 -4px 24px rgba(201, 160, 99, 0.4);
+  }
 }
 
 @media (max-width: 768px) {
+  /* Floating Consultation Button (Mobile Sticky Full-Width Bar) */
+  .floating-consult-btn {
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 16px 16px 0 0; /* Rounded top corners, flat bottom */
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+
   .floating-consult-btn.visible {
     display: flex;
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    background: var(--accent-gold, #C8A46B);
-    color: #c30000; /* Red text to match LIMITED SLOTS AVAILABLE */
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    padding: 10px 24px; /* Larger padding for better pill proportion */
-    border-radius: 30px; /* Fully rounded corner */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    animation: buttonPulse 2s infinite ease-in-out;
-    cursor: pointer;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+    animation: buttonPulseMobile 2s infinite ease-in-out;
   }
 
   .floating-consult-btn.visible:hover {
     background-color: var(--accent-gold-hover, #d8b276);
+    transform: none;
   }
 }
 

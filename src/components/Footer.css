@@ -337,7 +337,11 @@
 @media (max-width: 768px) {
   .scroll-to-top {
     right: 24px;
-    bottom: 24px;
+    bottom: 80px; /* Pushed up above the sticky bottom bar */
+  }
+
+  .footer {
+    padding-bottom: 70px; /* Leave space so bottom footer links are never covered */
   }
 
   .footer-content {
