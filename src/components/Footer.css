@@ -115,7 +115,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 27px;
-  color: #FFFFFF;
+  color: var(--accent-gold, #C8A46B);
   margin-bottom: 16px;
 }
 
