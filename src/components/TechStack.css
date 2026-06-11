@@ -73,20 +73,31 @@
 
 /* Horizontal Cards Styling */
 .tech-cards-wrapper {
-  overflow: visible;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-top: 16px;
+  padding-bottom: 24px;
+  margin-top: -16px;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.tech-cards-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .tech-cards-row {
   display: flex;
   gap: 20px;
-  width: 100%;
+  width: max-content;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .tech-flat-card {
-  flex: 1;
-  min-width: 160px;
+  flex: 0 0 220px;
+  min-width: 220px;
+  scroll-snap-align: start;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
@@ -193,30 +204,9 @@
 }
 
 @media (max-width: 1024px) {
-  .tech-cards-wrapper {
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding-top: 16px;
-    padding-bottom: 24px;
-    margin-top: -16px;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-  }
-
-  .tech-cards-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tech-cards-row {
-    width: max-content;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
   .tech-flat-card {
     flex: 0 0 190px;
     min-width: 190px;
-    scroll-snap-align: start;
   }
 }
 

@@ -366,7 +366,7 @@ const Portfolio = () => {
               <div className="portfolio-modal-details-sec">
                 <span className="modal-category">{selectedProject.category}</span>
                 <h2 className="modal-title">
-                  {selectedProject.title} {selectedProject.number && <span className="modal-number">· {selectedProject.number}</span>}
+                  {selectedProject.title}
                 </h2>
                 
                 <p className="modal-desc">{selectedProject.description}</p>

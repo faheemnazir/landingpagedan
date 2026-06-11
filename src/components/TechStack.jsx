@@ -31,7 +31,7 @@ const TechStack = () => {
   }, []);
 
   const handleScroll = () => {
-    if (!isMobile || !wrapperRef.current || isScrollingToTab.current) return;
+    if (!wrapperRef.current || isScrollingToTab.current) return;
     
     if (scrollThrottledRef.current) return;
     scrollThrottledRef.current = true;
@@ -67,7 +67,7 @@ const TechStack = () => {
 
   const handleTabClick = (cat) => {
     setActiveTab(cat);
-    if (isMobile && wrapperRef.current) {
+    if (wrapperRef.current) {
       const container = wrapperRef.current;
       const targetCard = container.querySelector(`.tech-flat-card[data-category="${cat}"]`);
       if (targetCard) {
@@ -261,28 +261,12 @@ const TechStack = () => {
         onScroll={handleScroll}
       >
         <div className="tech-cards-row">
-          {isMobile ? (
-            categories.flatMap(cat => 
-              stackData[cat].map((item, idx) => {
-                const logoUrl = getTechLogoUrl(item.name);
-                const colorClass = getIconColorClass(item.name);
-                return (
-                  <div key={`${cat}-${idx}`} className="tech-flat-card" data-category={cat}>
-                    <div className={`tech-icon-box ${colorClass}`}>
-                      <img src={logoUrl} alt={item.name} className="tech-logo-img" />
-                    </div>
-                    <h3 className="tech-name">{item.name}</h3>
-                    <p className="tech-desc">{item.desc}</p>
-                  </div>
-                );
-              })
-            )
-          ) : (
-            stackData[activeTab].map((item, idx) => {
+          {categories.flatMap(cat => 
+            stackData[cat].map((item, idx) => {
               const logoUrl = getTechLogoUrl(item.name);
               const colorClass = getIconColorClass(item.name);
               return (
-                <div key={idx} className="tech-flat-card">
+                <div key={`${cat}-${idx}`} className="tech-flat-card" data-category={cat}>
                   <div className={`tech-icon-box ${colorClass}`}>
                     <img src={logoUrl} alt={item.name} className="tech-logo-img" />
                   </div>
