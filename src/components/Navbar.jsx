@@ -73,10 +73,6 @@ const Navbar = () => {
       <a href="tel:+443001240371" className={`floating-call-btn ${scrolled ? 'visible' : ''}`} aria-label="Call Us Now">
         <Phone size={24} />
       </a>
-
-      <a href="#contact" className={`floating-consult-btn ${scrolled ? 'visible' : ''}`}>
-        Book Consultation Now
-      </a>
     </>
   );
 };
