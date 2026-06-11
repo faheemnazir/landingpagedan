@@ -335,19 +335,19 @@
 
 @media (max-width: 768px) {
   .scroll-to-top {
-    right: 24px;
-    bottom: 24px;
+    right: 88px;
+    bottom: 70px;
   }
 
   .footer-content {
-    padding: 40px 0 24px 0;
+    padding: 40px 24px 74px 24px;
   }
 
   .footer-top-row {
     flex-direction: column;
-    gap: 24px;
-    align-items: center;
-    text-align: center;
+    gap: 32px;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .footer-brand {
@@ -366,8 +366,8 @@
 
   .link-group {
     order: 3;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     margin-bottom: 8px;
   }
 
@@ -378,11 +378,11 @@
   .social-links {
     order: 4;
     margin-top: 16px;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .link-group ul {
-    align-items: center;
+    align-items: flex-start;
   }
   
   .newsletter-form {
@@ -398,7 +398,8 @@
   .footer-bottom {
     flex-direction: column;
     gap: 24px;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
