@@ -163,6 +163,7 @@
     flex: 0 0 85%;
     scroll-snap-align: start;
     max-width: none;
+    min-height: 420px; /* Lock height to match portfolio cards on mobile */
   }
 
   .excellence-stats {

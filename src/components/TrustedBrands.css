@@ -75,6 +75,7 @@
   animation: marquee-slide 60s linear infinite;
   padding-left: 12px;
   padding-right: 12px;
+  will-change: transform;
 }
 
 /* Pause scroll on hover */

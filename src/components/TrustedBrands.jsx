@@ -67,8 +67,6 @@ const TrustedBrands = () => {
             {marqueeBrands.map((brand, idx) => (
               <div key={idx} className={`brand-card${brand.blend ? ' brand-card--blend' : ''}`}>
                 <img
-                  loading="lazy"
-                  decoding="async"
                   src={brand.src}
                   alt={brand.alt}
                 />

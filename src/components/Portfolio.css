@@ -243,6 +243,7 @@
     flex: 0 0 85%;
     max-width: none;
     scroll-snap-align: start;
+    min-height: 420px; /* Lock height to match testimonials cards on mobile */
   }
 }
 

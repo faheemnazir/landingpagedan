@@ -199,6 +199,41 @@
   box-shadow: 0 6px 20px rgba(201, 160, 99, 0.6);
 }
 
+/* Floating Consultation Button for Mobile */
+.floating-consult-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .floating-consult-btn.visible {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: var(--accent-gold, #C8A46B);
+    color: #c30000; /* Red text to match LIMITED SLOTS AVAILABLE */
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    padding: 6px 14px; /* Matches LIMITED SLOTS AVAILABLE padding */
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    animation: buttonPulse 2s infinite ease-in-out;
+    cursor: pointer;
+  }
+
+  .floating-consult-btn.visible:hover {
+    background-color: var(--accent-gold-hover, #d8b276);
+  }
+}
+
 .navbar-banner {
   display: none; /* Hidden on desktop */
 }
