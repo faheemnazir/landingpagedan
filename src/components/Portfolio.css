@@ -68,7 +68,7 @@
 
 .project-image-placeholder {
   width: 100%;
-  height: clamp(180px, 22vh, 240px); /* Increased image height */
+  height: clamp(220px, 28vh, 280px); /* Increased image height to make card more rectangular */
   background: #ffffff;
   display: flex;
   justify-content: center;
@@ -109,10 +109,11 @@
 
 /* Info section inside card */
 .project-info {
-  padding: clamp(10px, 1.2vh, 18px);
+  padding: clamp(16px, 2vh, 24px); /* Increased padding to spread content */
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  gap: 8px; /* Added gap to evenly spread child elements */
 }
 
 .project-title {
