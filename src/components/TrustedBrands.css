@@ -121,15 +121,18 @@
   transform: scale(1.05);
 }
 
-/* Blend mode for logos with black backgrounds to seamlessly blend into dark section backgrounds */
-.brand-card--screen {
-  background: transparent !important;
-  border-color: transparent !important;
+/* White-background partner logos: render as white cards to preserve logo colors */
+.brand-card--blend {
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
-.brand-card--screen img {
-  mix-blend-mode: screen;
-  filter: brightness(1.1); /* Slight brightness boost to ensure colors pop against dark background */
+.brand-card--blend img {
+  opacity: 1;
+}
+
+.brand-card--blend:hover img {
+  transform: scale(1.05);
 }
 
 /* ── Stats Cards Grid ── */
