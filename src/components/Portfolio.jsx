@@ -10,8 +10,8 @@ import digidalImg from '../assets/digidal.png';
 import kashmiriRealtorImg from '../assets/kashmiriRealtor.png';
 import snookerImg from '../assets/snooker.png';
 import valeMountsImg from '../assets/vale_mounts.png';
-import ziplynowImg from '../assets/ziplynow.png'; // 8th image
-
+import zipplyImg from '../assets/tech/portfolioimages/zipply.png';
+import coldstoreImg from '../assets/tech/portfolioimages/coldstorage.png';
 const ProjectCard = ({ title, tags, description, stats, category, image, link, bg = '#ffffff', fit = 'contain', padding = '12px' }) => {
   const handleClick = (e) => {
     // Prevent double navigation if the user clicks directly on the project-link <a> tag
@@ -24,18 +24,18 @@ const ProjectCard = ({ title, tags, description, stats, category, image, link, b
       <div className="project-image-placeholder" style={{ backgroundColor: bg, padding: padding }}>
         {category && <span className="image-category-badge">{category}</span>}
         {image && (
-          <img 
-            src={image} 
-            alt={title} 
-            className="project-image-full" 
-            style={{ objectFit: fit }} 
+          <img
+            src={image}
+            alt={title}
+            className="project-image-full"
+            style={{ objectFit: fit }}
           />
         )}
       </div>
       <div className="project-info">
         <h3 className="project-title">{title}</h3>
         <p className="project-desc">{description}</p>
-        
+
         <div className="project-stats">
           <div className="stat">
             <span className="stat-value">{stats.users}</span> Users
@@ -126,7 +126,7 @@ const Portfolio = () => {
     },
     {
       title: "📦 ZipplyNow",
-      image: ziplynowImg,
+      image: zipplyImg,
       link: "https://zipplynow.com",
       category: "Logistics SaaS",
       tags: ["Delivery", "Real-time", "SaaS"],
@@ -171,11 +171,11 @@ const Portfolio = () => {
       const scrollLeft = container.scrollLeft;
       const scrollWidth = container.scrollWidth;
       const clientWidth = container.clientWidth;
-      
+
       const isAtEnd = scrollLeft > 10 && Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
-      
+
       const cardWidth = container.children[0].clientWidth + 16; // width + gap on mobile
-      
+
       let newActiveSlide = Math.round(scrollLeft / cardWidth);
       if (scrollLeft <= 10) {
         newActiveSlide = 0;
@@ -184,7 +184,7 @@ const Portfolio = () => {
       } else {
         newActiveSlide = Math.min(newActiveSlide, projects.length - 1);
       }
-      
+
       if (newActiveSlide !== activeSlide) {
         setActiveSlide(newActiveSlide);
       }
@@ -251,8 +251,8 @@ const Portfolio = () => {
         </button>
         <div className="slider-dots">
           {projects.map((_, idx) => (
-            <span 
-              key={idx} 
+            <span
+              key={idx}
               className={`slider-dot ${activeSlide === idx ? 'active' : ''}`}
               onClick={() => {
                 if (sliderRef.current) {
