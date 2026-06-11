@@ -214,6 +214,10 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+
   .floating-consult-btn {
     display: none;
     position: fixed;

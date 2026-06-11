@@ -398,7 +398,7 @@
 
   .hero-badge {
     padding: 8px 16px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -411,8 +411,8 @@
   .hero-subtitle {
     font-size: 18px;
     line-height: 28px;
-    margin-top: 12px;
-    margin-bottom: 24px;
+    margin-top: 8px;
+    margin-bottom: 12px;
     max-width: 100%;
   }
 
@@ -431,9 +431,9 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 64px;
+    padding-top: 20px;
     padding-bottom: 32px;
-    gap: 32px;
+    gap: 24px;
   }
 
   .hero-title {
@@ -449,6 +449,7 @@
     align-items: center;
     gap: 12px;
     width: 100%;
+    margin-top: 8px;
   }
   
   .btn-start, .btn-view {
@@ -467,8 +468,8 @@
   .hero-subtitle {
     font-size: 16px;
     line-height: 24px;
-    margin-top: 12px;
-    margin-bottom: 24px;
+    margin-top: 8px;
+    margin-bottom: 12px;
   }
 
   .hero-form-card {
@@ -499,9 +500,9 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: 24px;
+    padding-top: 16px;
     padding-bottom: 24px;
-    gap: 24px;
+    gap: 20px;
   }
   
   .hero-form-card {
