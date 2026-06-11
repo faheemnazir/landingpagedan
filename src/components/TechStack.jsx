@@ -11,52 +11,79 @@ const TechStack = () => {
   ];
 
   const [activeTab, setActiveTab] = useState("App Technologies");
-  const touchStartRef = useRef({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
+  
   const wrapperRef = useRef(null);
   const tabsRef = useRef(null);
+  const isScrollingToTab = useRef(false);
+  const scrollTimeoutRef = useRef(null);
+  const scrollThrottledRef = useRef(false);
 
-  const handleTouchStart = (e) => {
-    touchStartRef.current = {
-      x: e.touches[0].clientX,
-      y: e.touches[0].clientY
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
+  }, []);
+
+  const handleScroll = () => {
+    if (!isMobile || !wrapperRef.current || isScrollingToTab.current) return;
+    
+    if (scrollThrottledRef.current) return;
+    scrollThrottledRef.current = true;
+    
+    requestAnimationFrame(() => {
+      scrollThrottledRef.current = false;
+      const container = wrapperRef.current;
+      if (!container) return;
+      
+      const cards = container.querySelectorAll('.tech-flat-card');
+      if (cards.length === 0) return;
+
+      let closestCard = cards[0];
+      let minDiff = Infinity;
+      const containerCenter = container.getBoundingClientRect().left + container.clientWidth / 2;
+
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const diff = Math.abs(cardCenter - containerCenter);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestCard = card;
+        }
+      });
+
+      const category = closestCard.getAttribute('data-category');
+      if (category && category !== activeTab) {
+        setActiveTab(category);
+      }
+    });
   };
 
-  const handleTouchEnd = (e) => {
-    if (!wrapperRef.current) return;
-    const diffX = e.changedTouches[0].clientX - touchStartRef.current.x;
-    const diffY = e.changedTouches[0].clientY - touchStartRef.current.y;
-
-    // Horizontal swipe threshold
-    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 60) {
+  const handleTabClick = (cat) => {
+    setActiveTab(cat);
+    if (isMobile && wrapperRef.current) {
       const container = wrapperRef.current;
-      const isAtStart = container.scrollLeft <= 15;
-      const isAtEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 15;
+      const targetCard = container.querySelector(`.tech-flat-card[data-category="${cat}"]`);
+      if (targetCard) {
+        isScrollingToTab.current = true;
+        
+        const cardOffsetLeft = targetCard.offsetLeft;
+        const containerPaddingLeft = 16;
+        
+        container.scrollTo({
+          left: cardOffsetLeft - containerPaddingLeft,
+          behavior: 'smooth'
+        });
 
-      const currentIdx = categories.indexOf(activeTab);
-
-      if (diffX < 0 && isAtEnd) {
-        // Swiped left (scrolling right) at the end -> Go to next tab
-        if (currentIdx < categories.length - 1) {
-          const nextTab = categories[currentIdx + 1];
-          setActiveTab(nextTab);
-          setTimeout(() => {
-            if (wrapperRef.current) {
-              wrapperRef.current.scrollTo({ left: 0, behavior: 'auto' });
-            }
-          }, 30);
-        }
-      } else if (diffX > 0 && isAtStart) {
-        // Swiped right (scrolling left) at the start -> Go to previous tab
-        if (currentIdx > 0) {
-          const prevTab = categories[currentIdx - 1];
-          setActiveTab(prevTab);
-          setTimeout(() => {
-            if (wrapperRef.current) {
-              wrapperRef.current.scrollTo({ left: wrapperRef.current.scrollWidth, behavior: 'auto' });
-            }
-          }, 30);
-        }
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = setTimeout(() => {
+          isScrollingToTab.current = false;
+        }, 800);
       }
     }
   };
@@ -216,7 +243,7 @@ const TechStack = () => {
             <button
               key={idx}
               className={`tab-btn ${activeTab === cat ? 'active' : ''}`}
-              onClick={() => setActiveTab(cat)}
+              onClick={() => handleTabClick(cat)}
             >
               {cat}
             </button>
@@ -228,23 +255,40 @@ const TechStack = () => {
       <div 
         className="tech-cards-wrapper" 
         ref={wrapperRef}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        onScroll={handleScroll}
       >
         <div className="tech-cards-row">
-          {stackData[activeTab].map((item, idx) => {
-            const logoUrl = getTechLogoUrl(item.name);
-            const colorClass = getIconColorClass(item.name);
-            return (
-              <div key={idx} className="tech-flat-card">
-                <div className={`tech-icon-box ${colorClass}`}>
-                  <img src={logoUrl} alt={item.name} className="tech-logo-img" />
+          {isMobile ? (
+            categories.flatMap(cat => 
+              stackData[cat].map((item, idx) => {
+                const logoUrl = getTechLogoUrl(item.name);
+                const colorClass = getIconColorClass(item.name);
+                return (
+                  <div key={`${cat}-${idx}`} className="tech-flat-card" data-category={cat}>
+                    <div className={`tech-icon-box ${colorClass}`}>
+                      <img src={logoUrl} alt={item.name} className="tech-logo-img" />
+                    </div>
+                    <h3 className="tech-name">{item.name}</h3>
+                    <p className="tech-desc">{item.desc}</p>
+                  </div>
+                );
+              })
+            )
+          ) : (
+            stackData[activeTab].map((item, idx) => {
+              const logoUrl = getTechLogoUrl(item.name);
+              const colorClass = getIconColorClass(item.name);
+              return (
+                <div key={idx} className="tech-flat-card">
+                  <div className={`tech-icon-box ${colorClass}`}>
+                    <img src={logoUrl} alt={item.name} className="tech-logo-img" />
+                  </div>
+                  <h3 className="tech-name">{item.name}</h3>
+                  <p className="tech-desc">{item.desc}</p>
                 </div>
-                <h3 className="tech-name">{item.name}</h3>
-                <p className="tech-desc">{item.desc}</p>
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
       </div>
     </section>

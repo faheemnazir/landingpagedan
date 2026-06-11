@@ -200,6 +200,7 @@
     padding-bottom: 24px;
     margin-top: -16px;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
   }
 
   .tech-cards-wrapper::-webkit-scrollbar {
@@ -208,14 +209,14 @@
 
   .tech-cards-row {
     width: max-content;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .tech-flat-card {
-    flex: 0 0 200px;
-    /* Force cards to scroll horizontally instead of squeezing */
-    min-width: 200px;
+    flex: 0 0 220px;
+    min-width: 220px;
+    scroll-snap-align: start;
   }
 }
 
