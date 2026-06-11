@@ -59,7 +59,7 @@
   
   flex: 0 0 calc((100% - 72px) / 4);
   scroll-snap-align: start;
-  min-height: 420px; /* Increased height */
+  min-height: 520px; /* Increased height significantly */
 }
 
 .project-card:hover {
@@ -129,11 +129,11 @@
   line-height: 1.4;
   margin-bottom: clamp(6px, 0.8vh, 10px);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: calc(3 * 1.4 * clamp(0.65rem, 0.75vw, 0.8rem)); /* Scaled with font size */
+  min-height: calc(4 * 1.4 * clamp(0.65rem, 0.75vw, 0.8rem)); /* Scaled with font size */
 }
 
 .project-stats {
