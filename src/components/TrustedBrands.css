@@ -121,19 +121,18 @@
   transform: scale(1.05);
 }
 
-/* White-background partner logos: blend away the white */
+/* White-background partner logos: render as white cards to preserve logo colors */
 .brand-card--blend {
-  background: #000000;
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .brand-card--blend img {
-  mix-blend-mode: screen;
-  filter: invert(1);
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .brand-card--blend:hover img {
-  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* ── Stats Cards Grid ── */
