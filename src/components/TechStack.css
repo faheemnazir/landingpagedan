@@ -214,8 +214,8 @@
   }
 
   .tech-flat-card {
-    flex: 0 0 220px;
-    min-width: 220px;
+    flex: 0 0 190px;
+    min-width: 190px;
     scroll-snap-align: start;
   }
 }

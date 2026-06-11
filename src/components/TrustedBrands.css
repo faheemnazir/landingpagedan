@@ -199,3 +199,21 @@
     padding: 20px;
   }
 }
+
+@media (max-width: 768px) {
+  .brand-card {
+    width: 180px;
+    height: 100px;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .brand-card img {
+    max-height: 70px;
+    max-width: 140px;
+  }
+
+  .marquee-content {
+    gap: 16px;
+  }
+}
