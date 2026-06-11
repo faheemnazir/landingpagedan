@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowUpRight, ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, ArrowLeft, ArrowRight, X } from 'lucide-react';
 import './Portfolio.css';
 
 // Import project images from assets
@@ -13,15 +13,9 @@ import zipply from '../assets/tech/portfolioimages/zipply.png';
 import coldstorage from '../assets/tech/portfolioimages/coldstorage.png';
 import digidal from '../assets/tech/portfolioimages/digidal.png';
 
-const ProjectCard = ({ title, tags, description, stats, category, image, link, bg = '#ffffff', fit = 'contain', padding = '12px' }) => {
-  const handleClick = (e) => {
-    // Prevent double navigation if the user clicks directly on the project-link <a> tag
-    if (e.target.closest('.project-link')) return;
-    window.open(link, '_blank', 'noopener,noreferrer');
-  };
-
+const ProjectCard = ({ title, number, tags, description, stats, category, image, bg = '#ffffff', fit = 'contain', padding = '12px', onCardClick }) => {
   return (
-    <div className="project-card" onClick={handleClick} style={{ cursor: 'pointer' }}>
+    <div className="project-card" onClick={onCardClick} style={{ cursor: 'pointer' }}>
       <div className="project-image-placeholder" style={{ backgroundColor: bg, padding: padding }}>
         {category && <span className="image-category-badge">{category}</span>}
         {image && (
@@ -34,7 +28,9 @@ const ProjectCard = ({ title, tags, description, stats, category, image, link, b
         )}
       </div>
       <div className="project-info">
-        <h3 className="project-title">{title}</h3>
+        <h3 className="project-title">
+          {title} {number && <span className="project-number">· {number}</span>}
+        </h3>
         <p className="project-desc">{description}</p>
 
         <div className="project-stats">
@@ -55,9 +51,9 @@ const ProjectCard = ({ title, tags, description, stats, category, image, link, b
           ))}
         </div>
 
-        <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
-          Visit Website <ArrowUpRight size={16} />
-        </a>
+        <button className="project-link" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontFamily: 'inherit', textAlign: 'left' }}>
+          View Details <ArrowUpRight size={16} />
+        </button>
       </div>
     </div>
   );
@@ -66,97 +62,153 @@ const ProjectCard = ({ title, tags, description, stats, category, image, link, b
 const Portfolio = () => {
   const projects = [
     {
-      title: "🏠 Kashmiri Realtor",
-      image: kashmiriRealtorImg,
-      link: "https://stage.kashmirirealtor.com/",
-      category: "Real Estate",
-      tags: ["iOS", "Android", "Maps", "Search"],
-      description: "A premium property finder and real estate platform tailored for the Kashmir region. The app connects buyers, sellers, and renters through real-time listings, interactive map navigation, and verified property profiles. Built to serve the unique geography and market of Jammu & Kashmir, it simplifies property discovery from Srinagar to the valleys.",
-      stats: { users: "40K+", rating: "4.8", downloads: "100K+" },
+      title: "🌡 Daneen Cold Storage",
+      number: "01",
+      image: coldstorage,
+      link: "https://cs.daneenalmajaz.in/",
+      category: "Smart Logistics / ERP",
+      tags: ["ERP", "Inventory", "Horticulture", "J&K"],
+      description: "A full-stack cold storage management platform for Kashmir's horticulture industry. Enables real-time inventory tracking, crate management, automated billing, and storage occupancy analytics for institutional-grade facilities.",
+      bullets: [
+        "Live inventory & stock inward/outward tracking",
+        "Automated billing & invoice generation",
+        "Role-based access for operators and managers",
+        "Dashboard with storage occupancy analytics"
+      ],
+      stats: { users: "180", rating: "4.8", downloads: "320" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
     },
     {
-      title: "🏗️ CEMTAC Cement",
+      title: "🏗 Cemtac ERP System",
+      number: "02",
       image: cemtacImg,
       link: "https://cemtac.com/",
-      category: "Industrial ERP",
-      tags: ["Logistics", "B2B", "Supply Chain"],
-      description: "An enterprise resource planning and delivery tracking portal built for CEMTAC Cements, one of Jammu & Kashmir's leading cement manufacturers. The platform streamlines order management, distributor logistics, and supply chain visibility — connecting field operations with the head office in real time. MES-approved, the only J&K cement brand certified by Military Engineering Services.",
-      stats: { users: "10K+", rating: "4.7", downloads: "25K+" },
+      category: "Manufacturing ERP",
+      tags: ["ERP", "Inventory", "Distribution", "Custom Software"],
+      description: "Custom-built ERP for Cemtac Cements — J&K's only MES-approved cement brand. Manages inventory, sales orders, and a full dealer/distributor network from one unified platform built for manufacturing operations.",
+      bullets: [
+        "Inventory & stock management with real-time level tracking",
+        "Sales & order tracking from placement to fulfilment",
+        "Dealer & distributor management with dedicated profiles",
+        "Centralized dashboard for business-wide operational visibility"
+      ],
+      stats: { users: "120", rating: "4.9", downloads: "210" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
     },
     {
       title: "🎱 The Snooker Academy",
+      number: "03",
       image: snookerImg,
       link: "https://thesnookeracademy.in/",
-      category: "Sports SaaS",
-      tags: ["Leisure", "Booking System", "SaaS"],
-      description: "A real-time table booking and tournament management platform for The Snooker Academy. Players can reserve tables, view availability, register for tournaments, and track match results — all from a single app. Designed to modernize snooker club operations and enhance the player experience.",
-      stats: { users: "15K+", rating: "4.7", downloads: "30K+" },
+      category: "Sports Academy",
+      tags: ["Sports", "Booking", "Academy", "React"],
+      description: "A professional snooker academy platform built to attract aspiring players and manage coaching programmes. Features session booking, tournament info, coach profiles, and an achievement gallery for the academy.",
+      bullets: [
+        "Coaching programme showcase & online enrollment",
+        "Session booking & schedule management",
+        "Academy history, achievements & media gallery",
+        "Mobile-responsive with a clean sport-forward aesthetic"
+      ],
+      stats: { users: "260", rating: "4.7", downloads: "480" },
+      bg: "#ffffff",
+      fit: "contain",
+      padding: "12px"
+    },
+    {
+      title: "🏡 Kashmiri Realtor",
+      number: "04",
+      image: kashmiriRealtorImg,
+      link: "https://stage.kashmirirealtor.com/",
+      category: "Real Estate Portal",
+      tags: ["Real Estate", "Listings", "Kashmir", "Portal"],
+      description: "A premium real estate discovery platform for the Kashmir property market. Buyers, sellers and agents browse residential and commercial listings with location-based filters, agent profiles, and direct enquiry flows.",
+      bullets: [
+        "Property listings with filters — area, type & price range",
+        "Agent profiles with direct enquiry & contact system",
+        "Map-based property discovery for Kashmir localities",
+        "Stage environment maintained for QA and client review"
+      ],
+      stats: { users: "340", rating: "4.8", downloads: "590" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
     },
     {
       title: "🏨 BAKR HMS",
+      number: "05",
       image: bakirImg,
       link: "https://hms.daneenalmajaz.in/",
-      category: "On-Site Management",
-      tags: ["Civil", "Project Mgmt", "Collaboration"],
-      description: "An on-site management and progress tracking portal for BAKR, connecting field engineers with the head office. The system supports project milestone tracking, task assignments, daily progress reports, and team collaboration — bringing transparency and control to complex construction and hospitality operations.",
-      stats: { users: "5K+", rating: "4.6", downloads: "12K+" },
+      category: "Hospitality SaaS",
+      tags: ["HMS", "SaaS", "Hospitality", "Dashboard"],
+      description: "A comprehensive Hotel Management System covering the full operations lifecycle — reservations, front desk check-in/out, housekeeping status, guest billing, and real-time occupancy and revenue dashboards.",
+      bullets: [
+        "Front desk: reservations, check-in & check-out management",
+        "Room status & housekeeping workflow tracking",
+        "Guest billing, invoice generation & payment tracking",
+        "Occupancy & revenue analytics dashboard"
+      ],
+      stats: { users: "150", rating: "4.9", downloads: "270" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
     },
     {
-      title: "❄️ ColdStore Pro",
-      image: coldstorage,
-      link: "https://cs.daneenalmajaz.in/",
-      category: "Smart Logistics / IoT",
-      tags: ["IoT", "Sensors", "Real-time"],
-      description: "An IoT-enabled smart monitoring application for cold storage units, delivering real-time temperature and humidity tracking with instant alerts. Built for institutional-grade facilities, it ensures regulatory compliance, prevents spoilage, and gives operators full visibility into storage conditions from any device.",
-      stats: { users: "8K+", rating: "4.9", downloads: "15K+" },
-      bg: "#ffffff",
-      fit: "contain",
-      padding: "12px"
-    },
-    {
-      title: "📦 ZipplyNow",
+      title: "⚡ ZipplyNow",
+      number: "06",
       image: zipply,
       link: "https://zipplynow.com",
       category: "Logistics SaaS",
-      tags: ["Delivery", "Real-time", "SaaS"],
-      description: "Zip. Zap. Zoom. ZipplyNow is an on-demand hyper-local delivery and courier service platform connecting businesses and consumers for fast, trackable last-mile deliveries. The platform supports multi-vendor order management, real-time rider tracking, and seamless checkout — purpose-built for the fast-paced local commerce economy.",
-      stats: { users: "85K+", rating: "4.8", downloads: "120K+" },
+      tags: ["Delivery", "Real-time", "Flutter", "SaaS"],
+      description: "A Flutter-based on-demand logistics system built for hyperlocal deliveries. Features real-time order tracking on live maps, role-based workflows for customers/merchants/riders, and in-app push notifications.",
+      bullets: [
+        "Real-time order tracking with live map updates",
+        "Multi-role flows: customer, delivery rider & merchant",
+        "In-app push notifications & delivery status updates",
+        "Cross-platform Flutter codebase — iOS & Android"
+      ],
+      stats: { users: "720", rating: "4.8", downloads: "950" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
     },
     {
-      title: "🎬 DigiDal Media",
+      title: "🌐 DigiDal Media",
+      number: "07",
       image: digidal,
       link: "https://www.digidalglobal.com/",
       category: "Streaming SaaS",
       tags: ["Streaming", "Content Creation", "Social"],
-      description: "DigiDal is a digital media distribution and audience analytics platform empowering local content creators to reach wider audiences. From streaming and publishing to performance insights, it gives creators and media houses the tools to grow, monetize, and manage their digital presence — all on one platform.",
-      stats: { users: "200K+", rating: "4.8", downloads: "500K+" },
+      description: "DigiDal is a digital media distribution and audience analytics platform empowering local content creators to reach wider audiences. From streaming and publishing to performance insights, it gives creators full control.",
+      bullets: [
+        "Service pages: SEO, branding, social media & paid ads",
+        "Portfolio & case study showcase section",
+        "Lead generation forms & client enquiry flows",
+        "Clean, professional, conversion-focused design"
+      ],
+      stats: { users: "430", rating: "4.8", downloads: "780" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
     },
     {
-      title: "🔩 Vale Montis",
+      title: "🏔 Vale Montis",
+      number: "08",
       image: valeMountsImg,
       link: "https://valemontis.com/",
-      category: "Hardware Retail / E-Commerce",
-      tags: ["E-Commerce", "Hardware", "Retail"],
-      description: "An e-commerce catalog and ordering app for Vale Montis, specializing in industrial wall mounts, brackets, and hardware accessories. The platform features rapid product discovery, a detailed specification catalog, and a streamlined checkout experience — designed for contractors, retailers, and end consumers.",
-      stats: { users: "12K+", rating: "4.8", downloads: "20K+" },
+      category: "Luxury Hospitality / E-Commerce",
+      tags: ["E-Commerce", "Hospitality", "Luxury", "Retail"],
+      description: "An e-commerce and hospitality platform for Vale Montis — a premium mountain-valley luxury brand. Features immersive brand storytelling, room & suite showcase, experiences catalogue, and seamless booking integration.",
+      bullets: [
+        "Full-screen immersive hero with brand narrative",
+        "Room & suite showcase with booking integration",
+        "Experiences, dining & activities feature sections",
+        "High-end visual design crafted for luxury positioning"
+      ],
+      stats: { users: "310", rating: "4.8", downloads: "620" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -164,7 +216,20 @@ const Portfolio = () => {
   ];
 
   const [activeSlide, setActiveSlide] = useState(0);
+  const [selectedProject, setSelectedProject] = useState(null);
   const sliderRef = useRef(null);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
 
   const handleScroll = () => {
     if (sliderRef.current) {
@@ -174,8 +239,8 @@ const Portfolio = () => {
       const clientWidth = container.clientWidth;
 
       const isAtEnd = scrollLeft > 10 && Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
-
-      const cardWidth = container.children[0].clientWidth + 16; // width + gap on mobile
+      const firstChild = container.children[0];
+      const cardWidth = firstChild ? firstChild.clientWidth + 16 : 300; // width + gap on mobile
 
       let newActiveSlide = Math.round(scrollLeft / cardWidth);
       if (scrollLeft <= 10) {
@@ -218,14 +283,16 @@ const Portfolio = () => {
 
   const scrollPrev = () => {
     if (sliderRef.current) {
-      const cardWidth = sliderRef.current.children[0].clientWidth + 16;
+      const firstChild = sliderRef.current.children[0];
+      const cardWidth = firstChild ? firstChild.clientWidth + 16 : 300;
       sliderRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
     }
   };
 
   const scrollNext = () => {
     if (sliderRef.current) {
-      const cardWidth = sliderRef.current.children[0].clientWidth + 16;
+      const firstChild = sliderRef.current.children[0];
+      const cardWidth = firstChild ? firstChild.clientWidth + 16 : 300;
       sliderRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
     }
   };
@@ -233,15 +300,19 @@ const Portfolio = () => {
   return (
     <section className="portfolio container" id="portfolio">
       <div className="portfolio-header">
-        <h2 className="heading-lg text-gold">Portfolio</h2>
+        <h2 className="heading-lg text-gold">Portfolio — Selected Work</h2>
         <p className="text-body portfolio-subtitle">
-          Trusted by leading brands worldwide to build exceptional mobile experiences that users love and investors fund.
+          Trusted by leading brands to build exceptional digital products that users love.
         </p>
       </div>
 
       <div className="portfolio-grid" ref={sliderRef} onScroll={handleScroll}>
         {projects.map((project, idx) => (
-          <ProjectCard key={idx} {...project} />
+          <ProjectCard 
+            key={idx} 
+            {...project} 
+            onCardClick={() => setSelectedProject(project)}
+          />
         ))}
       </div>
 
@@ -257,7 +328,8 @@ const Portfolio = () => {
               className={`slider-dot ${activeSlide === idx ? 'active' : ''}`}
               onClick={() => {
                 if (sliderRef.current) {
-                  const cardWidth = sliderRef.current.children[0].clientWidth + 16;
+                  const firstChild = sliderRef.current.children[0];
+                  const cardWidth = firstChild ? firstChild.clientWidth + 16 : 300;
                   sliderRef.current.scrollTo({
                     left: cardWidth * idx,
                     behavior: 'smooth'
@@ -271,6 +343,89 @@ const Portfolio = () => {
           <ArrowRight size={18} />
         </button>
       </div>
+
+      {/* Details Popup Modal */}
+      {selectedProject && (
+        <div className="portfolio-modal-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="portfolio-modal-card" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="portfolio-modal-close" 
+              onClick={() => setSelectedProject(null)}
+              aria-label="Close modal"
+            >
+              <X size={20} />
+            </button>
+            
+            <div className="portfolio-modal-content">
+              <div className="portfolio-modal-image-sec" style={{ backgroundColor: selectedProject.bg || '#ffffff' }}>
+                {selectedProject.category && <span className="modal-category-badge">{selectedProject.category}</span>}
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title} 
+                  style={{ objectFit: selectedProject.fit || 'contain', padding: selectedProject.padding || '12px' }} 
+                />
+              </div>
+              
+              <div className="portfolio-modal-details-sec">
+                <span className="modal-category">{selectedProject.category}</span>
+                <h2 className="modal-title">
+                  {selectedProject.title} {selectedProject.number && <span className="modal-number">· {selectedProject.number}</span>}
+                </h2>
+                
+                <p className="modal-desc">{selectedProject.description}</p>
+                
+                {selectedProject.bullets && selectedProject.bullets.length > 0 && (
+                  <ul className="modal-bullets">
+                    {selectedProject.bullets.map((bullet, idx) => (
+                      <li key={idx} className="modal-bullet-item">
+                        <span className="bullet-arrow">→</span> {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                
+                <div className="modal-stats">
+                  <div className="modal-stat">
+                    <span className="stat-label">Users</span>
+                    <span className="stat-value">{selectedProject.stats.users}</span>
+                  </div>
+                  <div className="modal-stat">
+                    <span className="stat-label">Rating</span>
+                    <span className="stat-value">★ {selectedProject.stats.rating}</span>
+                  </div>
+                  <div className="modal-stat">
+                    <span className="stat-label">Downloads</span>
+                    <span className="stat-value">{selectedProject.stats.downloads}</span>
+                  </div>
+                </div>
+                
+                <div className="modal-tags">
+                  {selectedProject.tags.map((tag, idx) => (
+                    <span key={idx} className="modal-tag">{tag}</span>
+                  ))}
+                </div>
+                
+                <div className="modal-actions">
+                  <a 
+                    href={selectedProject.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn btn-primary modal-visit-btn"
+                  >
+                    Visit Website <ArrowUpRight size={16} />
+                  </a>
+                  <button 
+                    className="btn btn-secondary modal-back-btn"
+                    onClick={() => setSelectedProject(null)}
+                  >
+                    Back to Listing
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
