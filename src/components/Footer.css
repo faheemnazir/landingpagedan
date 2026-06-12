@@ -308,9 +308,18 @@
   right: 96px; /* stack horizontally next to floating call button on desktop */
   z-index: 999;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
 }
 
-.scroll-to-top:hover {
+.scroll-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-to-top.visible:hover {
   background: var(--accent-gold, #C8A46B);
   color: #000000;
   transform: translateY(-4px);

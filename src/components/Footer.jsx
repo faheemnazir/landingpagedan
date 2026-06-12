@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import logoImg from '../assets/logo-transparent.png';
@@ -7,8 +7,18 @@ import { FaXTwitter } from 'react-icons/fa6';
 import './Footer.css';
 
 const Footer = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isNearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 350;
+      setShowScrollTop(isNearBottom);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLogoClick = (e) => {
     e.preventDefault();
@@ -88,7 +98,7 @@ const Footer = () => {
             <Link to="/terms-and-conditions">Terms</Link>
             <Link to="/privacy-policy">Cookies</Link>
           </div>
-          <a href="#" className="scroll-to-top" aria-label="Scroll to top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          <a href="#" className={`scroll-to-top ${showScrollTop ? 'visible' : ''}`} aria-label="Scroll to top" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
           </a>
         </div>
