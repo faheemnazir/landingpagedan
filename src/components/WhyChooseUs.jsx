@@ -16,14 +16,14 @@ const BenefitCard = ({ title, description }) => (
 
 const WhyChooseUs = () => {
   const benefits = [
-    { title: "Custom-built code", description: "No templates, no shortcuts – just precision-engineered code built for your needs" },
+    { title: "Custom-built code", description: "No templates, no shortcuts, only precision-engineered code built for your needs" },
     { title: "Scalable architecture", description: "Systems that handle 100 users today and 1 million tomorrow without a rebuild" },
     { title: "Fixed transparent pricing", description: "Know exactly what you'll pay upfront. No hidden fees, no surprises" },
-    { title: "Contractual Delivery Timeline", description: "8–14 weeks is a signed contractual commitment, not a rough estimate." },
+    { title: "Contractual Delivery Timeline", description: "8-14 weeks is a signed contractual commitment, not a rough estimate." },
     { title: "Dedicated project manager", description: "Your single point of contact who keeps everything on track" },
-    { title: "Post-launch support included", description: "We don't disappear after launch – ongoing support is built in" },
+    { title: "Post-launch support included", description: "We don't disappear after launch, as ongoing support is built in" },
     { title: "NDA from day one", description: "Your ideas are protected from the very first conversation" },
-    { title: "100% code ownership", description: "You own everything we build – full rights, full documentation" }
+    { title: "100% code ownership", description: "You own everything we build, with full rights and full documentation" }
   ];
 
   return (

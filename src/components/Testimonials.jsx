@@ -45,7 +45,7 @@ const Testimonials = () => {
       company: "FinanceHub"
     },
     {
-      quote: "Daneen Al Majaz transformed our entire digital infrastructure. Their team delivered beyond our expectations — on time, on budget, and with exceptional quality.",
+      quote: "Daneen Al Majaz transformed our entire digital infrastructure. Their team delivered beyond our expectations, on time, on budget, and with exceptional quality.",
       author: "Mr Selva",
       role: "CEO",
       company: "Dainty"

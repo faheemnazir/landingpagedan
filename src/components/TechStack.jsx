@@ -235,7 +235,7 @@ const TechStack = () => {
         </h2>
         <div className="title-underline"></div>
         <p className="text-body tech-stack-subtitle">
-          We use a modern, open-technology stack — no proprietary lock-in, no frameworks that trap you. Every tool we choose is proven at scale, maintainable by any developer, and selected specifically for your project's performance requirements.
+          We use a modern, open-technology stack with no proprietary lock-in and no frameworks that trap you. Every tool we choose is proven at scale, maintainable by any developer, and selected specifically for your project's performance requirements.
         </p>
       </div>
 

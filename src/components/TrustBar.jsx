@@ -23,7 +23,7 @@ const trustItems = [
   },
   {
     icon: Clock,
-    title: "8–14 Weeks",
+    title: "8-14 Weeks",
     desc: "Timeline",
     check: "Milestone-tracked"
   },

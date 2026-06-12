@@ -81,7 +81,7 @@ const Portfolio = () => {
         "Real-time order tracking with live map updates",
         "Multi-role flows: customer, delivery rider & merchant",
         "In-app push notifications & delivery status updates",
-        "Cross-platform Flutter codebase — iOS & Android"
+        "Cross-platform Flutter codebase for iOS & Android"
       ],
       stats: { users: "300", rating: "4.8", downloads: "1k+" },
       bg: "#ffffff",
@@ -171,7 +171,7 @@ const Portfolio = () => {
       link: "https://hms.daneenalmajaz.in/",
       category: "Hospitality SaaS",
       tags: ["HMS", "SaaS", "Hospitality", "Dashboard"],
-      description: "A comprehensive Hotel Management System covering the full operations lifecycle — reservations, front desk check-in/out, housekeeping status, guest billing, and real-time occupancy and revenue dashboards.",
+      description: "A comprehensive Hotel Management System covering the full operations lifecycle, including reservations, front desk check-in/out, housekeeping status, guest billing, and real-time occupancy and revenue dashboards.",
       bullets: [
         "Front desk: reservations, check-in & check-out management",
         "Room status & housekeeping workflow tracking",
@@ -210,7 +210,7 @@ const Portfolio = () => {
       link: "https://valemontis.com/",
       category: "Luxury Hospitality / E-Commerce",
       tags: ["E-Commerce", "Hospitality", "Luxury", "Retail"],
-      description: "An e-commerce and hospitality platform for Vale Montis — a premium mountain-valley luxury brand. Features immersive brand storytelling, room & suite showcase, experiences catalogue, and seamless booking integration.",
+      description: "An e-commerce and hospitality platform for Vale Montis, a premium mountain-valley luxury brand. Features immersive brand storytelling, room & suite showcase, experiences catalogue, and seamless booking integration.",
       bullets: [
         "Full-screen immersive hero with brand narrative",
         "Room & suite showcase with booking integration",
@@ -309,7 +309,7 @@ const Portfolio = () => {
   return (
     <section className="portfolio container" id="portfolio">
       <div className="portfolio-header">
-        <h2 className="heading-lg text-gold">Portfolio — Selected Work</h2>
+        <h2 className="heading-lg text-gold">Portfolio: Selected Work</h2>
         <p className="text-body portfolio-subtitle">
           Trusted by leading brands to build exceptional digital products that users love.
         </p>

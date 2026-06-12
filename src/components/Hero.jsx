@@ -163,7 +163,7 @@ const Hero = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   <h4 style={{ fontSize: '20px', color: '#fff', margin: 0, fontWeight: 500 }}>Your inquiry has been successfully received.</h4>
                   <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '16px', lineHeight: '1.7', margin: 0 }}>
-                    A senior consultant from Daneen Al Majaz IT Services will contact you within one business day to arrange your free discovery call — no commitment required.
+                    A senior consultant from Daneen Al Majaz IT Services will contact you within one business day to arrange your free discovery call, with no commitment required.
                   </p>
                 </div>
                 <div style={{ marginTop: '16px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>

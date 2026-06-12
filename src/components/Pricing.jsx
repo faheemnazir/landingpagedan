@@ -44,7 +44,7 @@ const Pricing = () => {
           title="STARTER"
           price="from £5,999"
           features={[
-            "Single platform — iOS or Android",
+            "Single platform: iOS or Android",
             "Up to 10 app screens",
             "UI/UX design included",
             "Backend API development",
@@ -59,7 +59,7 @@ const Pricing = () => {
           price="from £9,999"
           badgeText="Most Popular"
           features={[
-            "iOS and Android — both platforms",
+            "iOS and Android (both platforms)",
             "Unlimited screens",
             "Advanced UI/UX and prototyping",
             "Scalable backend architecture",

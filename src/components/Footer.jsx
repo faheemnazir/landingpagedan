@@ -73,7 +73,7 @@ const Footer = () => {
             <ul>
               <li><a href="mailto:info@daneenalmajaz.in">info@daneenalmajaz.in</a></li>
               <li><a href="tel:+443001240371">+44 0300 124 0371 (UK)</a></li>
-              <li>Mon–Sat, 9am–6pm GMT/IST</li>
+              <li>Mon-Sat, 9am-6pm GMT/IST</li>
               <li>Response within 1 business day</li>
             </ul>
           </div>

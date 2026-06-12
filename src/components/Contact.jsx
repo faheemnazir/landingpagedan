@@ -47,7 +47,7 @@ const Contact = () => {
           <h3 className="heading-md text-gold italic-title">Still Thinking About It?</h3>
           <h4 className="thinking-subtitle">That's Exactly Why This Is Free.</h4>
 
-          <p className="text-body">This is a significant investment — we understand that completely. That's precisely why there's no commitment before the conversation.</p>
+          <p className="text-body">This is a significant investment, and we understand that completely. That's precisely why there's no commitment before the conversation.</p>
           <p className="text-body mt-3">Just an honest 30-minute call about your idea, what it would take to build it, and whether we're the right team for the job.</p>
 
           <div className="reach-us-card mt-3">
@@ -68,7 +68,7 @@ const Contact = () => {
               </a>
               <div className="contact-line">
                 <Clock size={18} className="text-gray" />
-                <span>Mon–Sat, 9am–6pm GMT/IST · Response within 1 business day</span>
+                <span>Mon-Sat, 9am-6pm GMT/IST · Response within 1 business day</span>
               </div>
             </div>
 
@@ -198,7 +198,7 @@ const Contact = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <h4 style={{ fontSize: '20px', color: '#fff', margin: 0, fontWeight: 500 }}>Your inquiry has been successfully received.</h4>
                 <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '16px', lineHeight: '1.7', margin: 0 }}>
-                  A senior consultant from Daneen Al Majaz IT Services will contact you within one business day to arrange your free discovery call — no commitment required.
+                  A senior consultant from Daneen Al Majaz IT Services will contact you within one business day to arrange your free discovery call, with no commitment required.
                 </p>
               </div>
               <div style={{ marginTop: '16px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
