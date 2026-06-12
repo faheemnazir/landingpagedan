@@ -33,8 +33,7 @@ const Testimonials = () => {
       company: "CEMTAC CEMENTS"
     },
     {
-      quote: "working with Daneen Al Majaz IT Services was one of the best decisions we made for ZipplyNow.The real-time tracking, rider workflows, and merchant management system have significantly improved our delivery operations. Their team was responsive, professional, and genuinely invested in our success.",
-      author: "Eshaan Ali",
+      quote: "working with Daneen Al Majaz IT Services was one of the best decisions we made for ZipplyNow.The real-time tracking, rider workflows, and merchant management system have significantly improved our delivery operations.",
       role: "CEO",
       company: "ZipplyNow "
     },
