@@ -441,8 +441,8 @@
   }
 
   .hero-title {
-    font-size: 2.8rem;
-    line-height: 1.25;
+    font-size: 2.3rem;
+    line-height: 1.2;
   }
 
   .hero-actions {
@@ -508,6 +508,11 @@
     padding-top: 16px;
     padding-bottom: 24px;
     gap: 20px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+    line-height: 1.2;
   }
 
   .hero-form-card {
