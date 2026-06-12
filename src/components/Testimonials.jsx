@@ -12,9 +12,9 @@ const TestimonialCard = ({ quote, author, role, company }) => (
     </div>
     <p className="testimonial-text">{quote}</p>
     <div className="testimonial-author">
-      <div className="author-avatar">{author.charAt(0).toUpperCase()}</div>
+      <div className="author-avatar">{(author || '').charAt(0).toUpperCase()}</div>
       <div className="author-info">
-        <h4 className="author-name">{author}</h4>
+        <h4 className="author-name">{author || ''}</h4>
         <p className="author-role">{role ? `${role}, ` : ''}{company}</p>
       </div>
     </div>
@@ -34,6 +34,7 @@ const Testimonials = () => {
     },
     {
       quote: "working with Daneen Al Majaz IT Services was one of the best decisions we made for ZipplyNow. They didn’t just build an app they understood our logistics operations and translated them into a smooth, scalable platform. The real-time tracking, rider workflows, and merchant management system have significantly improved our delivery operations. Their team was responsive, professional, and genuinely invested in our success.",
+      author: "Eshaan Ali",
       role: "CEO",
       company: "ZipplyNow "
     },
