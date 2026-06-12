@@ -140,7 +140,7 @@ const Portfolio = () => {
         "Integrated e-commerce website & dedicated mobile application",
         "Hygienic processing & cold chain storage quality control"
       ],
-      stats: { users: "15K+", rating: "4.9", downloads: "2.5k" },
+      stats: { users: "3.5k+", rating: "4.9", downloads: "2.5k+" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
