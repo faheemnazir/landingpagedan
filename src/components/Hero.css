@@ -71,6 +71,10 @@
   margin-bottom: 20px;
 }
 
+.hero-subtitle.mobile-subtitle {
+  display: none;
+}
+
 .hero-actions {
   display: flex;
   flex-direction: row;
@@ -378,6 +382,14 @@
     padding-top: 32px;
     padding-bottom: 32px;
     min-height: auto;
+  }
+
+  .hero-subtitle.desktop-subtitle {
+    display: none;
+  }
+
+  .hero-subtitle.mobile-subtitle {
+    display: block;
   }
 
   .hero-content {

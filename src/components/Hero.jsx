@@ -55,8 +55,10 @@ const Hero = () => {
           Custom Mobile App Development for <span className="hero-title-gradient">UK Businesses</span>
         </h1>
 
-        <p className="hero-subtitle">
+        <p className="hero-subtitle desktop-subtitle">
           We design and develop scalable, high-performance mobile apps tailored to your business goals from concept and strategy to launch and ongoing support.No templates, no compromises, and no hidden fees just custom solutions that help your business engage customers, streamline operations, and drive measurable results.</p>
+        <p className="hero-subtitle mobile-subtitle">
+          We design and develop scalable, high-performance mobile apps tailored to your business goals; from idea to launch. No templates. No compromises. No hidden fees.</p>
 
         <div className="hero-actions">
           <a href="#contact-form" className="btn-start" style={{ textDecoration: 'none' }}>
