@@ -56,8 +56,7 @@ const Hero = () => {
         </h1>
 
         <p className="hero-subtitle">
-          We design and develop scalable, high-performance mobile apps tailored to your business goals; from idea to launch. No templates. No compromises. No hidden fees.
-        </p>
+          We design and develop scalable, high-performance mobile apps tailored to your business goals from concept and strategy to launch and ongoing support. Every app is built with a focus on user experience, speed, security, and long-term growth. No templates, no compromises, and no hidden fees just custom solutions that help your business engage customers, streamline operations, and drive measurable results.</p>
 
         <div className="hero-actions">
           <a href="#contact-form" className="btn-start" style={{ textDecoration: 'none' }}>
