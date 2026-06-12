@@ -153,7 +153,7 @@
   color: var(--text-secondary);
 }
 
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (max-width: 1024px) {
   .testimonial-card {
     flex: 0 0 320px;
     scroll-snap-align: center;
@@ -161,7 +161,7 @@
   }
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px) {
   .testimonials-grid {
     display: flex;
     flex-direction: row;

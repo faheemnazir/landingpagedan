@@ -203,14 +203,14 @@
   color: #ef4444;
 }
 
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (max-width: 1024px) {
   .tech-flat-card {
     flex: 0 0 190px;
     min-width: 190px;
   }
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px) {
   .tech-stack {
     padding-top: 32px;
     padding-bottom: 32px;

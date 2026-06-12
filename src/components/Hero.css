@@ -371,7 +371,7 @@
 }
 
 
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -429,7 +429,7 @@
   }
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px) {
   .hero {
     padding-top: 20px;
     padding-bottom: 32px;
@@ -520,13 +520,16 @@
   }
   
   .btn-start, .btn-view {
-    width: 100%;
-    flex: none;
+    min-width: 100px;
+    font-size: 12px;
+    padding: 10px 8px;
+    gap: 4px;
   }
   
   .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
   }
 
   .hero-pricing-badge {

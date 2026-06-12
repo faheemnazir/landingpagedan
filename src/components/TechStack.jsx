@@ -12,7 +12,7 @@ const TechStack = () => {
 
   const [activeTab, setActiveTab] = useState("App Technologies");
   const [isMobile, setIsMobile] = useState(false);
-  
+
   const wrapperRef = useRef(null);
   const tabsRef = useRef(null);
   const isScrollingToTab = useRef(false);
@@ -32,15 +32,15 @@ const TechStack = () => {
 
   const handleScroll = () => {
     if (!wrapperRef.current || isScrollingToTab.current) return;
-    
+
     if (scrollThrottledRef.current) return;
     scrollThrottledRef.current = true;
-    
+
     requestAnimationFrame(() => {
       scrollThrottledRef.current = false;
       const container = wrapperRef.current;
       if (!container) return;
-      
+
       const cards = container.querySelectorAll('.tech-flat-card');
       if (cards.length === 0) return;
 
@@ -72,10 +72,10 @@ const TechStack = () => {
       const targetCard = container.querySelector(`.tech-flat-card[data-category="${cat}"]`);
       if (targetCard) {
         isScrollingToTab.current = true;
-        
+
         const cardOffsetLeft = targetCard.offsetLeft;
         const containerPaddingLeft = 16;
-        
+
         container.scrollTo({
           left: cardOffsetLeft - containerPaddingLeft,
           behavior: 'smooth'
@@ -231,7 +231,7 @@ const TechStack = () => {
     <section className="tech-stack container" id="tech-stack">
       <div className="tech-stack-header">
         <h2 className="heading-lg">
-          What Technologies Does <span className="text-gold" style={{ color: '#dfb15b', borderBottom: '2px solid #dfb15b', paddingBottom: '4px' }}>Daneen Al Majaz</span> <br className="tech-br-desktop" /> Use for Mobile App Development?
+          What Technologies Does <span className="text-gold" >Daneen Al Majaz</span> <br className="tech-br-desktop" /> Use for Mobile App Development?
         </h2>
         <div className="title-underline"></div>
         <p className="text-body tech-stack-subtitle">
@@ -255,13 +255,13 @@ const TechStack = () => {
       </div>
 
       {/* Horizontal Cards Grid */}
-      <div 
-        className="tech-cards-wrapper" 
+      <div
+        className="tech-cards-wrapper"
         ref={wrapperRef}
         onScroll={handleScroll}
       >
         <div className="tech-cards-row">
-          {categories.flatMap(cat => 
+          {categories.flatMap(cat =>
             stackData[cat].map((item, idx) => {
               const logoUrl = getTechLogoUrl(item.name);
               const colorClass = getIconColorClass(item.name);

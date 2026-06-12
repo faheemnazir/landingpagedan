@@ -197,7 +197,7 @@
   margin-bottom: 4px;
 }
 
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (max-width: 1024px) {
   .portfolio-header h2 {
     font-size: 2rem;
   }
@@ -207,7 +207,7 @@
   }
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px) {
   .portfolio {
     padding-top: 8px;
     padding-bottom: 8px;
@@ -252,7 +252,7 @@
   display: flex !important;
 }
 
-@media (max-width: 480px) and (orientation: portrait) {
+@media (max-width: 480px) {
   .portfolio {
     padding-top: 6px;
     padding-bottom: 6px;
@@ -500,7 +500,7 @@
 }
 
 /* Responsive Modal styling */
-@media (max-width: 900px) and (orientation: portrait) {
+@media (max-width: 900px) {
   .portfolio-modal-content {
     grid-template-columns: 1fr;
   }
@@ -514,7 +514,7 @@
   }
 }
 
-@media (max-width: 480px) and (orientation: portrait) {
+@media (max-width: 480px) {
   .portfolio-modal-overlay {
     padding: 10px;
   }

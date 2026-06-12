@@ -190,19 +190,21 @@
 }
 
 /* ── Responsive breakpoints ── */
-@media (max-width: 1024px) and (orientation: portrait) {
+@media (max-width: 1024px) {
   .challenges {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 
   .challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
   .challenge-card {
-    flex: 0 0 calc((100% - 20px) / 2);
-    min-height: 420px;
+    min-height: auto;
+    height: 100%;
   }
 
   .challenges-callout {
@@ -215,24 +217,24 @@
   }
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px) {
   .challenges {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   .challenges-header {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 
   .challenges-header .badge {
-    margin-bottom: 28px;
+    margin-bottom: 16px;
   }
 
   .challenges-header h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 1.35;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
   }
 
   .challenges-subtitle {
@@ -247,6 +249,8 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    gap: 16px;
+    padding-bottom: 16px;
   }
 
   .challenges-grid::-webkit-scrollbar {
@@ -254,10 +258,11 @@
   }
 
   .challenge-card {
-    flex: 0 0 85%;
+    flex: 0 0 88%;
     height: auto;
-    min-height: 380px;
+    min-height: auto;
     scroll-snap-align: start;
+    padding: 24px 16px;
   }
 
   .card-top {
@@ -266,5 +271,6 @@
 
   .challenges-callout {
     border-radius: 16px;
+    padding: 20px 16px;
   }
 }
