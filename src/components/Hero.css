@@ -4,7 +4,7 @@
   gap: clamp(16px, 3vw, 32px);
   padding-top: clamp(12px, 2.5vh, 48px);
   padding-bottom: clamp(12px, 2.5vh, 48px);
-  align-items: center;
+  align-items: stretch;
   min-height: calc(100vh - 96px);
   min-height: calc(100dvh - 96px);
 }
@@ -13,8 +13,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(12px, 1.8vh, 24px);
+  justify-content: space-between;
   width: 100%;
+  height: 100%;
 }
 
 .hero-badge {
@@ -385,6 +386,9 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: auto;
+    justify-content: flex-start;
+    gap: clamp(12px, 1.8vh, 24px);
   }
 
   .hero-form-card {
