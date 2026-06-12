@@ -274,41 +274,7 @@
     height: auto;
     min-height: auto;
     scroll-snap-align: start;
-    padding: clamp(14px, 4.5vw, 24px) clamp(10px, 3.5vw, 16px);
-  }
-
-  .problem-badge {
-    padding: 3px 10px;
-    font-size: clamp(0.65rem, 2vw, 0.75rem);
-  }
-
-  .challenge-title {
-    font-size: clamp(1rem, 4.5vw, 1.2rem);
-    margin-top: clamp(8px, 2.5vw, 12px);
-    margin-bottom: clamp(6px, 2vw, 10px);
-  }
-
-  .problem-text {
-    font-size: clamp(0.78rem, 3.2vw, 0.88rem);
-    line-height: 1.45;
-  }
-
-  .card-divider {
-    margin: clamp(6px, 2vw, 10px) 0;
-  }
-
-  .solution-header {
-    font-size: clamp(0.68rem, 2.2vw, 0.75rem);
-    margin-bottom: clamp(8px, 2.5vw, 12px);
-  }
-
-  .solution-list {
-    gap: clamp(6px, 2vw, 10px);
-  }
-
-  .solution-list li {
-    font-size: clamp(0.72rem, 3vw, 0.82rem);
-    line-height: 1.35;
+    padding: 24px 16px;
   }
 
   .card-top {
