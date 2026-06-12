@@ -40,9 +40,11 @@ const ProjectCard = ({ title, number, tags, description, stats, category, image,
           <div className="stat">
             <span className="stat-value">★ {stats.rating}</span>
           </div>
-          <div className="stat">
-            <span className="stat-value">{stats.downloads}</span> Downloads
-          </div>
+          {stats.downloads && (
+            <div className="stat">
+              <span className="stat-value">{stats.downloads}</span> Downloads
+            </div>
+          )}
         </div>
 
         <div className="project-tags">
@@ -51,11 +53,11 @@ const ProjectCard = ({ title, number, tags, description, stats, category, image,
           ))}
         </div>
 
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="project-link" 
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-link"
           onClick={(e) => e.stopPropagation()}
         >
           Visit Website <ArrowUpRight size={16} />
@@ -81,7 +83,7 @@ const Portfolio = () => {
         "Role-based access for operators and managers",
         "Dashboard with storage occupancy analytics"
       ],
-      stats: { users: "180", rating: "4.8", downloads: "320" },
+      stats: { users: "400", rating: "4.8" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -100,7 +102,7 @@ const Portfolio = () => {
         "Dealer & distributor management with dedicated profiles",
         "Centralized dashboard for business-wide operational visibility"
       ],
-      stats: { users: "120", rating: "4.9", downloads: "210" },
+      stats: { users: "120", rating: "4.9" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -119,7 +121,7 @@ const Portfolio = () => {
         "Academy history, achievements & media gallery",
         "Mobile-responsive with a clean sport-forward aesthetic"
       ],
-      stats: { users: "260", rating: "4.7", downloads: "480" },
+      stats: { users: "150", rating: "4.7" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -138,7 +140,7 @@ const Portfolio = () => {
         "Map-based property discovery for Kashmir localities",
         "Stage environment maintained for QA and client review"
       ],
-      stats: { users: "340", rating: "4.8", downloads: "590" },
+      stats: { users: "200", rating: "4.8" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -157,7 +159,7 @@ const Portfolio = () => {
         "Guest billing, invoice generation & payment tracking",
         "Occupancy & revenue analytics dashboard"
       ],
-      stats: { users: "150", rating: "4.9", downloads: "270" },
+      stats: { users: "350", rating: "4.9" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -176,7 +178,7 @@ const Portfolio = () => {
         "In-app push notifications & delivery status updates",
         "Cross-platform Flutter codebase — iOS & Android"
       ],
-      stats: { users: "720", rating: "4.8", downloads: "950" },
+      stats: { users: "300", rating: "4.8", downloads: "150" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -195,7 +197,7 @@ const Portfolio = () => {
         "Lead generation forms & client enquiry flows",
         "Clean, professional, conversion-focused design"
       ],
-      stats: { users: "430", rating: "4.8", downloads: "780" },
+      stats: { users: "180", rating: "4.8" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -214,7 +216,7 @@ const Portfolio = () => {
         "Experiences, dining & activities feature sections",
         "High-end visual design crafted for luxury positioning"
       ],
-      stats: { users: "310", rating: "4.8", downloads: "620" },
+      stats: { users: "200", rating: "4.8" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -314,9 +316,9 @@ const Portfolio = () => {
 
       <div className="portfolio-grid" ref={sliderRef} onScroll={handleScroll}>
         {projects.map((project, idx) => (
-          <ProjectCard 
-            key={idx} 
-            {...project} 
+          <ProjectCard
+            key={idx}
+            {...project}
             onCardClick={() => setSelectedProject(project)}
           />
         ))}
@@ -354,23 +356,23 @@ const Portfolio = () => {
       {selectedProject && (
         <div className="portfolio-modal-overlay" onClick={() => setSelectedProject(null)}>
           <div className="portfolio-modal-card" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="portfolio-modal-close" 
+            <button
+              className="portfolio-modal-close"
               onClick={() => setSelectedProject(null)}
               aria-label="Close modal"
             >
               <X size={20} />
             </button>
-            
+
             <div className="portfolio-modal-content">
               <div className="portfolio-modal-details-sec">
                 <span className="modal-category">{selectedProject.category}</span>
                 <h2 className="modal-title">
                   {selectedProject.title}
                 </h2>
-                
+
                 <p className="modal-desc">{selectedProject.description}</p>
-                
+
                 {selectedProject.bullets && selectedProject.bullets.length > 0 && (
                   <ul className="modal-bullets">
                     {selectedProject.bullets.map((bullet, idx) => (
@@ -380,7 +382,7 @@ const Portfolio = () => {
                     ))}
                   </ul>
                 )}
-                
+
                 <div className="modal-stats">
                   <div className="modal-stat">
                     <span className="stat-label">Users</span>
@@ -390,28 +392,30 @@ const Portfolio = () => {
                     <span className="stat-label">Rating</span>
                     <span className="stat-value">★ {selectedProject.stats.rating}</span>
                   </div>
-                  <div className="modal-stat">
-                    <span className="stat-label">Downloads</span>
-                    <span className="stat-value">{selectedProject.stats.downloads}</span>
-                  </div>
+                  {selectedProject.stats.downloads && (
+                    <div className="modal-stat">
+                      <span className="stat-label">Downloads</span>
+                      <span className="stat-value">{selectedProject.stats.downloads}</span>
+                    </div>
+                  )}
                 </div>
-                
+
                 <div className="modal-tags">
                   {selectedProject.tags.map((tag, idx) => (
                     <span key={idx} className="modal-tag">{tag}</span>
                   ))}
                 </div>
-                
+
                 <div className="modal-actions">
-                  <a 
-                    href={selectedProject.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-primary modal-visit-btn"
                   >
                     Visit Website <ArrowUpRight size={16} />
                   </a>
-                  <button 
+                  <button
                     className="btn btn-secondary modal-back-btn"
                     onClick={() => setSelectedProject(null)}
                   >
