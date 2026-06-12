@@ -43,7 +43,7 @@
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(2rem, 4vw, 5.5rem);
+  font-size: clamp(2.4rem, 4.3vw, 5.8rem);
   line-height: 1.15;
   color: #FFFFFF;
   margin: 0;
@@ -441,7 +441,7 @@
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     line-height: 1.25;
   }
 
