@@ -130,7 +130,7 @@ const Portfolio = () => {
       title: "🐔 Apna Chicken Centre",
       number: "03",
       image: apnaChickenImg,
-      link: "#",
+      link: "https://apnachickencenter.in/",
       category: "Poultry E-Commerce / App",
       tags: ["Poultry", "E-Commerce", "Mobile App", "Home Delivery"],
       description: "An end-to-end poultry e-commerce platform with a dedicated mobile application and website, enabling customers to order fresh, hygienically processed chicken directly from their smartphones or desktop devices. The platform combines seamless online ordering, custom-cut selections, scheduled deliveries, and real-time convenience to modernize the traditional poultry shopping experience.",

@@ -19,6 +19,8 @@ import seriesMarriottImg from '../assets/new_partnars/06_series_by_marriott.png'
 import kashmirGiftImg from '../assets/new_partnars/07_kashmir_gift.png';
 import daintyImg from '../assets/new_partnars/08_dainty.png';
 import trustonImg from '../assets/new_partnars/08_truston.png';
+import nitristoreImg from '../assets/new_partnars/nutristore.png';
+import nutrivandImg from '../assets/new_partnars/nutrivend_logo-removebg-preview.png';
 
 
 const TrustedBrands = () => {
@@ -37,7 +39,9 @@ const TrustedBrands = () => {
     { src: astoraImg, alt: "Astora Equipment Trading" },
     { src: daintyImg, alt: "Spectra Bathe Gallery" },
     { src: coldstoreImg, alt: "ColdStore J&K" },
-    { src: ziplynowImg, alt: "ZiplyNow" }
+    { src: ziplynowImg, alt: "ZiplyNow" },
+    { src: nitristoreImg, alt: "Nutristore" },
+    { src: nutrivandImg, alt: "Nutrivend" }
   ];
 
   // Duplicate for seamless infinite marquee scrolling
