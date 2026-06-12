@@ -29,7 +29,7 @@ const ProjectCard = ({ title, number, tags, description, stats, category, image,
       </div>
       <div className="project-info">
         <h3 className="project-title">
-          {title} {number && <span className="project-number">· {number}</span>}
+          {title}
         </h3>
         <p className="project-desc">{description}</p>
 
