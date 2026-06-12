@@ -217,16 +217,13 @@ a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-ca
 
 /* Responsive Overrides */
 @media (max-width: 1024px) {
-  .slider-controls-mobile {
+  .slider-controls-mobile,
+  .slider-controls {
     display: flex;
   }
 }
 
 @media (max-width: 768px) {
-
-  .slider-controls {
-    display: flex;
-  }
 
   /* Global Streamlined Mobile Section Spacing */
   section {

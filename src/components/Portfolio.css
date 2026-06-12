@@ -205,6 +205,27 @@
   .portfolio-header .portfolio-subtitle {
     font-size: 0.85rem;
   }
+
+  .portfolio-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .portfolio-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-card {
+    flex: 0 0 45%;
+    max-width: none;
+    scroll-snap-align: start;
+    min-height: 460px;
+  }
 }
 
 @media (max-width: 768px) {
