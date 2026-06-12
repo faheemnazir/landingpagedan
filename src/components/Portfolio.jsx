@@ -94,7 +94,7 @@ const Portfolio = () => {
       image: coldstorage,
       link: "https://cs.daneenalmajaz.in/",
       category: "Smart Logistics / ERP",
-      tags: ["ERP", "Inventory", "Horticulture", "J&K"],
+      tags: ["ERP", "Inventory", "SaaS", "J&K"],
       description: "A full-stack cold storage management platform for Kashmir's horticulture industry. Enables real-time inventory tracking, crate management, automated billing, and storage occupancy analytics for institutional-grade facilities.",
       bullets: [
         "Live inventory & stock inward/outward tracking",
