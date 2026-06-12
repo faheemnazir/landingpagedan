@@ -169,7 +169,7 @@
   border-top: 1px solid var(--border-color);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (orientation: portrait) {
   .pricing-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -180,14 +180,14 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .included-grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (orientation: portrait) {
   .pricing-header {
     padding: 24px;
   }

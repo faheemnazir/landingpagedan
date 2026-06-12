@@ -125,7 +125,7 @@
   background-color: var(--accent-gold);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (orientation: portrait) {
   .features-grid {
     display: flex;
     flex-wrap: nowrap;

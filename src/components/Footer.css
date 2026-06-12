@@ -316,7 +316,7 @@
   transform: translateY(-4px);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (orientation: portrait) {
   .footer-top-row {
     flex-wrap: wrap;
     gap: 48px;
@@ -334,7 +334,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .scroll-to-top {
     right: 24px;
     bottom: 80px; /* Pushed up above the sticky bottom bar */

@@ -72,7 +72,7 @@ const Navbar = () => {
         <Phone size={24} />
       </a>
 
-      <a href="#contact-form" className={`floating-consult-btn ${scrolled ? 'visible' : ''}`}>
+      <a href="#contact-form" className="floating-consult-btn">
         Book a Free Consultation Now
       </a>
     </>

@@ -215,13 +215,13 @@ a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-ca
 }
 
 /* Responsive Overrides */
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (orientation: portrait) {
   .slider-controls-mobile {
     display: flex;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
 
   .slider-controls {
     display: flex;
@@ -242,7 +242,7 @@ a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-ca
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (orientation: portrait) {
 
   .heading-xl {
     font-size: 1.8rem;
@@ -254,7 +254,7 @@ a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-ca
 }
 
 /* Responsive Contact Links */
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .desktop-phone-only {
     display: none !important;
   }
@@ -267,7 +267,7 @@ a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-ca
 }
 
 /* Global Laptop Figma Zoom Engine */
-@media (max-width: 1440px) and (min-width: 1025px) {
+@media (max-width: 1440px) and (orientation: portrait) and (min-width: 1025px) {
   html {
     zoom: calc(100vw / 1440px);
   }

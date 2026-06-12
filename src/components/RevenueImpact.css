@@ -134,14 +134,14 @@
 /* ==========================================
    RESPONSIVE LAYOUT BREAKPOINTS
    ========================================== */
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (orientation: portrait) {
   .revenue-content {
     grid-template-columns: 1fr;
     gap: 48px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .revenue-impact {
     padding-top: 88px;
     padding-bottom: 64px;
@@ -176,7 +176,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (orientation: portrait) {
   .revenue-stats-grid {
     grid-template-columns: 1fr;
   }

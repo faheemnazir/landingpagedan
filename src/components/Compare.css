@@ -113,7 +113,7 @@
   border-radius: 100px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .compare-card {
     padding: 24px 12px;
   }

@@ -371,7 +371,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (orientation: portrait) {
   .hero {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -429,7 +429,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .hero {
     padding-top: 20px;
     padding-bottom: 32px;
@@ -498,7 +498,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (orientation: portrait) {
   .hero {
     padding-top: 16px;
     padding-bottom: 24px;

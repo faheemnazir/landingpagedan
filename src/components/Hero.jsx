@@ -48,7 +48,7 @@ const Hero = () => {
           <Star size={16} color="#C8A46B" fill="#C8A46B" />
           <Star size={16} color="#C8A46B" fill="#C8A46B" />
           <Star size={16} color="#C8A46B" fill="#C8A46B" />
-          <span className="badge-text">Trusted by Fortune 500 Companies</span>
+          <span className="badge-text">Trusted by Fortune 200 Companies</span>
         </div>
 
         <h1 className="hero-title">
@@ -66,7 +66,7 @@ const Hero = () => {
           <a href="#portfolio" className="btn-view" style={{ textDecoration: 'none' }}>
             View Our Work
           </a>
-          
+
           <div className="hero-pricing-badge">
             <span className="badge-label">Starting At</span>
             <span className="badge-price">£5,999</span>

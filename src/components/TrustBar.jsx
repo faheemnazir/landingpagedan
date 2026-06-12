@@ -17,7 +17,7 @@ const trustItems = [
   },
   {
     icon: PoundSterling,
-    title: "Srarting Fixed Price",
+    title: "Starting Fixed Price",
     desc: "£5,999",
     check: "No surprises",
   },
@@ -29,7 +29,7 @@ const trustItems = [
   },
   {
     icon: Check,
-    title: "1000+",
+    title: "200+",
     desc: "Projects Delivered",
     check: "Full transfer"
   },
@@ -51,14 +51,14 @@ const TrustBar = () => {
     const scrollLeft = container.scrollLeft;
     const scrollWidth = container.scrollWidth;
     const clientWidth = container.clientWidth;
-    
+
     const isAtEnd = scrollLeft > 10 && Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
-    
+
     const card = container.querySelector('.trust-card');
     if (!card) return;
     const cardWidth = card.clientWidth;
     const gap = 20;
-    
+
     let newIndex = Math.round(scrollLeft / (cardWidth + gap));
     if (scrollLeft <= 10) {
       newIndex = 0;
@@ -67,7 +67,7 @@ const TrustBar = () => {
     } else {
       newIndex = Math.min(newIndex, trustItems.length - 1);
     }
-    
+
     if (newIndex !== activeIndex) {
       setActiveIndex(newIndex);
     }
@@ -75,7 +75,7 @@ const TrustBar = () => {
 
   useEffect(() => {
     const container = scrollContainerRef.current;
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -91,7 +91,7 @@ const TrustBar = () => {
     if (container) {
       observer.observe(container);
     }
-    
+
     return () => {
       if (container) {
         observer.unobserve(container);
@@ -140,9 +140,9 @@ const TrustBar = () => {
       </div>
 
       <div className="slider-controls">
-        <button 
-          className="control-btn prev" 
-          onClick={() => handleScrollTo('left')} 
+        <button
+          className="control-btn prev"
+          onClick={() => handleScrollTo('left')}
           aria-label="Previous card"
           disabled={activeIndex === 0}
         >
@@ -150,8 +150,8 @@ const TrustBar = () => {
         </button>
         <div className="slider-dots">
           {trustItems.map((_, idx) => (
-            <span 
-              key={idx} 
+            <span
+              key={idx}
               className={`slider-dot ${idx === activeIndex ? 'active' : ''}`}
               onClick={() => {
                 if (!scrollContainerRef.current) return;
@@ -165,9 +165,9 @@ const TrustBar = () => {
             ></span>
           ))}
         </div>
-        <button 
-          className="control-btn next" 
-          onClick={() => handleScrollTo('right')} 
+        <button
+          className="control-btn next"
+          onClick={() => handleScrollTo('right')}
           aria-label="Next card"
           disabled={activeIndex >= trustItems.length - 1}
         >

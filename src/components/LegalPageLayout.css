@@ -170,7 +170,7 @@
   justify-content: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (orientation: portrait) {
   .legal-header h1 {
     font-size: 56px;
   }
@@ -189,7 +189,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .legal-page {
     padding-top: 120px;
   }
@@ -249,7 +249,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) and (orientation: portrait) {
   .legal-header h1 {
     font-size: 32px;
   }

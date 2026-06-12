@@ -44,7 +44,7 @@ const TrustedBrands = () => {
   const marqueeBrands = [...brandLogos, ...brandLogos, ...brandLogos];
 
   const stats = [
-    { value: "500+", label: "Happy Clients" },
+    { value: "150+", label: "Happy Clients" },
     { value: "50+", label: "Industry Partners" },
     { value: "98%", label: "Satisfaction Rate" },
     { value: "24/7", label: "Support Available" }
