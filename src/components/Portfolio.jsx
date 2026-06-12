@@ -7,7 +7,7 @@ import bakirImg from '../assets/bakir.png';
 import cemtacImg from '../assets/cemtac.png';
 import digidalImg from '../assets/digidal.png';
 import kashmiriRealtorImg from '../assets/kashmiriRealtor.png';
-import snookerImg from '../assets/snooker.png';
+import apnaChickenImg from '../assets/new_partnars/02_apna_chicken.png';
 import valeMountsImg from '../assets/vale_mounts.png';
 import zipply from '../assets/tech/portfolioimages/zipply.png';
 import coldstorage from '../assets/tech/portfolioimages/coldstorage.png';
@@ -70,6 +70,25 @@ const ProjectCard = ({ title, number, tags, description, stats, category, image,
 const Portfolio = () => {
   const projects = [
     {
+      title: "⚡ ZipplyNow",
+      number: "06",
+      image: zipply,
+      link: "https://zipplynow.com",
+      category: "Logistics SaaS",
+      tags: ["Delivery", "Real-time", "Flutter", "SaaS"],
+      description: "A Flutter-based on-demand logistics system built for hyperlocal deliveries. Features real-time order tracking on live maps, role-based workflows for customers/merchants/riders, and in-app push notifications.",
+      bullets: [
+        "Real-time order tracking with live map updates",
+        "Multi-role flows: customer, delivery rider & merchant",
+        "In-app push notifications & delivery status updates",
+        "Cross-platform Flutter codebase — iOS & Android"
+      ],
+      stats: { users: "300", rating: "4.8", downloads: "1k+" },
+      bg: "#ffffff",
+      fit: "contain",
+      padding: "12px"
+    },
+    {
       title: "🌡 Daneen Cold Storage",
       number: "01",
       image: coldstorage,
@@ -95,33 +114,33 @@ const Portfolio = () => {
       link: "https://cemtac.com/",
       category: "Manufacturing ERP",
       tags: ["ERP", "Inventory", "Distribution", "Custom Software"],
-      description: "Custom-built ERP for Cemtac Cements — J&K's only MES-approved cement brand. Manages inventory, sales orders, and a full dealer/distributor network from one unified platform built for manufacturing operations.",
+      description: "Custom-built ERP for Cemtac Cements J&K's only MES-approved cement brand. Manages inventory, sales orders, and a full dealer/distributor network from one unified platform built for manufacturing operations.",
       bullets: [
         "Inventory & stock management with real-time level tracking",
         "Sales & order tracking from placement to fulfilment",
         "Dealer & distributor management with dedicated profiles",
         "Centralized dashboard for business-wide operational visibility"
       ],
-      stats: { users: "120", rating: "4.9" },
+      stats: { users: "200+", rating: "4.9" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
     },
     {
-      title: "🎱 The Snooker Academy",
+      title: "🍗 Apna Chicken Center",
       number: "03",
-      image: snookerImg,
-      link: "https://thesnookeracademy.in/",
-      category: "Sports Academy",
-      tags: ["Sports", "Booking", "Academy", "React"],
-      description: "A professional snooker academy platform built to attract aspiring players and manage coaching programmes. Features session booking, tournament info, coach profiles, and an achievement gallery for the academy.",
+      image: apnaChickenImg,
+      link: "#",
+      category: "Food Delivery / POS",
+      tags: ["Quick Service", "Billing", "App", "POS"],
+      description: "A custom ordering and billing application for Apna Chicken Center. Features real-time token tracking, custom ordering experience, sales tracking, and direct POS integration.",
       bullets: [
-        "Coaching programme showcase & online enrollment",
-        "Session booking & schedule management",
-        "Academy history, achievements & media gallery",
-        "Mobile-responsive with a clean sport-forward aesthetic"
+        "Real-time order token tracking & queue management",
+        "Interactive custom ordering & digital billing system",
+        "Front-counter POS integration for kitchen order sync",
+        "Streamlined layout built for high-volume quick service"
       ],
-      stats: { users: "150", rating: "4.7" },
+      stats: { users: "500+", rating: "4.9" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -135,7 +154,7 @@ const Portfolio = () => {
       tags: ["Real Estate", "Listings", "Kashmir", "Portal"],
       description: "A premium real estate discovery platform for the Kashmir property market. Buyers, sellers and agents browse residential and commercial listings with location-based filters, agent profiles, and direct enquiry flows.",
       bullets: [
-        "Property listings with filters — area, type & price range",
+        "Property listings with filters area, type & price range",
         "Agent profiles with direct enquiry & contact system",
         "Map-based property discovery for Kashmir localities",
         "Stage environment maintained for QA and client review"
@@ -164,25 +183,7 @@ const Portfolio = () => {
       fit: "contain",
       padding: "12px"
     },
-    {
-      title: "⚡ ZipplyNow",
-      number: "06",
-      image: zipply,
-      link: "https://zipplynow.com",
-      category: "Logistics SaaS",
-      tags: ["Delivery", "Real-time", "Flutter", "SaaS"],
-      description: "A Flutter-based on-demand logistics system built for hyperlocal deliveries. Features real-time order tracking on live maps, role-based workflows for customers/merchants/riders, and in-app push notifications.",
-      bullets: [
-        "Real-time order tracking with live map updates",
-        "Multi-role flows: customer, delivery rider & merchant",
-        "In-app push notifications & delivery status updates",
-        "Cross-platform Flutter codebase — iOS & Android"
-      ],
-      stats: { users: "300", rating: "4.8", downloads: "150" },
-      bg: "#ffffff",
-      fit: "contain",
-      padding: "12px"
-    },
+
     {
       title: "🌐 DigiDal Media",
       number: "07",

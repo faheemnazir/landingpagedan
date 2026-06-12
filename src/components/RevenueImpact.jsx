@@ -28,12 +28,12 @@ const RevenueImpact = () => {
     },
     {
       value: "£5,999",
-      label: "fixed starting price — vs £30,000+ quoted by most London agencies for the same scope",
+      label: "fixed starting price vs £30,000+ quoted by most London agencies for the same scope",
       highlight: false
     },
     {
       value: "14 wks",
-      label: "average time from signed NDA to live App Store product — contractually guaranteed",
+      label: "average time from signed NDA to live App Store product, contractually guaranteed",
       highlight: false
     }
   ];
@@ -47,7 +47,7 @@ const RevenueImpact = () => {
             <span className="text-gold">Unlock New Revenue</span> by Putting Your Business in Your Customers' Pockets
           </h2>
           <p className="text-body revenue-subtitle">
-            UK businesses that invest in a custom mobile app are consistently outperforming those that don't. From faster customer service to automated operations and repeat purchase loops — here is the kind of measurable impact Daneen Al Majaz IT Services delivers for our clients.
+            UK businesses that invest in a custom mobile app are consistently outperforming those that don't. From faster customer service to automated operations and repeat purchase loops, here is the kind of measurable impact Daneen Al Majaz IT Services delivers for our clients.
           </p>
           <a href="#contact-form" className="btn btn-gold cta-btn " >
             Get Free Consultation <span className="arrow">→</span>
