@@ -28,32 +28,32 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote: "The software Daneen Al Majaz IT Services built for Cemtac has completely transformed how we manage operations. The HRM and inventory system is reliable, fast, and exactly what we needed.",
-      author: "Imtiyaz Ahmad",
-      role: "Client",
+      author: "Raiz Ahmad Panjra",
+      role: "CEO",
       company: "CEMTAC CEMENTS"
     },
     {
-      quote: "The Apna Chicken Center app is mind-blowing. The billing system, token numbers, and custom ordering experience set us apart from every competitor.",
-      author: "Mohammad Saad Shah",
-      role: "Customer & App User",
-      company: "APNA CHICKEN CENTER"
+      quote: "Daneen Al Majaz transformed our vision into a stunning mobile app that exceeded all expectations. Their attention to detail and technical expertise is unmatched. Our user engagement increased by 300% in the first quarter.",
+      author: "Eshaan Ali",
+      role: "CEO",
+      company: "ZipplyNow "
     },
     {
       quote: "Daneen Al Majaz transformed our vision into a stunning mobile app that exceeded all expectations. Their attention to detail and technical expertise is unmatched. Our user engagement increased by 300% in the first quarter.",
-      author: "Kashifa khan",
+      author: "Humayun",
       role: "CEO",
-      company: "FinanceHub"
+      company: "Apna Chicken Center"
     },
     {
       quote: "Daneen Al Majaz transformed our entire digital infrastructure. Their team delivered beyond our expectations, on time, on budget, and with exceptional quality.",
-      author: "Mr Selva",
+      author: "Suhail Ansari",
       role: "CEO",
-      company: "Dainty"
+      company: "Digidal"
     },
     {
-      quote: "The e-commerce platform they built for us increased our online sales by 300% in just 6 months. Truly world-class development team.",
+      quote: "The e-commerce platform they built for us increased our online sales. Truly world-class development team.",
       author: "Mr Abrar",
-      role: "",
+      role: "CEI",
       company: "Deprel"
     },
     {
@@ -73,11 +73,11 @@ const Testimonials = () => {
       const scrollLeft = container.scrollLeft;
       const scrollWidth = container.scrollWidth;
       const clientWidth = container.clientWidth;
-      
+
       const isAtEnd = scrollLeft > 10 && Math.abs(scrollWidth - clientWidth - scrollLeft) <= 10;
-      
+
       const cardWidth = container.children[0].clientWidth + 24; // width + gap
-      
+
       let newActiveSlide = Math.round(scrollLeft / cardWidth);
       if (scrollLeft <= 10) {
         newActiveSlide = 0;
@@ -86,7 +86,7 @@ const Testimonials = () => {
       } else {
         newActiveSlide = Math.min(newActiveSlide, testimonials.length - 1);
       }
-      
+
       if (newActiveSlide !== activeSlide) {
         setActiveSlide(newActiveSlide);
       }

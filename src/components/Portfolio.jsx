@@ -75,7 +75,7 @@ const Portfolio = () => {
       image: zipply,
       link: "https://zipplynow.com",
       category: "Logistics SaaS",
-      tags: ["Delivery", "Real-time", "Flutter", "SaaS"],
+      tags: ["Delivery", "Real-time", "Flutter", "E-commerce"],
       description: "A Flutter-based on-demand logistics system built for hyperlocal deliveries. Features real-time order tracking on live maps, role-based workflows for customers/merchants/riders, and in-app push notifications.",
       bullets: [
         "Real-time order tracking with live map updates",
@@ -114,14 +114,14 @@ const Portfolio = () => {
       link: "https://cemtac.com/",
       category: "Manufacturing ERP",
       tags: ["ERP", "Inventory", "Distribution", "Custom Software"],
-      description: "Custom-built ERP for Cemtac Cements J&K's only MES-approved cement brand. Manages inventory, sales orders, and a full dealer/distributor network from one unified platform built for manufacturing operations.",
+      description: "A comprehensive custom ERP solution designed for Cemtac Cements to manage employees, inventory, billing, task assignments, and daily operations from one unified platform. Built for manufacturing environments, it provides real-time visibility into stock levels, workforce activities, sales transactions, and operational performance across departments.",
       bullets: [
-        "Inventory & stock management with real-time level tracking",
-        "Sales & order tracking from placement to fulfilment",
-        "Dealer & distributor management with dedicated profiles",
-        "Centralized dashboard for business-wide operational visibility"
+        "HRM system for employee management, attendance, and payroll workflows",
+        "nventory management with real-time stock tracking and warehouse control",
+        "illing & invoicing system with sales and payment management",
+        "Mobile and web access for seamless operational management"
       ],
-      stats: { users: "200+", rating: "4.9" },
+      stats: { users: "800+", rating: "4.9" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
@@ -209,8 +209,8 @@ const Portfolio = () => {
       image: valeMountsImg,
       link: "https://valemontis.com/",
       category: "Luxury Hospitality / E-Commerce",
-      tags: ["E-Commerce", "Hospitality", "Luxury", "Retail"],
-      description: "An e-commerce and hospitality platform for Vale Montis, a premium mountain-valley luxury brand. Features immersive brand storytelling, room & suite showcase, experiences catalogue, and seamless booking integration.",
+      tags: ["Hospitality", "Luxury", "Retail"],
+      description: "It's a hospitality platform for Vale Montis, a premium mountain-valley luxury brand. Features immersive brand storytelling, room & suite showcase, experiences catalogue, and seamless booking integration.",
       bullets: [
         "Full-screen immersive hero with brand narrative",
         "Room & suite showcase with booking integration",

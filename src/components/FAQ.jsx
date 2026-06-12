@@ -30,9 +30,9 @@ const FAQ = () => {
             Timelines shift depending on how complex the app is and how many integrations it needs. Our UK mobile app developers generally see projects fall into these brackets:
           </p>
           <ul style={{ paddingLeft: '20px', listStyleType: 'disc', color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-            <li style={{ marginBottom: '6px' }}>Simple apps with minimal features: about <strong>3-4 months</strong>.</li>
-            <li style={{ marginBottom: '6px' }}>Medium apps with integrations and custom UI: around <strong>6-7 months</strong>.</li>
-            <li style={{ marginBottom: '6px' }}>Feature-rich or enterprise-grade apps: <strong>8-10 months or more</strong>.</li>
+            <li style={{ marginBottom: '6px' }}>Simple apps with minimal features: about <strong>2-4 months</strong>.</li>
+            <li style={{ marginBottom: '6px' }}>Medium apps with integrations and custom UI: around <strong>4-6 months</strong>.</li>
+            <li style={{ marginBottom: '6px' }}>Feature-rich or enterprise-grade apps: <strong>6-8 months or more</strong>.</li>
             <li style={{ marginBottom: '6px' }}>Continuous builds with AI and compliance-heavy workflows: ongoing cycles.</li>
           </ul>
         </div>
@@ -58,9 +58,9 @@ const FAQ = () => {
 
       <div className="faq-list">
         {faqs.map((faq, idx) => (
-          <FAQItem 
-            key={idx} 
-            {...faq} 
+          <FAQItem
+            key={idx}
+            {...faq}
             isOpen={openIndex === idx}
             onToggle={() => setOpenIndex(openIndex === idx ? null : idx)}
           />
