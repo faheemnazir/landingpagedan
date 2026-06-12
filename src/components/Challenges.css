@@ -197,26 +197,14 @@
   }
 
   .challenges-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    padding-bottom: 16px;
-  }
-
-  .challenges-grid::-webkit-scrollbar {
-    display: none;
   }
 
   .challenge-card {
-    flex: 0 0 45%;
-    max-width: none;
-    scroll-snap-align: start;
-    min-height: 440px;
+    min-height: auto;
+    height: 100%;
   }
 
   .challenges-callout {

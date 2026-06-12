@@ -154,6 +154,14 @@
 }
 
 @media (max-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 320px;
+    scroll-snap-align: center;
+    max-width: 85vw;
+  }
+}
+
+@media (max-width: 768px) {
   .testimonials-grid {
     display: flex;
     flex-direction: row;
@@ -163,8 +171,6 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    gap: 20px;
-    padding-bottom: 16px;
   }
 
   .testimonials-grid::-webkit-scrollbar {
@@ -172,20 +178,9 @@
   }
 
   .testimonial-card {
-    flex: 0 0 45%;
-    max-width: none;
-    scroll-snap-align: start;
-    min-height: 460px;
-  }
-}
-
-@media (max-width: 768px) {
-  .testimonials-grid {
-    gap: 16px;
-  }
-
-  .testimonial-card {
     flex: 0 0 85%;
+    scroll-snap-align: start;
+    max-width: none;
     min-height: 420px; /* Lock height to match portfolio cards on mobile */
   }
 
