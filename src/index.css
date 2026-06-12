@@ -118,6 +118,7 @@ button {
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -229,8 +230,8 @@ a, button, .slider-dot, .project-card, .service-card, .challenge-card, .trust-ca
 
   /* Global Streamlined Mobile Section Spacing */
   section {
-    padding-top: 48px !important;
-    padding-bottom: 48px !important;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
   }
 
   .heading-xl {
