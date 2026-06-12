@@ -4,7 +4,7 @@
   gap: clamp(16px, 3vw, 32px);
   padding-top: clamp(12px, 2.5vh, 48px);
   padding-bottom: clamp(12px, 2.5vh, 48px);
-  align-items: stretch;
+  align-items: flex-start;
   min-height: calc(100vh - 96px);
   min-height: calc(100dvh - 96px);
 }
@@ -13,9 +13,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  gap: clamp(16px, 2.5vh, 32px);
   width: 100%;
-  height: 100%;
 }
 
 .hero-badge {
@@ -64,7 +63,7 @@
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(14px, 1.2vw, 19px);
+  font-size: clamp(15px, 1.25vw, 21px);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
   max-width: 100%;
@@ -413,8 +412,8 @@
   }
 
   .hero-subtitle {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 17px;
+    line-height: 25px;
     margin-top: 8px;
     margin-bottom: 12px;
     max-width: 100%;
@@ -472,8 +471,8 @@
   }
 
   .hero-subtitle {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 24px;
     margin-top: 8px;
     margin-bottom: 12px;
   }
@@ -521,8 +520,8 @@
   }
 
   .hero-subtitle {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 22px;
   }
 
   .btn-start,
