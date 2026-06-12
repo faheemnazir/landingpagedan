@@ -33,8 +33,7 @@ const Testimonials = () => {
       company: "CEMTAC CEMENTS"
     },
     {
-      quote: "Daneen Al Majaz transformed our vision into a stunning mobile app that exceeded all expectations. Their attention to detail and technical expertise is unmatched. Our user engagement increased by 300% in the first quarter.",
-      author: "Eshaan Ali",
+      quote: "working with Daneen Al Majaz IT Services was one of the best decisions we made for ZipplyNow. They didn’t just build an app they understood our logistics operations and translated them into a smooth, scalable platform. The real-time tracking, rider workflows, and merchant management system have significantly improved our delivery operations. Their team was responsive, professional, and genuinely invested in our success.",
       role: "CEO",
       company: "ZipplyNow "
     },
