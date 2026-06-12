@@ -127,20 +127,20 @@ const Portfolio = () => {
       padding: "12px"
     },
     {
-      title: "🍗 Apna Chicken Center",
+      title: "🐔 Apna Chicken Centre",
       number: "03",
       image: apnaChickenImg,
       link: "#",
-      category: "Food Delivery / POS",
-      tags: ["Quick Service", "Billing", "App", "POS"],
-      description: "A custom ordering and billing application for Apna Chicken Center. Features real-time token tracking, custom ordering experience, sales tracking, and direct POS integration.",
+      category: "Poultry E-Commerce / App",
+      tags: ["Poultry", "E-Commerce", "Mobile App", "Home Delivery"],
+      description: "An end-to-end poultry e-commerce platform with a dedicated mobile application and website, enabling customers to order fresh, hygienically processed chicken directly from their smartphones or desktop devices. The platform combines seamless online ordering, custom-cut selections, scheduled deliveries, and real-time convenience to modernize the traditional poultry shopping experience.",
       bullets: [
-        "Real-time order token tracking & queue management",
-        "Interactive custom ordering & digital billing system",
-        "Front-counter POS integration for kitchen order sync",
-        "Streamlined layout built for high-volume quick service"
+        "Seamless online ordering & custom-cut poultry selection",
+        "Scheduled home delivery routes with real-time tracking",
+        "Integrated e-commerce website & dedicated mobile application",
+        "Hygienic processing & cold chain storage quality control"
       ],
-      stats: { users: "500+", rating: "4.9" },
+      stats: { users: "15K+", rating: "4.9", downloads: "2.5k" },
       bg: "#ffffff",
       fit: "contain",
       padding: "12px"
