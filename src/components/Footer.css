@@ -304,8 +304,8 @@
   color: #FFFFFF;
   transition: all 0.3s ease;
   position: fixed;
-  bottom: 24px;
-  right: 96px; /* stack horizontally next to floating call button on desktop */
+  bottom: 96px;
+  right: 32px; /* stack vertically above floating call button on desktop */
   z-index: 999;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   opacity: 0;

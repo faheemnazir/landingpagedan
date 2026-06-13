@@ -74,7 +74,7 @@ const Portfolio = () => {
       number: "06",
       image: zipply,
       link: "https://zipplynow.com",
-      category: "Logistics SaaS",
+
       tags: ["Delivery", "Real-time", "Flutter", "E-commerce"],
       description: "A Flutter-based on-demand logistics system built for hyperlocal deliveries. Features real-time order tracking on live maps, role-based workflows for customers/merchants/riders, and in-app push notifications.",
       bullets: [
@@ -93,7 +93,7 @@ const Portfolio = () => {
       number: "01",
       image: coldstorage,
       link: "https://cs.daneenalmajaz.in/",
-      category: "Smart Logistics / ERP",
+
       tags: ["ERP", "Inventory", "SaaS", "J&K"],
       description: "A full-stack cold storage management platform for Kashmir's horticulture industry. Enables real-time inventory tracking, crate management, automated billing, and storage occupancy analytics for institutional-grade facilities.",
       bullets: [
@@ -112,7 +112,7 @@ const Portfolio = () => {
       number: "02",
       image: cemtacImg,
       link: "https://cemtac.com/",
-      category: "Manufacturing ERP",
+
       tags: ["ERP", "Inventory", "Distribution", "Custom Software"],
       description: "A comprehensive custom ERP solution designed for Cemtac Cements to manage employees, inventory, billing, task assignments, and daily operations from one unified platform. Built for manufacturing environments, it provides real-time visibility into stock levels, workforce activities, sales transactions, and operational performance across departments.",
       bullets: [
@@ -131,7 +131,7 @@ const Portfolio = () => {
       number: "03",
       image: apnaChickenImg,
       link: "https://apnachickencenter.in/",
-      category: "Poultry E-Commerce / App",
+
       tags: ["Poultry", "E-Commerce", "Mobile App", "Home Delivery"],
       description: "An end-to-end poultry e-commerce platform with a dedicated mobile application and website, enabling customers to order fresh, hygienically processed chicken directly from their smartphones or desktop devices. The platform combines seamless online ordering, custom-cut selections, scheduled deliveries, and real-time convenience to modernize the traditional poultry shopping experience.",
       bullets: [
@@ -150,7 +150,7 @@ const Portfolio = () => {
       number: "04",
       image: kashmiriRealtorImg,
       link: "https://stage.kashmirirealtor.com/",
-      category: "Real Estate Portal",
+
       tags: ["Real Estate", "Listings", "Kashmir", "Portal"],
       description: "A premium real estate discovery platform for the Kashmir property market. Buyers, sellers and agents browse residential and commercial listings with location-based filters, agent profiles, and direct enquiry flows.",
       bullets: [
@@ -169,7 +169,6 @@ const Portfolio = () => {
       number: "05",
       image: bakirImg,
       link: "https://hms.daneenalmajaz.in/",
-      category: "Hospitality SaaS",
       tags: ["HMS", "SaaS", "Hospitality", "Dashboard"],
       description: "A comprehensive Hotel Management System covering the full operations lifecycle, including reservations, front desk check-in/out, housekeeping status, guest billing, and real-time occupancy and revenue dashboards.",
       bullets: [
@@ -189,7 +188,6 @@ const Portfolio = () => {
       number: "07",
       image: digidal,
       link: "https://www.digidalglobal.com/",
-      category: "Streaming SaaS",
       tags: ["Streaming", "Content Creation", "Social"],
       description: "DigiDal is a digital media distribution and audience analytics platform empowering local content creators to reach wider audiences. From streaming and publishing to performance insights, it gives creators full control.",
       bullets: [
@@ -208,7 +206,7 @@ const Portfolio = () => {
       number: "08",
       image: valeMountsImg,
       link: "https://valemontis.com/",
-      category: "Luxury Hospitality / E-Commerce",
+
       tags: ["Hospitality", "Luxury", "Retail"],
       description: "It's a hospitality platform for Vale Montis, a premium mountain-valley luxury brand. Features immersive brand storytelling, room & suite showcase, experiences catalogue, and seamless booking integration.",
       bullets: [

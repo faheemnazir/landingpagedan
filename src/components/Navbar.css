@@ -20,26 +20,26 @@
 }
 
 .navbar-logo-img {
-  height: 64px;
+  height: 76px;
   width: auto;
   transition: height 0.3s ease;
 }
 
 @media (max-width: 1024px) and (orientation: portrait) {
   .navbar-logo-img {
-    height: 52px;
+    height: 60px;
   }
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
   .navbar-logo-img {
-    height: 44px;
+    height: 52px;
   }
 }
 
 @media (max-width: 480px) and (orientation: portrait) {
   .navbar-logo-img {
-    height: 36px;
+    height: 44px;
   }
 }
 

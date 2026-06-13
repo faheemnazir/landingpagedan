@@ -166,7 +166,7 @@ const Contact = () => {
 
               <div className="form-footer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '8px', marginTop: '24px' }}>
                 <div style={{ display: 'flex', gap: '16px', color: 'rgba(255,255,255,0.6)', fontSize: '13px' }}>
-                  <span>• No obligation</span>
+                  <span>• Limited slots available</span>
                   <span>• NDA available</span>
                 </div>
                 <p className="text-small" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px', margin: 0 }}>
